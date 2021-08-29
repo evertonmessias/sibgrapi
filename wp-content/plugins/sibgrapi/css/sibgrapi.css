@@ -1,0 +1,42 @@
+.settings-sibgrapi, .about-sibgrapi{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 99%;
+    min-height: 500px;
+    border: 1px solid #888;
+    margin-top: 15px;
+    margin-left: -5px;
+    padding: 20px;
+}
+.settings-sibgrapi .title, .about-sibgrapi .title{
+    color: #f00;
+}
+.settings-sibgrapi hr, .about-sibgrapi hr{
+    background-color: #bbb !important;
+    border: 1px solid #bbb !important;
+}
+.settings-sibgrapi input[type=number]{
+    width: 7em;
+    font-weight: 400;
+}
+.settings-sibgrapi input[type=email],.settings-sibgrapi input[type=text]{
+    width: 40em;
+    font-weight: 400;
+}
+.settings-sibgrapi table{
+    width: 62em;
+}
+.settings-sibgrapi table td:nth-child(1),.settings-sibgrapi table td:nth-child(3){
+    width: 8em;   
+}
+.settings-sibgrapi table td:nth-child(1) div{
+    text-align: center !important;
+    font-weight: 600;
+}
+.settings-sibgrapi table td:nth-child(2){
+    width: 40em;   
+}
+.settings-sibgrapi table td:nth-child(2) input{
+    width: 100%;
+}

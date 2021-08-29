@@ -1,0 +1,222 @@
+#topbar .search{
+    position: absolute;
+    top: 9px;
+    right: 25%;
+}
+#topbar .search form label{
+    display: none;
+}
+#topbar .search form input{
+    border-radius: 2px;
+}
+#topbar .search form input[type=text]{
+    border: 0px;    
+}
+#topbar .search form input[type=submit]{
+    border: 0px;
+    margin-left: -2px;
+    background-color: #FFF;
+    color: #009ee0;
+}
+#topbar .search form input[type=submit]:hover{
+    background-color: #9edbf4;
+    color: #fff;
+}
+#topbar .social-links i{
+    transform: scale(1.2);
+}
+#hero h1,#hero h2{
+    color: #FFF;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+#hero h1 span{
+    color: #009ee0;
+}
+.logo span{
+    color: #000 !important;
+    font-weight: 900;
+}
+.featured-services .icon-box{
+    width: 13em;
+    text-align: center;
+}
+.about h3{
+    text-align: center;
+}
+.about p{
+    text-align: justify;
+}
+
+.services .plus, .portfolio .plus, .team .plus{
+    position: relative;
+    width: 35px;
+    margin: 0 auto;
+}
+
+.services .plus a, .portfolio .plus a, .team .plus a{
+    font-size: 35px;  
+}
+
+.services .icon-box{
+    width: 100%;
+    margin-bottom: 25px;
+    height: 250px;
+    padding: 20px 10px;
+}
+
+.portfolio .portfolio-item{
+    padding: 20px;
+}
+
+.portfolio .portfolio-item:hover{
+    box-shadow: 0px 0 5px 0 #009ee0;
+}
+
+.portfolio .portfolio-item img{
+    width: 100%;
+}
+
+.portfolio .portfolio-info{
+    border: 2px solid #e2eefd;
+}
+
+.page.page-portfolio .section-title h2{
+    position: relative;
+    top: -32px;
+}
+
+.page.page-portfolio .portfolio-item.page-portfolio{
+    float: left;
+}
+
+.team .member{
+    width: 100%;
+    min-height: 300px;
+    padding: 30px;
+}
+
+.team .member .bloco1,.team .member .bloco2 {
+    width: 50%;
+    float: left;
+}
+
+.contact .info-box{
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.page{
+    min-height: 600px;
+}
+
+.page .page-title{
+    font-weight: 600;
+}
+
+.page.agenda .portfolio-info{
+    position: relative;
+    width: 300px;
+    margin-top: -30px !important;
+    float: right;
+}
+
+.page.agenda .portfolio-description{
+    width: 48em; 
+}
+
+.page.post .owl-carousel img{
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.page table{
+    border-spacing: 0px;
+    width: 100%;    
+}
+
+.page table td{
+border: 1px solid #888;padding: 10px;
+vertical-align:top; 
+}
+
+.committee{
+    background-color: #FFF;
+}
+
+.contact{
+    background-color: #F1F6FE;
+}
+
+.clients{
+    background-color: #FFF;
+}
+
+.clients .logo{
+    margin-bottom: 50px;
+}
+
+.php-email-form{
+    margin-top: -40px !important;
+}
+
+.php-email-form textarea{
+    height: 200px !important;
+}
+
+.php-email-form .button-send{
+    background-color: #009ee0 !important;
+    color: #fff !important;
+}
+
+.php-email-form .button-send:hover{
+    background-color: #9edbf4 !important;
+}
+
+#footer .footer-top{
+    background-color: #F1F6FE;
+}
+
+.footer-top .logo img{
+    width: 50px;
+}
+
+.footer-top h2{
+    text-align: center;
+}
+
+@media(max-width:900px){
+    .featured-services .icon-box{
+        width: 100%;
+    }
+    .counts .count-box{
+        margin-bottom: 30px;
+    }
+    .clients img{
+        max-width: 100%;
+        height: 100%;
+    }
+    .portfolio .portfolio-item img {
+        width: 100%;
+    }
+    .page .portfolio-description{
+        width: 100%; 
+    }
+    .page.agenda .portfolio-info{
+        width: 100%;
+        float: none;
+        margin-top: -80px !important;
+        margin-bottom: 50px;
+    }
+    .page.agenda .portfolio-description{
+        width: 100%;
+    }
+    .footer-top .footer-contact,.footer-top .footer-links{
+        text-align: center;
+    }
+    .footer-top .menu1,.footer-top .menu2{
+        float: right;
+        width: 45%;        
+    }    
+}
