@@ -5,7 +5,7 @@
             <h1>&nbsp;</h1><h1>&nbsp;</h1><h1>&nbsp;</h1>
             <br>
             <h1 style="text-align:center;">
-                Página não encontrada!
+                Page not found!
             </h1>
         </div>
     </section>

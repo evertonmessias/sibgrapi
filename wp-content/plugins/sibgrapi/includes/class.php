@@ -3,22 +3,22 @@ class sibgrapi
 {
 	public function __construct()
 	{
-		add_action('init', array($this, 'create_custom_post_type_modulo_agenda'));
+		add_action('init', array($this, 'create_custom_post_type_modulo_schedule'));
 	}
 
-	public function create_custom_post_type_modulo_agenda()
+	public function create_custom_post_type_modulo_schedule()
 	{
 		$labels = [
-			'name'					=> _x('Agenda', 'Agenda', 'text_domain'),
-			'singular_name'			=> _x('Agenda', 'Agenda', 'text_domain'),
-			'menu_name'				=> __('Agenda', 'text_domain'),
-			'name_admin_bar'		=> __('Agenda', 'text_domain'),
-			'add_new_item'			=> __('Criar nova Agenda', 'text_domain'),
-			'edit_item'				=> __('Editar Agenda', 'text_domain') 
+			'name'					=> _x('Schedule', 'Schedule', 'text_domain'),
+			'singular_name'			=> _x('Schedule', 'Schedule', 'text_domain'),
+			'menu_name'				=> __('Schedule', 'text_domain'),
+			'name_admin_bar'		=> __('Schedule', 'text_domain'),
+			'add_new_item'			=> __('Create New Schedule', 'text_domain'),
+			'edit_item'				=> __('Edit Schedule', 'text_domain') 
 		];
 		$args = [
-			'label'                	=> __('Agenda', 'text_domain'),
-			'description'           => __('Descrição Agenda', 'text_domain'),
+			'label'                	=> __('Schedule', 'text_domain'),
+			'description'           => __('Description Schedule', 'text_domain'),
 			'labels'				=> $labels,
 			'supports'              => ['title' /* , 'editor' ,'thumbnail', 'author', 'excerpt'*/],
 			'taxonomies'            => [/*'category', 'post_tag'*/],
@@ -34,10 +34,10 @@ class sibgrapi
 			'has_archive'           => true,
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
-			'capability_type'     	=> array('post', 'agenda'),
+			'capability_type'     	=> array('post', 'schedule'),
 			'map_meta_cap'        => true,
 		];
-		register_post_type('agenda', $args);
+		register_post_type('schedule', $args);
 	}
 
 	public function activate()
@@ -45,7 +45,7 @@ class sibgrapi
 		remove_role('subscriber');
 		remove_role('contributor');
 		remove_role('author');
-		$this->create_custom_post_type_modulo_agenda();			
+		$this->create_custom_post_type_modulo_schedule();			
 		flush_rewrite_rules();		
 	}
 

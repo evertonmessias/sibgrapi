@@ -114,14 +114,14 @@
     font-weight: 600;
 }
 
-.page.agenda .portfolio-info{
+.page.schedule .portfolio-info{
     position: relative;
     width: 300px;
     margin-top: -30px !important;
     float: right;
 }
 
-.page.agenda .portfolio-description{
+.page.schedule .portfolio-description{
     width: 48em; 
 }
 
@@ -203,13 +203,13 @@ vertical-align:top;
     .page .portfolio-description{
         width: 100%; 
     }
-    .page.agenda .portfolio-info{
+    .page.schedule .portfolio-info{
         width: 100%;
         float: none;
         margin-top: -80px !important;
         margin-bottom: 50px;
     }
-    .page.agenda .portfolio-description{
+    .page.schedule .portfolio-description{
         width: 100%;
     }
     .footer-top .footer-contact,.footer-top .footer-links{

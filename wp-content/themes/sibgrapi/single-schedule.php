@@ -1,12 +1,12 @@
 <?php get_header(); ?>
-<main id="main" class="page agenda" data-aos="fade-up">
+<main id="main" class="page schedule" data-aos="fade-up">
    <!-- ======= Breadcrumbs ======= -->
    <section class="breadcrumbs">
       <div class="container">
          <div class="d-flex justify-content-between align-items-center">
             <h2><?php the_title() ?></h2>
             <ol>
-               <li><a href="/">inicio</a></li>
+               <li><a href="/">home</a></li>
                <li>
                   <?php
                   if (url_active()[2] == "") echo url_active()[1];
@@ -30,15 +30,15 @@
             <div class="portfolio-info">
                <h3><?php the_title() ?></h3>
                <ul>
-                  <li><strong>Data</strong>: 
-                  <?php echo (DateTime::createFromFormat('Y-m-d', get_post_meta($post->ID, 'agenda_date', true)))->format('d/m/Y'); ?>
+                  <li><strong>Date</strong>: 
+                  <?php echo get_post_meta($post->ID, 'schedule_date', true); ?>
                   </li>                  
                </ul>
             </div>
          </div>
 
          <div class="portfolio-description">
-            <?php echo get_post_meta($post->ID, 'agenda_content', true); ?>
+            <?php echo get_post_meta($post->ID, 'schedule_content', true); ?>
          </div>
       </div>
    </section><!-- End Portfolio Details Section -->

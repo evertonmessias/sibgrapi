@@ -4,9 +4,9 @@
    <section class="breadcrumbs">
       <div class="container">
          <div class="d-flex justify-content-between align-items-center">
-            <h2><strong>Agenda Completa</strong></h2>
+            <h2><strong>All Schedule</strong></h2>
             <ol>
-               <li><a href="/">inicio</a></li>
+               <li><a href="/">home</a></li>
                <li>
                   <?php
                   if (url_active()[2] == "") echo url_active()[1];
@@ -30,7 +30,7 @@
          $x = 1;          
          while (have_posts()){
             the_post();
-            if(strtotime(get_post_meta($post->ID, 'agenda_date', true)) >= strtotime(date('Y-m-d'))){
+            if(strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))){
             ?>
             <ul>
                <li>
@@ -39,7 +39,7 @@
                   if($x < 10)$n = "0".$x;
                   else "".$n = $x;
                   echo $n.". ";
-                  echo "<strong>".(DateTime::createFromFormat('Y-m-d', get_post_meta($post->ID, 'agenda_date', true)))->format('d/m/Y')."</strong> - ";
+                  echo "<strong>".get_post_meta($post->ID, 'schedule_date', true)."</strong> - ";
                   echo get_the_title();  
                   ?>
                   </a>
@@ -52,10 +52,10 @@
          $x = 1;           
          while (have_posts()){
             the_post();
-            if(strtotime(get_post_meta($post->ID, 'agenda_date', true)) < strtotime(date('Y-m-d'))){
+            if(strtotime(get_post_meta($post->ID, 'schedule_date', true)) < strtotime(date('Y-m-d'))){
             ?>
             <br><hr><br>
-            <h5>Arquivo</h5><br>            
+            <h5>History</h5><br>            
             <ul>
                <li>
                   <a href="<?php the_permalink() ?>">
@@ -63,7 +63,7 @@
                   if($x < 10)$n = "0".$x;
                   else "".$n = $x;
                   echo $n.". ";
-                  echo "<strong>".(DateTime::createFromFormat('Y-m-d', get_post_meta($post->ID, 'agenda_date', true)))->format('d/m/Y')."</strong> - ";
+                  echo "<strong>".get_post_meta($post->ID, 'schedule_date', true)."</strong> - ";
                   echo get_the_title();  
                   ?>
                   </a>

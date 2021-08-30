@@ -1,17 +1,12 @@
 <?php get_header(); ?>
-<style>
-      .programa img{
-         width: 100% !important;
-      }
-   </style>
-<main id="main" class="page programa" data-aos="fade-up">
+<main id="main" class="page" data-aos="fade-up">
    <!-- ======= Breadcrumbs ======= -->
    <section class="breadcrumbs">
       <div class="container">
          <div class="d-flex justify-content-between align-items-center">
-            <h2 class="page-title">Programa <?php echo get_option('agenda_input_1'); ?></h2>
+            <h2 class="page-title">Registration</h2>
             <ol>
-               <li><a href="/">inicio</a></li>
+               <li><a href="/">home</a></li>
                <li>
                   <?php
                   if (url_active()[2] == "") echo url_active()[1];
@@ -29,7 +24,27 @@
    </section><!-- End Breadcrumbs -->
    <section class="inner-page">
       <div class="container">
-         <?php the_content(); ?>
+      <?php the_content(); ?>
+      <br><hr><br>
+         <ul>
+            <?php
+            $args = array(
+               'post_type' => 'page',
+               'orderby' => 'title',
+               'order'   => 'ASC',
+               'posts_per_page' => 100
+            );
+            $loop = new WP_Query($args);
+            while ($loop->have_posts()) {
+               $loop->the_post();
+               if (strstr(get_the_title(),"Registration ")) { ?>
+                  <li>
+                     <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+                  </li>
+            <?php }
+            } ?>
+         </ul>
+         
       </div>
    </section>
 </main><!-- End #main -->

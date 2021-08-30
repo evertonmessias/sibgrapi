@@ -7,19 +7,19 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3 class="logo mr-auto">
               <a href="/">
-                <img src="<?php echo get_option('agenda_input_2'); ?>" title="SIBGRAPI">
+                <img src="<?php echo get_option('schedule_input_2'); ?>" title="SIBGRAPI">
                 <span>SIBGRAPI</span>
               </a>
             </h3>
-            <h3><?php echo get_option('agenda_input_1'); ?></h3>
+            <h3><?php echo get_option('schedule_input_1'); ?></h3>
             <p>
-              <?php if (get_option('agenda_input_5') != "") { ?>
-                <i class="icofont-envelope"></i>&ensp;<a href="mailto:<?php echo get_option('agenda_input_5'); ?>"><?php echo get_option('agenda_input_5'); ?></a>
+              <?php if (get_option('schedule_input_5') != "") { ?>
+                <i class="icofont-envelope"></i>&ensp;<a href="mailto:<?php echo get_option('schedule_input_5'); ?>"><?php echo get_option('schedule_input_5'); ?></a>
               <?php } ?>
             </p>
             <p>
-              <?php if (get_option('agenda_input_4') != "") { ?>
-                <i class="bx bxl-whatsapp"></i>&ensp;<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo get_option('agenda_input_4'); ?>&text=SIBGRAPI"><?php echo get_option('agenda_input_4'); ?></a>
+              <?php if (get_option('schedule_input_4') != "") { ?>
+                <i class="bx bxl-whatsapp"></i>&ensp;<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo get_option('schedule_input_4'); ?>&text=SIBGRAPI"><?php echo get_option('schedule_input_4'); ?></a>
               <?php } ?>
             </p>
           </div>
@@ -29,14 +29,14 @@
 
           <div class="col-lg-3 col-md-6 footer-links">
             <div class="social-links mt-3">
-              <?php if (get_option('agenda_input_27') != "") { ?>
-                <a href="<?php echo explode(",", get_option('agenda_input_27'))[1]; ?>" target="_blank" class="facebook"><i class="bx <?php echo explode(",", get_option('agenda_input_27'))[0]; ?>"></i></a>
+              <?php if (get_option('schedule_input_27') != "") { ?>
+                <a href="<?php echo explode(",", get_option('schedule_input_27'))[1]; ?>" target="_blank" class="facebook"><i class="bx <?php echo explode(",", get_option('schedule_input_27'))[0]; ?>"></i></a>
               <?php } ?>
-              <?php if (get_option('agenda_input_28') != "") { ?>
-                <a href="<?php echo explode(",", get_option('agenda_input_28'))[1]; ?>" target="_blank" class="instagram"><i class="bx <?php echo explode(",", get_option('agenda_input_28'))[0]; ?>"></i></a>
+              <?php if (get_option('schedule_input_28') != "") { ?>
+                <a href="<?php echo explode(",", get_option('schedule_input_28'))[1]; ?>" target="_blank" class="instagram"><i class="bx <?php echo explode(",", get_option('schedule_input_28'))[0]; ?>"></i></a>
               <?php } ?>
-              <?php if (get_option('agenda_input_29') != "") { ?>
-                <a href="<?php echo explode(",", get_option('agenda_input_29'))[1]; ?>" target="_blank" class="instagram"><i class="bx <?php echo explode(",", get_option('agenda_input_29'))[0]; ?>"></i></a>
+              <?php if (get_option('schedule_input_29') != "") { ?>
+                <a href="<?php echo explode(",", get_option('schedule_input_29'))[1]; ?>" target="_blank" class="instagram"><i class="bx <?php echo explode(",", get_option('schedule_input_29'))[0]; ?>"></i></a>
               <?php } ?>
             </div>
           </div>
@@ -47,7 +47,7 @@
 
     <div class="container py-4">
       <div class="copyright">
-        <strong><span>SIBGRAPI</span></strong>. Todos os direitos reservados
+        <strong><span>SIBGRAPI</span></strong>. All rights reserved
       </div>
       <div class="credits">
         Designed by <a href="https://ic.unicamp.br/~everton/" target="_blank">EvM</a>

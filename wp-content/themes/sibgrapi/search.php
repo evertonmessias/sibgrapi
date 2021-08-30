@@ -36,13 +36,13 @@ $the_query = new WP_Query($args);
       <section class="breadcrumbs">
          <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-               <h2>Nada encontrado!</h2>
+               <h2>Not found</h2>
             </div>
          </div>
       </section><!-- End Breadcrumbs -->
       <section class="inner-page">
          <div class="container">            
-            <p>Nenhuma correspondência encontrada.</p>          
+            <p>No matches found.</p>          
          </div>
       </section>
    <?php } ?>

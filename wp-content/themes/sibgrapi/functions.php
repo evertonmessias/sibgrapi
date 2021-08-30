@@ -19,7 +19,7 @@ function tf_wp_admin_login_logo()
 { ?>
   <style type="text/css">
     #login h1 a {
-      background-image: url('<?php echo get_option('agenda_input_2'); ?>');
+      background-image: url('<?php echo get_option('schedule_input_2'); ?>');
     }
 
     #login .galogin-powered {

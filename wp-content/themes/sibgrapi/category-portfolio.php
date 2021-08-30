@@ -4,9 +4,9 @@
    <section class="breadcrumbs">
       <div class="container">
          <div class="d-flex justify-content-between align-items-center">
-            <h2><strong>Portfolio</strong></h2>
+            <h2><strong>All Portfolio</strong></h2>
             <ol>
-               <li><a href="/">inicio</a></li>
+               <li><a href="/">home</a></li>
                <li>
                   <?php
                   if (url_active()[2] == "") echo url_active()[1];
