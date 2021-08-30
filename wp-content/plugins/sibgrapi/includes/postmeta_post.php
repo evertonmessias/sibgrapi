@@ -1,5 +1,7 @@
 <?php
 
+// ADD field DATE in POST
+
 // Data **********************************
 
 function field_box_post_date()
