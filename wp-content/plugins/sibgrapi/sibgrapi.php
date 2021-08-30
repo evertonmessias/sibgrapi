@@ -22,7 +22,8 @@ include ABSPATH . '/wp-content/plugins/sibgrapi/includes/class.php';
 include ABSPATH . '/wp-content/plugins/sibgrapi/includes/functions.php';
 
 // POSTMETA ************************************************
-include ABSPATH . '/wp-content/plugins/sibgrapi/includes/postmeta.php';
+include ABSPATH . '/wp-content/plugins/sibgrapi/includes/postmeta_schedule.php';
+//include ABSPATH . '/wp-content/plugins/sibgrapi/includes/postmeta_post.php';
 
 // SETTINGS ************************************************
 include ABSPATH . '/wp-content/plugins/sibgrapi/includes/settings.php';
