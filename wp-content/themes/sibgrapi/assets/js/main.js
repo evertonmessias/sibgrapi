@@ -87,7 +87,7 @@
   } else if(document.getElementById(pag[3]) == null) {    
     main_nav.find('li').removeClass('active');
   } else{
-    if(pag[3] == "sobre-cegrapi" || pag[3] == "sobre-sibgrapi")pag[3] = "sobre";    
+    if(pag[3] == "about-cegrapi" || pag[3] == "about-sibgrapi")pag[3] = "about";    
     $('#'+pag[3]).addClass('active');
   }
 

@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 <style>
-      .gestao .contentgestao{
+      .management .contentmanagement{
          display: none;
       }
-      .gestao ul{
+      .management ul{
          list-style: none;                  
       }      
    </style>
-<main id="main" class="page gestao" data-aos="fade-up">
+<main id="main" class="page management" data-aos="fade-up">
    <!-- ======= Breadcrumbs ======= -->
    <section class="breadcrumbs">
       <div class="container">
          <div class="d-flex justify-content-between align-items-center">
-            <h2 class="page-title">Todas as Gestões</h2>
+            <h2 class="page-title">All Management</h2>
             <ol>
-               <li><a href="/">inicio</a></li>
+               <li><a href="/">home</a></li>
                <li>
                   <?php
                   if (url_active()[2] == "") echo url_active()[1];
@@ -35,7 +35,7 @@
          <ul>
             <?php
             $args = array(
-               'category_name' => 'gestao',
+               'category_name' => 'management',
                'posts_per_page' => 100
             );
             $loop = new WP_Query($args);
@@ -44,7 +44,7 @@
                $loop->the_post(); ?>
                   <li>
                   <a href="#!" title="Clique" onclick="$('#p<?php echo $x; ?>').slideToggle(500)"><h5><?php echo get_the_title(); ?></h5></a>
-                  <div class="contentgestao" id="p<?php echo $x; ?>"><br><?php echo get_the_content(); ?><br><br></div>
+                  <div class="contentmanagement" id="p<?php echo $x; ?>"><br><?php echo get_the_content(); ?><br><br></div>
                   </li><br>
             <?php $x++; } ?>
          </ul>

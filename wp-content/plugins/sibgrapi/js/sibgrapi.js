@@ -14,8 +14,8 @@ function upload_image(val){
             var attachment = aw_uploader.state().get('selection').first().toJSON();
             var url = attachment.url.split('/').splice(3,6);            
             url = url.join('/');
-            $('#agenda_input_'+val).val("/"+url);
-            $('#preview_agenda_input_'+val).attr('src',"/"+url);
+            $('#schedule_input_'+val).val("/"+url);
+            $('#preview_schedule_input_'+val).attr('src',"/"+url);
         })
         .open();    
 }

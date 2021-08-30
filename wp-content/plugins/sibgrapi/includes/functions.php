@@ -7,15 +7,15 @@ function role_caps()
 	foreach ($roles as $the_role) {
 		$role = get_role($the_role);
 		$role->add_cap('read');
-		$role->add_cap('read_agenda');
-		$role->add_cap('read_private_agenda');
-		$role->add_cap('edit_agenda');
-		$role->add_cap('edit_others_agenda');
-		$role->add_cap('edit_published_agenda');
-		$role->add_cap('publish_agenda');
-		$role->add_cap('delete_others_agenda');
-		$role->add_cap('delete_private_agenda');
-		$role->add_cap('delete_published_agenda');
+		$role->add_cap('read_schedule');
+		$role->add_cap('read_private_schedule');
+		$role->add_cap('edit_schedule');
+		$role->add_cap('edit_others_schedule');
+		$role->add_cap('edit_published_schedule');
+		$role->add_cap('publish_schedule');
+		$role->add_cap('delete_others_schedule');
+		$role->add_cap('delete_private_schedule');
+		$role->add_cap('delete_published_schedule');
 		$role->add_cap('list_users');		
 		$role->add_cap('manage_options');	
 	}
@@ -42,7 +42,7 @@ add_action('admin_enqueue_scripts', 'style_and_script');
 //Rename menu iten Admin
 function wd_admin_menu_rename() {
 	global $menu;
-	$menu[3][0] = 'Evento';	
+	$menu[3][0] = 'Event';	
 	$menu[5][0] = 'Portfolio';
 }
 add_action( 'admin_menu', 'wd_admin_menu_rename' );

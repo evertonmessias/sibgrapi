@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?php echo get_option('agenda_input_2'); ?>" rel="icon">
+  <link href="<?php echo get_option('schedule_input_2'); ?>" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -36,12 +36,12 @@
     <div class="container d-flex">
 
       <div class="contact-info mr-auto">
-        <?php if (get_option('agenda_input_5') != "") { ?>
-          <i class="icofont-envelope"></i>&ensp;<a href="mailto:<?php echo get_option('agenda_input_5'); ?>"><?php echo get_option('agenda_input_5'); ?></a>
+        <?php if (get_option('schedule_input_5') != "") { ?>
+          <i class="icofont-envelope"></i>&ensp;<a href="mailto:<?php echo get_option('schedule_input_5'); ?>"><?php echo get_option('schedule_input_5'); ?></a>
         <?php } ?>
         &emsp;
-        <?php if (get_option('agenda_input_4') != "") { ?>
-          <i class="bx bxl-whatsapp"></i>&ensp;<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo get_option('agenda_input_4'); ?>&text=SIBGRAPI"><?php echo get_option('agenda_input_4'); ?></a>
+        <?php if (get_option('schedule_input_4') != "") { ?>
+          <i class="bx bxl-whatsapp"></i>&ensp;<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo get_option('schedule_input_4'); ?>&text=SIBGRAPI"><?php echo get_option('schedule_input_4'); ?></a>
         <?php } ?>
       </div>
 
@@ -50,20 +50,20 @@
       </div>
 
       <div class="social-links">
-        <?php if (get_option('agenda_input_27') != "") {
-          $social1 = explode(",", get_option('agenda_input_27'));
+        <?php if (get_option('schedule_input_27') != "") {
+          $social1 = explode(",", get_option('schedule_input_27'));
         ?>
           <a title="<?php echo $social1[2]; ?>" href="<?php echo $social1[1]; ?>" target="_blank"><i class="bx <?php echo $social1[0]; ?>"></i></a>
         <?php } ?>
 
-        <?php if (get_option('agenda_input_28') != "") {
-          $social2 = explode(",", get_option('agenda_input_28'));
+        <?php if (get_option('schedule_input_28') != "") {
+          $social2 = explode(",", get_option('schedule_input_28'));
         ?>
           <a title="<?php echo $social2[2]; ?>" href="<?php echo $social2[1]; ?>" target="_blank"><i class="bx <?php echo $social2[0]; ?>"></i></a>
         <?php } ?>
 
-        <?php if (get_option('agenda_input_29') != "") {
-          $social3 = explode(",", get_option('agenda_input_29'));
+        <?php if (get_option('schedule_input_29') != "") {
+          $social3 = explode(",", get_option('schedule_input_29'));
         ?>
           <a title="<?php echo $social3[2]; ?>" href="<?php echo $social3[1]; ?>" target="_blank"><i class="bx <?php echo $social3[0]; ?>"></i></a>
         <?php } ?>
@@ -79,7 +79,7 @@
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto">
         <a href="/">
-          <img src="<?php echo get_option('agenda_input_2'); ?>" title="SIBGRAPI">
+          <img src="<?php echo get_option('schedule_input_2'); ?>" title="SIBGRAPI">
           <span>SIBGRAPI</span>
         </a>
       </h1>

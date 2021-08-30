@@ -1,21 +1,20 @@
 <?php
 // about *************************************************
-function agenda_page_about()
+function schedule_page_about()
 { ?>
     <div class="about-sibgrapi">
-        <h1 class="title">Sobre o plugin SIBGRAPI</h1>
-        <p>O plugin <b>SIBGRAPI</b> foi desenvolvido para proporcionar o gerenciamento de agendas e eventos anuais.
-        </p>
+        <h1 class="title">About plugin SIBGRAPI</h1>
+        <p>Plugin <b>SIBGRAPI</b> was developed to provide management of annual schedules and events.</p>
         <ul>
-            <li><a href="https://github.com/evertonmessias/sibgrapi" target="_blank">Link do Projeto</a></li>
-            <li><a href="https://ic.unicamp.br/~everton" target="_blank">Site do Desenvolvedor</a></li>
+            <li><a href="https://github.com/evertonmessias/sibgrapi" target="_blank">Project Link</a></li>
+            <li><a href="https://ic.unicamp.br/~everton" target="_blank">Developer Website</a></li>
         </ul>        
     </div>
 <?php
 }
 
-function agenda_about()
+function schedule_about()
 {
-    add_submenu_page('edit.php?post_type=agenda', 'Sobre', 'Sobre', 'manage_options', 'agenda_about', 'agenda_page_about');
+    add_submenu_page('edit.php?post_type=schedule', 'About', 'About', 'manage_options', 'schedule_about', 'schedule_page_about');
 }
-add_action('admin_menu', 'agenda_about');
+add_action('admin_menu', 'schedule_about');
