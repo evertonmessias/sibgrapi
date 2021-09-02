@@ -68,7 +68,7 @@
           <a title="<?php echo $social3[2]; ?>" href="<?php echo $social3[1]; ?>" target="_blank"><i class="bx <?php echo $social3[0]; ?>"></i></a>
         <?php } ?>
         
-        <a title="Login" href="/wp-admin"><i class="bx bxs-user"></i></a>
+        <a title="Login" href="/wp-admin/admin.php?page=cegrapi"><i class="bx bxs-user"></i></a>
       </div>
 
     </div>

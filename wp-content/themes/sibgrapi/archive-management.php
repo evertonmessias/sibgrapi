@@ -35,7 +35,7 @@
          <ul>
             <?php
             $args = array(
-               'category_name' => 'management',
+               'post_type' => 'management',
                'posts_per_page' => 100
             );
             $loop = new WP_Query($args);
@@ -43,7 +43,7 @@
             while ($loop->have_posts()) {
                $loop->the_post(); ?>
                   <li>
-                  <a href="#!" title="Clique" onclick="$('#p<?php echo $x; ?>').slideToggle(500)"><h5><?php echo get_the_title(); ?></h5></a>
+                  <a href="#!" title="Click" onclick="$('#p<?php echo $x; ?>').slideToggle(500)"><h5><?php echo get_the_title(); ?></h5></a>
                   <div class="contentmanagement" id="p<?php echo $x; ?>"><br><?php echo get_the_content(); ?><br><br></div>
                   </li><br>
             <?php $x++; } ?>

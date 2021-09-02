@@ -1,3 +1,7 @@
+window.onload = function(){
+    $("#adminmenu #toplevel_page_cegrapi ul li.wp-first-item a").html("About");
+}
+
 function upload_image(val){
 
     aw_uploader = wp.media({

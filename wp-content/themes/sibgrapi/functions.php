@@ -9,7 +9,7 @@ define('SITEPATH', '/wp-content/themes/sibgrapi/');
 //************* Login_redirect
 function admin_default_page()
 {
-  return '/wp-admin';
+  return '/wp-admin/admin.php?page=cegrapi';
 }
 add_filter('login_redirect', 'admin_default_page');
 

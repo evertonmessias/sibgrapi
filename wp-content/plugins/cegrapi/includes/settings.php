@@ -1,5 +1,5 @@
 <?php
-//Configuração *************************************************
+//Settings *************************************************
 function schedule_page_html()
 { ?>
 	<div class="settings-sibgrapi">
@@ -252,7 +252,7 @@ function schedule_page_html()
 
 function schedule_options_page()
 {
-	add_submenu_page('edit.php?post_type=schedule', 'Settings', 'Settings', 'manage_options', 'schedule_page', 'schedule_page_html');
+	add_submenu_page('cegrapi', 'Settings', 'Settings', 'edit_posts', 'schedule_page', 'schedule_page_html');
 }
 add_action('admin_menu', 'schedule_options_page');
 
