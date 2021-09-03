@@ -28,7 +28,7 @@ include ABSPATH . '/wp-content/plugins/cegrapi/includes/settings.php';
 // POSTMETA POST ************************************************
 //include ABSPATH . '/wp-content/plugins/cegrapi/includes/postmeta-post.php';
 
-// OBJETOS *************************************************
+// OBJECTS *************************************************
 $schedule = new schedule();
 $management = new management();
 
