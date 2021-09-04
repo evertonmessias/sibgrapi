@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_header_portal(); ?>
 <?php $s = get_search_query();
 $args = array(
    's' => $s

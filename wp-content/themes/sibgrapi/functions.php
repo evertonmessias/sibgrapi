@@ -94,6 +94,22 @@ function my_li_id_handler($id, $item, $args)
 }
 add_filter('nav_menu_item_id', 'my_li_id_handler', 10, 3);
 
+
+//************* Get Header cegrapi
+function get_header_portal()
+{
+  include ABSPATH . '/wp-content/themes/sibgrapi/header-portal.php';
+}
+add_action('get_header_portal', 'get_header_portal');
+
+
+//************* Get Header sibgrapi
+function get_header_sibgrapi()
+{
+  include ABSPATH . '/wp-content/themes/sibgrapi/header-sibgrapi.php';
+}
+add_action('get_header_sibgrapi', 'get_header_sibgrapi');
+
 //************* Removes rich text editor
 //add_filter( 'user_can_richedit' , '__return_false');
 

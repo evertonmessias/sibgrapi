@@ -1,6 +1,13 @@
 <?php
 
-//***************** Add General Configuration
+// ***************** Add in Menu
+function menu_cegrapi()
+{
+	add_menu_page('SIBGRAPI Portal', 'SIBGRAPI Portal', 'edit_posts', 'cegrapi', 'function_about', 'dashicons-screenoptions', 1);
+}
+add_action('admin_menu', 'menu_cegrapi');
+
+//***************** Add General Configuration Roles
 function general_configuration_role_caps()
 {
 	$roles = array('editor');
@@ -11,7 +18,7 @@ function general_configuration_role_caps()
 		$role->remove_cap('remove_users');
 		$role->remove_cap('promote_users');
 		$role->remove_cap('edit_users');
-		$role->remove_cap('manage_options');
+		$role->add_cap('manage_options');
 	}
 }
 add_action('admin_init', 'general_configuration_role_caps', 999);
@@ -50,15 +57,6 @@ function style_and_script()
 }
 add_action('admin_enqueue_scripts', 'style_and_script');
 
-
-// ***************** Add in Menu
-function menu_cegrapi()
-{
-	add_menu_page('CEGRAPI', 'CEGRAPI', 'edit_posts', 'cegrapi', 'function_about', 'dashicons-screenoptions', 1);
-}
-add_action('admin_menu', 'menu_cegrapi');
-
-
 //Rename menu iten Admin
 function wd_admin_menu_rename() {
 	global $menu;	
@@ -71,3 +69,4 @@ function function_about()
 {
 	include ABSPATH . '/wp-content/plugins/cegrapi/includes/about.php';
 }
+add_action('function_about','function_about');

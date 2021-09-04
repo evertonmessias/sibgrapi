@@ -16,21 +16,21 @@
     border: 0px;
     margin-left: -2px;
     background-color: #FFF;
-    color: #009ee0;
+    color: #bbb;
 }
 #topbar .search form input[type=submit]:hover{
-    background-color: #9edbf4;
+    background-color: #ccc;
     color: #fff;
 }
 #topbar .social-links i{
     transform: scale(1.2);
 }
-#hero h1,#hero h2{
+#hero h2, #hero p{
     color: #FFF;
     text-shadow: black 0.1em 0.1em 0.2em
 }
-#hero h1 span{
-    color: #009ee0;
+#hero .carousel-control-prev-icon, #hero .carousel-control-next-icon{
+    margin-top: 3em;
 }
 .logo span{
     color: #000 !important;
@@ -69,7 +69,7 @@
 }
 
 .portfolio .portfolio-item:hover{
-    box-shadow: 0px 0 5px 0 #009ee0;
+    box-shadow: 0px 0 5px 0 #bbb;
 }
 
 .portfolio .portfolio-item img{
@@ -166,12 +166,7 @@ vertical-align:top;
 }
 
 .php-email-form .button-send{
-    background-color: #009ee0 !important;
     color: #fff !important;
-}
-
-.php-email-form .button-send:hover{
-    background-color: #9edbf4 !important;
 }
 
 #footer .footer-top{

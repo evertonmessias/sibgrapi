@@ -14,9 +14,9 @@ class management
 			'singular_name'			=> __('Management', 'Management', 'text_domain'),
 			'menu_name'				=> __('Management', 'text_domain'),
 			'name_admin_bar'		=> __('Management', 'text_domain'),
-			'add_new_item'			=> __('Criar nova Management', 'text_domain'),
-			'edit_item'				=> __('Editar Management', 'text_domain'),
-			'description'           => __('Descrição Management', 'text_domain') 
+			'add_new_item'			=> __('Create new Management', 'text_domain'),
+			'edit_item'				=> __('Edit Management', 'text_domain'),
+			'description'           => __('Description Management', 'text_domain') 
 		];
 		$args = [			
 			'labels'				=> $labels,

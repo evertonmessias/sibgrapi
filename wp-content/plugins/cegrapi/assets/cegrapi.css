@@ -16,6 +16,14 @@
     background-color: #bbb !important;
     border: 1px solid #bbb !important;
 }
+.settings-sibgrapi table{
+    width: 65em;
+}
+
+.settings-sibgrapi table img{
+    height: 100%;   
+}
+
 .settings-sibgrapi input[type=number]{
     width: 7em;
     font-weight: 400;
@@ -24,11 +32,14 @@
     width: 40em;
     font-weight: 400;
 }
-.settings-sibgrapi table{
-    width: 62em;
+.settings-sibgrapi textarea{
+    width: 100%;
+    font-weight: 400;
+    margin-bottom: -3px;
 }
+
 .settings-sibgrapi table td:nth-child(1),.settings-sibgrapi table td:nth-child(3){
-    width: 8em;   
+    width: 9em;
 }
 .settings-sibgrapi table td:nth-child(1) div{
     text-align: center !important;

@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_header_portal(); ?>
 <style>
       .management .contentmanagement{
          display: none;

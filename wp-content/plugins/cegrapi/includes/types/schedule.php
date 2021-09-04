@@ -14,9 +14,9 @@ class schedule
 			'singular_name'			=> __('Schedule', 'Schedule', 'text_domain'),
 			'menu_name'				=> __('Schedule', 'text_domain'),
 			'name_admin_bar'		=> __('Schedule', 'text_domain'),
-			'add_new_item'			=> __('Criar nova Schedule', 'text_domain'),
-			'edit_item'				=> __('Editar Schedule', 'text_domain'),
-			'description'           => __('Descrição Schedule', 'text_domain') 
+			'add_new_item'			=> __('Create new Schedule', 'text_domain'),
+			'edit_item'				=> __('Edit Schedule', 'text_domain'),
+			'description'           => __('Description Schedule', 'text_domain') 
 		];
 		$args = [			
 			'labels'				=> $labels,

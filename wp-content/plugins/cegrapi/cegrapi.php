@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Plugin Name: CEGRAPI
+ * Plugin Name: SIBGRAPI PORTAL
  * Plugin URI: https://ic.unicamp.br/~everton
- * Description: Plugin CEGRAPI for SIBGRAPI site, include Schedule, Management and Settings
+ * Description: Plugin SIBGRAPI PORTAL, include Event, Schedule, Management and Settings
  * Author: EvM.
  * Version: 1.0
- * Text Domain: SIBGRAPI
- * Plugin CEGRAPI for SIBGRAPI site
+ * Text Domain: SIBGRAPI PORTAL
+ * Plugin SIBGRAPI PORTAL
  */
 
 // Exit if accessed directly.
@@ -19,6 +19,7 @@ if (!defined('ABSPATH')) {
 include ABSPATH . '/wp-content/plugins/cegrapi/includes/functions.php';
 
 // TYPES ************************************************
+include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/event.php';
 include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/management.php';
 include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/schedule.php';
 
@@ -29,14 +30,18 @@ include ABSPATH . '/wp-content/plugins/cegrapi/includes/settings.php';
 //include ABSPATH . '/wp-content/plugins/cegrapi/includes/postmeta-post.php';
 
 // OBJECTS *************************************************
-$schedule = new schedule();
+$event = new event();
 $management = new management();
+$schedule = new schedule();
+
 
 register_activation_hook(__FILE__, array(
-    $schedule, 'activate',
-    $management, 'activate'
+    $event, 'activate',
+    $management, 'activate',
+    $schedule, 'activate'    
 ));
 register_deactivation_hook(__FILE__, array(
-    $schedule, 'deactivate',
-    $management, 'deactivate'
+    $event, 'deactivate',
+    $management, 'deactivate',
+    $schedule, 'deactivate'    
 ));

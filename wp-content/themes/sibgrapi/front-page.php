@@ -1,12 +1,68 @@
 <?php get_header(); ?>
-
+<?php get_header_portal(); ?>
 <!-- ======= Hero Section ======= -->
-<section id="hero" style="background: url('<?php echo get_option('schedule_input_3'); ?>') top left;" class="d-flex align-items-center">
-	<div class="container" data-aos="zoom-out" data-aos-delay="100">
-		<h1><?php bloginfo() ?>&nbsp;<span><?php echo get_option('schedule_input_1'); ?></span></h1>
-		<h2>Conference on Patterns, Graphics, and Images</h2>
-		<div class="d-flex">
-			<a href="#About" class="btn-get-started scrollto">About</a>
+<section id="hero">
+	<div class="hero-container">
+		<div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators">
+				<li data-target="#heroCarousel" data-slide-to="0" class=""></li>
+				<li data-target="#heroCarousel" data-slide-to="1" class=""></li>
+				<li data-target="#heroCarousel" data-slide-to="2" class=""></li>
+			</ol>
+
+			<div class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<?php if (get_option('schedule_input_111') != "") { ?>
+					<div class="carousel-item active" style="background-image: url('<?php echo get_option('schedule_input_111'); ?>');">
+						<div class="carousel-container">
+							<div class="carousel-content container">
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('schedule_input_112') ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_option('schedule_input_113'); ?></p>
+								<a href="<?php echo explode(",", get_option('schedule_input_114'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('schedule_input_114'))[0]; ?></a>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
+
+				<!-- Slide 2 -->
+				<?php if (get_option('schedule_input_115') != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_option('schedule_input_115'); ?>');">
+						<div class="carousel-container">
+							<div class="carousel-content container">
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('schedule_input_116') ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_option('schedule_input_117'); ?></p>
+								<a href="<?php echo explode(",", get_option('schedule_input_118'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('schedule_input_118'))[0]; ?></a>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
+
+				<!-- Slide 3 -->
+				<?php if (get_option('schedule_input_119') != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_option('schedule_input_119'); ?>');">
+						<div class="carousel-container">
+							<div class="carousel-content container">
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('schedule_input_120') ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_option('schedule_input_121'); ?></p>
+								<a href="<?php echo explode(",", get_option('schedule_input_122'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('schedule_input_122'))[0]; ?></a>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
+
+			</div>
+
+			<a class="carousel-control-prev" title="Previous" href="#heroCarousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" title="Next" href="#heroCarousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+
 		</div>
 	</div>
 </section><!-- End Hero -->
@@ -40,18 +96,15 @@
 		</div>
 	</section><!-- End Featured Services Section -->
 
-	<!-- ======= About Section ======= -->
-	<section id="About" class="about section-bg">
+	<!-- ======= About Sibgrapi ======= -->
+	<section id="Sibgrapi" class="about section-bg">
 		<div class="container" data-aos="fade-up">
-
 			<div class="section-title">
 				<h2>About</h2>
-				<h3>About <span>Us</span></h3>
+				<h3>SIBGRAPI</h3>
 			</div>
-
-			<div class="row">
-				<div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
-					<h3>SIBGRAPI</h3>
+			<div id="Sibgrapi" class="row">
+				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">					
 					<?php
 					$loop = new WP_Query(array('pagename' => 'About SIBGRAPI'));
 					while ($loop->have_posts()) {
@@ -60,8 +113,20 @@
 					}
 					?>
 				</div>
-				<div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
-					<h3>CEGRAPI</h3>
+			</div>
+		</div>
+		</div>
+	</section><!-- End About Section -->
+
+	<!-- ======= About Section ======= -->
+	<section id="Cegrapi" class="about section-bg">
+		<div class="container" data-aos="fade-up">
+			<div class="section-title">
+				<h2>About</h2>
+				<h3>CEGRAPI</h3>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">					
 					<?php
 					$loop = new WP_Query(array('pagename' => 'About CEGRAPI'));
 					while ($loop->have_posts()) {
@@ -71,7 +136,7 @@
 					?>
 				</div>
 			</div>
-
+		</div>
 		</div>
 	</section><!-- End About Section -->
 
@@ -109,32 +174,33 @@
 		</div>
 	</section><!-- End Counts Section -->
 
-	<!-- ======= Schedule Section ======= -->
-	<section id="Schedule" class="services section-bg">
+	<!-- ======= Events Section ======= -->
+	<section id="Events" class="services section-bg">
 		<div class="container" data-aos="fade-up">
 			<div class="section-title">
-				<h2>Schedule</h2>
-				<h3>Check out our <span>Schedule</span></h3>
+				<h2>Events</h2>
+				<h3>Our <span>Events</span></h3>
 			</div>
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'schedule',
+					'post_type' => 'events',
 					'posts_per_page' => 12
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if(strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))){
+					if (strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
 				?>
-					<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
-						<div class="icon-box">
-							<div class="icon"><i class="bx bx-timer"></i></div>
-							<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-							<p>Date: <?php echo get_post_meta($post->ID, 'schedule_date', true); ?></p>
+						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
+							<div class="icon-box">
+								<div class="icon"><i class="bx bx-timer"></i></div>
+								<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+								<p>Date: <?php echo get_post_meta($post->ID, 'schedule_date', true); ?></p>
+							</div>
 						</div>
-					</div>
-				<?php }} ?>
+				<?php }
+				} ?>
 			</div>
 			<br><br>
 			<h4 class="plus"><a title="Schedule Completa" href="/schedule"><i class="bx bxs-folder-plus"></i></a></h4>
@@ -153,36 +219,42 @@
 				<div class="col-lg-12 d-flex justify-content-center">
 
 					<ul id="portfolio-flters">
-					<?php $categories = get_categories(array('order'=>'DESC'));				
-					foreach( $categories as $category ) { 
-						if(strstr($category->slug,"20")){ ?>					
-						<li data-filter=".filter-<?php echo $category->slug; ?>" <?php if(get_option('schedule_input_1') == $category->slug)echo "class='filter-active'";else echo "onclick='mostrar(".$category->slug.")'";?>><?php echo $category->slug; ?></li>
-					<?php }} ?>					
+						<?php $categories = get_categories(array('order' => 'DESC'));
+						foreach ($categories as $category) {
+							if (strstr($category->slug, "20")) { ?>
+								<li data-filter=".filter-<?php echo $category->slug; ?>" <?php if (get_option('schedule_input_1') == $category->slug) echo "class='filter-active'";
+																							else echo "onclick='mostrar(" . $category->slug . ")'"; ?>><?php echo $category->slug; ?></li>
+						<?php }
+						} ?>
 					</ul>
 				</div>
 			</div>
 
 			<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-			<?php foreach( $categories as $category ) { 
-						if(strstr($category->slug,"20")){ 
-							$args = array(
-								'category_name' => $category->slug,
-								'posts_per_page' => 6
-							);
-							$loop = new WP_Query($args);
-							while ($loop->have_posts()) {
-								$loop->the_post();
-							?>						
-				<div <?php if(get_option('schedule_input_1') != $category->slug)echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->slug; ?>">
-					<img src="<?php if(has_post_thumbnail())the_post_thumbnail_url('full');else echo SITEPATH."assets/img/semimagem.png"; ?>" class="img-fluid" title="<?php the_title() ?>">
-					<div class="portfolio-info">
-						<h4><?php the_title() ?></h4>						
-						<a href="<?php if(has_post_thumbnail())the_post_thumbnail_url('full');else echo SITEPATH."assets/img/semimagem.png"; ?>" data-gall="portfolioGallery" class="venobox preview-link" title="<?php the_title() ?>"><i class="bx bx-plus"></i></a>
-						<a href="<?php the_permalink() ?>" class="details-link" title="Link"><i class="bx bx-link"></i></a>
-					</div>
-				</div>
-				<?php }}}?>
+				<?php foreach ($categories as $category) {
+					if (strstr($category->slug, "20")) {
+						$args = array(
+							'category_name' => $category->slug,
+							'posts_per_page' => 6
+						);
+						$loop = new WP_Query($args);
+						while ($loop->have_posts()) {
+							$loop->the_post();
+				?>
+							<div <?php if (get_option('schedule_input_1') != $category->slug) echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->slug; ?>">
+								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+											else echo SITEPATH . "assets/img/semimagem.png"; ?>" class="img-fluid" title="<?php the_title() ?>">
+								<div class="portfolio-info">
+									<h4><?php the_title() ?></h4>
+									<a href="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+												else echo SITEPATH . "assets/img/semimagem.png"; ?>" data-gall="portfolioGallery" class="venobox preview-link" title="<?php the_title() ?>"><i class="bx bx-plus"></i></a>
+									<a href="<?php the_permalink() ?>" class="details-link" title="Link"><i class="bx bx-link"></i></a>
+								</div>
+							</div>
+				<?php }
+					}
+				} ?>
 			</div>
 			<br><br>
 			<h4 class="plus"><a title="Portfolio Completo" href="/portfolio"><i class="bx bxs-folder-plus"></i></a></h4>
@@ -247,7 +319,7 @@
 
 			<div class="section-title">
 				<h2>Contact</h2>
-				<h3>Contact<span>Us</span></h3>
+				<h3>Contact <span>Us</span></h3>
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
