@@ -14,39 +14,39 @@
 			<div class="carousel-inner" role="listbox">
 
 				<!-- Slide 1 -->
-				<?php if (get_option('schedule_input_111') != "") { ?>
-					<div class="carousel-item active" style="background-image: url('<?php echo get_option('schedule_input_111'); ?>');">
+				<?php if (get_option('portal_input_111') != "") { ?>
+					<div class="carousel-item active" style="background-image: url('<?php echo get_option('portal_input_111'); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('schedule_input_112') ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_option('schedule_input_113'); ?></p>
-								<a href="<?php echo explode(",", get_option('schedule_input_114'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('schedule_input_114'))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_112') ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_113'); ?></p>
+								<a href="<?php echo explode(",", get_option('portal_input_114'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_114'))[0]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 
 				<!-- Slide 2 -->
-				<?php if (get_option('schedule_input_115') != "") { ?>
-					<div class="carousel-item" style="background-image: url('<?php echo get_option('schedule_input_115'); ?>');">
+				<?php if (get_option('portal_input_115') != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_option('portal_input_115'); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('schedule_input_116') ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_option('schedule_input_117'); ?></p>
-								<a href="<?php echo explode(",", get_option('schedule_input_118'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('schedule_input_118'))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_116') ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_117'); ?></p>
+								<a href="<?php echo explode(",", get_option('portal_input_118'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_118'))[0]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 
 				<!-- Slide 3 -->
-				<?php if (get_option('schedule_input_119') != "") { ?>
-					<div class="carousel-item" style="background-image: url('<?php echo get_option('schedule_input_119'); ?>');">
+				<?php if (get_option('portal_input_119') != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_option('portal_input_119'); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('schedule_input_120') ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_option('schedule_input_121'); ?></p>
-								<a href="<?php echo explode(",", get_option('schedule_input_122'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('schedule_input_122'))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_120') ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_121'); ?></p>
+								<a href="<?php echo explode(",", get_option('portal_input_122'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_122'))[0]; ?></a>
 							</div>
 						</div>
 					</div>
@@ -73,10 +73,10 @@
 		<div class="container" data-aos="fade-up">
 			<div class="row">
 				<?php
-				$bloco_link1 = explode(',', get_option('schedule_input_7'));
-				$bloco_link2 = explode(',', get_option('schedule_input_8'));
-				$bloco_link3 = explode(',', get_option('schedule_input_9'));
-				$bloco_link4 = explode(',', get_option('schedule_input_10'));
+				$bloco_link1 = explode(',', get_option('portal_input_7'));
+				$bloco_link2 = explode(',', get_option('portal_input_8'));
+				$bloco_link3 = explode(',', get_option('portal_input_9'));
+				$bloco_link4 = explode(',', get_option('portal_input_10'));
 				$bloco_links = array($bloco_link1, $bloco_link2, $bloco_link3, $bloco_link4);
 				foreach ($bloco_links as $bloco) {
 					if ($bloco[0] != "" && $bloco[1] != "" && $bloco[2] != "") {
@@ -151,10 +151,10 @@
 
 			<div class="row">
 				<?php
-				$bloco_count1 = explode(',', get_option('schedule_input_23'));
-				$bloco_count2 = explode(',', get_option('schedule_input_24'));
-				$bloco_count3 = explode(',', get_option('schedule_input_25'));
-				$bloco_count4 = explode(',', get_option('schedule_input_26'));
+				$bloco_count1 = explode(',', get_option('portal_input_23'));
+				$bloco_count2 = explode(',', get_option('portal_input_24'));
+				$bloco_count3 = explode(',', get_option('portal_input_25'));
+				$bloco_count4 = explode(',', get_option('portal_input_26'));
 				$bloco_counts = array($bloco_count1, $bloco_count2, $bloco_count3, $bloco_count4);
 				foreach ($bloco_counts as $bloco) {
 					if ($bloco[0] != "" && $bloco[1] != "" && $bloco[2] != "") {
@@ -222,7 +222,7 @@
 						<?php $categories = get_categories(array('order' => 'DESC'));
 						foreach ($categories as $category) {
 							if (strstr($category->slug, "20")) { ?>
-								<li data-filter=".filter-<?php echo $category->slug; ?>" <?php if (get_option('schedule_input_1') == $category->slug) echo "class='filter-active'";
+								<li data-filter=".filter-<?php echo $category->slug; ?>" <?php if (get_option('portal_input_1') == $category->slug) echo "class='filter-active'";
 																							else echo "onclick='mostrar(" . $category->slug . ")'"; ?>><?php echo $category->slug; ?></li>
 						<?php }
 						} ?>
@@ -242,7 +242,7 @@
 						while ($loop->have_posts()) {
 							$loop->the_post();
 				?>
-							<div <?php if (get_option('schedule_input_1') != $category->slug) echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->slug; ?>">
+							<div <?php if (get_option('portal_input_1') != $category->slug) echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->slug; ?>">
 								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
 											else echo SITEPATH . "assets/img/semimagem.png"; ?>" class="img-fluid" title="<?php the_title() ?>">
 								<div class="portfolio-info">
@@ -299,13 +299,13 @@
 
 			<div class="section-title">
 				<h2>Committee</h2>
-				<h3>Committee <span><?php echo get_option('schedule_input_1'); ?></span></h3>
+				<h3>Committee <span><?php echo get_option('portal_input_1'); ?></span></h3>
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
 				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
 					<div class="member">
-						<?php echo get_option('schedule_input_30'); ?>
+						<?php echo get_option('portal_input_30'); ?>
 						<br>
 					</div>
 				</div>
@@ -325,7 +325,7 @@
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
 
 				<div class="col-lg-6 ">
-					<iframe class="mb-4 mb-lg-0" src="<?php echo get_option('schedule_input_6'); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+					<iframe class="mb-4 mb-lg-0" src="<?php echo get_option('portal_input_6'); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
 				</div>
 
 				<div class="col-lg-6">
@@ -345,12 +345,12 @@
 			<h3>Sponsor</h3>
 		</div>
 		<?php
-		$org_logo_1 = array(get_option('schedule_input_11'), explode(',', get_option('schedule_input_12'))[0], explode(',', get_option('schedule_input_12'))[1]);
-		$org_logo_2 = array(get_option('schedule_input_13'), explode(',', get_option('schedule_input_14'))[0], explode(',', get_option('schedule_input_14'))[1]);
-		$org_logo_3 = array(get_option('schedule_input_15'), explode(',', get_option('schedule_input_16'))[0], explode(',', get_option('schedule_input_16'))[1]);
-		$org_logo_4 = array(get_option('schedule_input_17'), explode(',', get_option('schedule_input_18'))[0], explode(',', get_option('schedule_input_18'))[1]);
-		$org_logo_5 = array(get_option('schedule_input_19'), explode(',', get_option('schedule_input_20'))[0], explode(',', get_option('schedule_input_20'))[1]);
-		$org_logo_6 = array(get_option('schedule_input_21'), explode(',', get_option('schedule_input_22'))[0], explode(',', get_option('schedule_input_22'))[1]);
+		$org_logo_1 = array(get_option('portal_input_11'), explode(',', get_option('portal_input_12'))[0], explode(',', get_option('portal_input_12'))[1]);
+		$org_logo_2 = array(get_option('portal_input_13'), explode(',', get_option('portal_input_14'))[0], explode(',', get_option('portal_input_14'))[1]);
+		$org_logo_3 = array(get_option('portal_input_15'), explode(',', get_option('portal_input_16'))[0], explode(',', get_option('portal_input_16'))[1]);
+		$org_logo_4 = array(get_option('portal_input_17'), explode(',', get_option('portal_input_18'))[0], explode(',', get_option('portal_input_18'))[1]);
+		$org_logo_5 = array(get_option('portal_input_19'), explode(',', get_option('portal_input_20'))[0], explode(',', get_option('portal_input_20'))[1]);
+		$org_logo_6 = array(get_option('portal_input_21'), explode(',', get_option('portal_input_22'))[0], explode(',', get_option('portal_input_22'))[1]);
 		$org_logos = array($org_logo_1, $org_logo_2, $org_logo_3, $org_logo_4, $org_logo_5, $org_logo_6)
 		?>
 		<div class="container" data-aos="zoom-in">

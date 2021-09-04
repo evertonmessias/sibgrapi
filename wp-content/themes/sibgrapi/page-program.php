@@ -10,7 +10,7 @@
    <section class="breadcrumbs">
       <div class="container">
          <div class="d-flex justify-content-between align-items-center">
-            <h2 class="page-title">Program <?php echo get_option('schedule_input_1'); ?></h2>
+            <h2 class="page-title">Program <?php echo get_option('portal_input_1'); ?></h2>
             <ol>
                <li><a href="/">home</a></li>
                <li>

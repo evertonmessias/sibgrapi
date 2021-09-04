@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?php echo get_option('schedule_input_2'); ?>" rel="icon">
+  <link href="<?php echo get_option('portal_input_2'); ?>" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -38,32 +38,32 @@
     #footer .footer-newsletter form input[type="submit"],
     #footer .footer-top .social-links a,
     .php-email-form .button-send {
-      background-color: <?php echo get_option('schedule_input_3') ?>;
+      background-color: <?php echo get_option('portal_input_3') ?>;
     }
 
     .contact .php-email-form button[type="submit"]{
-      background-color: <?php echo get_option('schedule_input_3') ?> !important;
+      background-color: <?php echo get_option('portal_input_3') ?> !important;
     }
     .contact .php-email-form button[type="submit"]:hover{
       background-color: #ccc !important;
     }
 
     .services .icon-box:hover {
-      box-shadow: 0px 0 10px 0 <?php echo get_option('schedule_input_3') ?>;
+      box-shadow: 0px 0 10px 0 <?php echo get_option('portal_input_3') ?>;
     }
 
     .portfolio .portfolio-item:hover {
-      box-shadow: 0px 0 5px 0 <?php echo get_option('schedule_input_3') ?>;
+      box-shadow: 0px 0 5px 0 <?php echo get_option('portal_input_3') ?>;
     }
 
     #preloader:before {
-      border-color: 6px solid <?php echo get_option('schedule_input_3') ?>;
+      border-color: 6px solid <?php echo get_option('portal_input_3') ?>;
     }
 
     .contact .php-email-form input:focus,
     .contact .php-email-form textarea:focus,
     .services .icon-box:hover .icon {
-      border-color: <?php echo get_option('schedule_input_3') ?>;
+      border-color: <?php echo get_option('portal_input_3') ?>;
     }
 
     a,
@@ -92,7 +92,7 @@
     #footer .footer-top .footer-links ul i,
     #footer .footer-top .footer-links ul a:hover,
     #topbar .search form input[type=submit] {
-      color: <?php echo get_option('schedule_input_3') ?>;
+      color: <?php echo get_option('portal_input_3') ?>;
     }
   </style>
   <?php wp_head(); ?>
