@@ -5,7 +5,7 @@
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto">
         <a href="/">
-          <img src="<?php echo get_option('schedule_input_2'); ?>" title="SIBGRAPI">
+          <img src="<?php echo get_option('portal_input_2'); ?>" title="SIBGRAPI">
           <span><?php the_title() ?></span>
         </a>
       </h1>
