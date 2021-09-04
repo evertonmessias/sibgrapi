@@ -7,11 +7,11 @@ body {
 }
 
 a {
-  color: #bbb;
+  color: #999;
 }
 
 a:hover {
-  color: #ccc;
+  color: #aaa;
   text-decoration: none;
 }
 
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border-color: 6px solid #bbb;
+  border-color: 6px solid #999;
   border-top-color: #e2eefd;
   border-radius: 50%;
   width: 60px;
@@ -84,13 +84,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  background-color: #ccc;
+  background-color: #aaa;
   color: #fff;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-  background-color: #bbb;
+  background-color: #999;
   color: #fff;
 }
 
@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background-color: #bbb;
+  background-color: #999;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -181,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo a span {
-  color: #bbb;
+  color: #999;
 }
 
 #header .logo img {
@@ -236,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #bbb;
+  background-color: #999;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -248,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #bbb;
+  color: #999;
 }
 
 .nav-menu .drop-down ul {
@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-  color: #bbb;
+  color: #999;
 }
 
 .nav-menu .drop-down > a:after {
@@ -380,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #bbb;
+  color: #999;
   text-decoration: none;
 }
 
@@ -554,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started:hover {
-  background-color: #ccc;
+  background-color: #aaa;
 }
 
 @media (max-width: 768px) {
@@ -596,7 +596,7 @@ section {
   padding: 8px 20px;
   margin: 0;
   background-color: #e7f1fd;
-  color: #bbb;
+  color: #999;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
@@ -609,7 +609,7 @@ section {
 }
 
 .section-title h3 span {
-  color: #bbb;
+  color: #999;
 }
 
 .section-title p {
@@ -710,7 +710,7 @@ section {
 }
 
 .featured-services .icon-box:hover::before {
-  background-color: #bbb;
+  background-color: #999;
   top: 0;
   border-radius: 0px;
 }
@@ -722,7 +722,7 @@ section {
 .featured-services .icon i {
   font-size: 48px;
   line-height: 1;
-  color: #bbb;
+  color: #999;
   transition: all 0.3s ease-in-out;
 }
 
@@ -779,7 +779,7 @@ section {
   font-size: 24px;
   padding: 20px;
   margin-right: 15px;
-  color: #bbb;
+  color: #999;
   border-radius: 50px;
 }
 
@@ -828,7 +828,7 @@ section {
   width: 1px;
   height: 10px;
   transition: .9s;
-  background-color: #bbb;
+  background-color: #999;
 }
 
 /*--------------------------------------------------------------
@@ -852,7 +852,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
-  background-color: #bbb;
+  background-color: #999;
   padding: 12px;
   color: #fff;
   border-radius: 50px;
@@ -924,7 +924,7 @@ section {
 }
 
 .services .icon-box .icon i {
-  color: #ccc;
+  color: #aaa;
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
@@ -948,15 +948,15 @@ section {
 
 .services .icon-box:hover {
   border-color: #fff;
-  box-shadow: 0px 0 10px 0 #bbb;
+  box-shadow: 0px 0 10px 0 #999;
 }
 
 .services .icon-box:hover h4 a, .services .icon-box:hover .icon i {
-  color: #bbb;
+  color: #999;
 }
 
 .services .icon-box:hover .icon {
-  border-color: #bbb;
+  border-color: #999;
 }
 
 /*--------------------------------------------------------------
@@ -985,7 +985,7 @@ section {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #bbb;
+  color: #999;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -1030,7 +1030,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #bbb;
+  color: #999;
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -1095,7 +1095,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #bbb !important;
+  background-color: #999 !important;
 }
 
 .portfolio-details .portfolio-info {
@@ -1196,7 +1196,7 @@ section {
 }
 
 .team .member .social a:hover {
-  background-color: #ccc;
+  background-color: #aaa;
 }
 
 .team .member .social i {
@@ -1245,7 +1245,7 @@ section {
 
 .contact .info-box i {
   font-size: 32px;
-  color: #bbb;
+  color: #999;
   border-radius: 50%;
   padding: 8px;
   border: 2px dotted #b3d1fa;
@@ -1327,7 +1327,7 @@ section {
 }
 
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #bbb;
+  border-color: #999;
 }
 
 .contact .php-email-form input {
@@ -1339,7 +1339,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background-color: #bbb;
+  background-color: #999;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1348,7 +1348,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background-color: #ccc;
+  background-color: #aaa;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1420,7 +1420,7 @@ section {
   background-color: none;
   font-size: 16px;
   padding: 0 20px;
-  background-color: #bbb;
+  background-color: #999;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -1449,7 +1449,7 @@ section {
 }
 
 #footer .footer-top .footer-contact h3 span {
-  color: #bbb;
+  color: #999;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1478,7 +1478,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #bbb;
+  color: #999;
   font-size: 18px;
   line-height: 1;
 }
@@ -1502,13 +1502,13 @@ section {
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #bbb;
+  color: #999;
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background-color: #bbb;
+  background-color: #999;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1521,7 +1521,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background-color: #ccc;
+  background-color: #aaa;
   color: #fff;
   text-decoration: none;
 }
