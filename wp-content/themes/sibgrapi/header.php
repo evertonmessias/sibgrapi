@@ -34,24 +34,23 @@
     .counts .count-box i,
     .nav-menu>ul>li>a:before,
     .skills .progress-bar,
-    .portfolio-details .portfolio-details-carousel .owl-dot.active,    
+    .portfolio-details .portfolio-details-carousel .owl-dot.active,
     #footer .footer-newsletter form input[type="submit"],
     #footer .footer-top .social-links a,
     .php-email-form .button-send {
       background-color: <?php echo get_option('portal_input_3') ?>;
     }
 
-    .contact .php-email-form button[type="submit"]{
+    .contact .php-email-form button[type="submit"] {
       background-color: <?php echo get_option('portal_input_3') ?> !important;
     }
-    .contact .php-email-form button[type="submit"]:hover{
+
+    .contact .php-email-form button[type="submit"]:hover {
       background-color: #ccc !important;
     }
 
-    .services .icon-box:hover {
-      box-shadow: 0px 0 10px 0 <?php echo get_option('portal_input_3') ?>;
-    }
-
+    .team .member,
+    .services .icon-box:hover,
     .portfolio .portfolio-item:hover {
       box-shadow: 0px 0 5px 0 <?php echo get_option('portal_input_3') ?>;
     }
