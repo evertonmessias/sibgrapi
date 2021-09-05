@@ -26,73 +26,9 @@
   <!-- Template Main CSS File -->
   <link href="<?php echo SITEPATH; ?>assets/css/style.css" rel="stylesheet">
   <link href="<?php echo SITEPATH; ?>assets/css/sibgrapi.css" rel="stylesheet">
-  <style>
-    .back-to-top i:hover,
-    #topbar,
-    #hero .btn-get-started,
-    .featured-services .icon-box:hover::before,
-    .counts .count-box i,
-    .nav-menu>ul>li>a:before,
-    .skills .progress-bar,
-    .portfolio-details .portfolio-details-carousel .owl-dot.active,
-    #footer .footer-newsletter form input[type="submit"],
-    #footer .footer-top .social-links a,
-    .php-email-form .button-send {
-      background-color: <?php echo get_option('portal_input_3') ?>;
-    }
-
-    .contact .php-email-form button[type="submit"] {
-      background-color: <?php echo get_option('portal_input_3') ?> !important;
-    }
-
-    .contact .php-email-form button[type="submit"]:hover {
-      background-color: #ccc !important;
-    }
-
-    .team .member,
-    .services .icon-box:hover,
-    .portfolio .portfolio-item:hover {
-      box-shadow: 0px 0 5px 0 <?php echo get_option('portal_input_3') ?>;
-    }
-
-    #preloader:before {
-      border-color: 6px solid <?php echo get_option('portal_input_3') ?>;
-    }
-
-    .contact .php-email-form input:focus,
-    .contact .php-email-form textarea:focus,
-    .services .icon-box:hover .icon {
-      border-color: <?php echo get_option('portal_input_3') ?>;
-    }
-
-    a,
-    #header .logo a span,
-    .nav-menu a:hover,
-    .nav-menu .active>a,
-    .nav-menu li:hover>a,
-    .nav-menu .drop-down ul a:hover,
-    .nav-menu .drop-down ul .active>a,
-    .nav-menu .drop-down ul li:hover>a,
-    .mobile-nav a:hover,
-    .mobile-nav .active>a,
-    .mobile-nav li:hover>a,
-    .section-title h2,
-    .section-title h3 span,
-    .featured-services .icon i,
-    .about .content ul i,
-    .services .icon-box:hover h4 a,
-    .services .icon-box:hover .icon i,
-    .portfolio #portfolio-flters li:hover,
-    .portfolio #portfolio-flters li.filter-active,
-    .portfolio .portfolio-item .portfolio-info .preview-link:hover,
-    .portfolio .portfolio-item .portfolio-info .details-link:hover,
-    .contact .info-box i,
-    #footer .footer-top .footer-contact h3 span,
-    #footer .footer-top .footer-links ul i,
-    #footer .footer-top .footer-links ul a:hover,
-    #topbar .search form input[type=submit] {
-      color: <?php echo get_option('portal_input_3') ?>;
-    }
-  </style>
   <?php wp_head(); ?>
 </head>
+<?php
+if (url_active()[1] == "event") include ABSPATH . '/wp-content/themes/sibgrapi/layout/header-sibgrapi.php';
+else include ABSPATH . '/wp-content/themes/sibgrapi/layout/header-portal.php';
+?>

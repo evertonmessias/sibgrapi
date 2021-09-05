@@ -33,7 +33,7 @@ include ABSPATH . '/wp-content/plugins/cegrapi/includes/settings.php';
 $event = new event();
 $management = new management();
 $schedule = new schedule();
-
+//*************************************************************CRIAR REGISTRATION AQUI */
 
 register_activation_hook(__FILE__, array(
     $event, 'activate',

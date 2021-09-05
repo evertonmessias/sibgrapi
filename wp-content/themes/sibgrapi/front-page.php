@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_header_portal(); ?>
 <!-- ======= Hero Section ======= -->
 <section id="hero">
 	<div class="hero-container">
@@ -179,31 +178,26 @@
 		<div class="container" data-aos="fade-up">
 			<div class="section-title">
 				<h2>Events</h2>
-				<h3>Our <span>Events</span></h3>
+				<h3>All <span>Events</span></h3>
 			</div>
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'events',
+					'post_type' => 'event',
 					'posts_per_page' => 12
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if (strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
 				?>
 						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 							<div class="icon-box">
-								<div class="icon"><i class="bx bx-timer"></i></div>
+								<div class="icon">fazer imagem aqui</div>
 								<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-								<p>Date: <?php echo get_post_meta($post->ID, 'schedule_date', true); ?></p>
 							</div>
 						</div>
-				<?php }
-				} ?>
+				<?php }	 ?>
 			</div>
-			<br><br>
-			<h4 class="plus"><a title="Schedule Completa" href="/schedule"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
 	</section><!-- End Schedule Section -->
 
@@ -294,25 +288,6 @@
 		</div>
 	</section><!-- End Team Section -->
 
-	<section id="Committee" class="team committee section-bg">
-		<div class="container" data-aos="fade-up">
-
-			<div class="section-title">
-				<h2>Committee</h2>
-				<h3>Committee <span><?php echo get_option('portal_input_1'); ?></span></h3>
-			</div>
-
-			<div class="row" data-aos="fade-up" data-aos-delay="100">
-				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="member">
-						<?php echo get_option('portal_input_30'); ?>
-						<br>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- End Team Section -->
-
 	<!-- ======= Contact Section ======= -->
 	<section id="Contact" class="contact">
 		<div class="container" data-aos="fade-up">
@@ -322,13 +297,9 @@
 				<h3>Contact <span>Us</span></h3>
 			</div>
 
-			<div class="row" data-aos="fade-up" data-aos-delay="100">
+			<div class="row" data-aos="fade-up" data-aos-delay="100">		
 
-				<div class="col-lg-6 ">
-					<iframe class="mb-4 mb-lg-0" src="<?php echo get_option('portal_input_6'); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-				</div>
-
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 					<?php echo do_shortcode('[wpforms id="176"]'); ?>
 				</div>
 
@@ -336,39 +307,6 @@
 
 		</div>
 	</section><!-- End Contact Section -->
-
-	<!-- ======= Clients Section ======= -->
-	<section id="clients" class="clients">
-
-		<div class="section-title">
-			<h2>Organized by</h2>
-			<h3>Sponsor</h3>
-		</div>
-		<?php
-		$org_logo_1 = array(get_option('portal_input_11'), explode(',', get_option('portal_input_12'))[0], explode(',', get_option('portal_input_12'))[1]);
-		$org_logo_2 = array(get_option('portal_input_13'), explode(',', get_option('portal_input_14'))[0], explode(',', get_option('portal_input_14'))[1]);
-		$org_logo_3 = array(get_option('portal_input_15'), explode(',', get_option('portal_input_16'))[0], explode(',', get_option('portal_input_16'))[1]);
-		$org_logo_4 = array(get_option('portal_input_17'), explode(',', get_option('portal_input_18'))[0], explode(',', get_option('portal_input_18'))[1]);
-		$org_logo_5 = array(get_option('portal_input_19'), explode(',', get_option('portal_input_20'))[0], explode(',', get_option('portal_input_20'))[1]);
-		$org_logo_6 = array(get_option('portal_input_21'), explode(',', get_option('portal_input_22'))[0], explode(',', get_option('portal_input_22'))[1]);
-		$org_logos = array($org_logo_1, $org_logo_2, $org_logo_3, $org_logo_4, $org_logo_5, $org_logo_6)
-		?>
-		<div class="container" data-aos="zoom-in">
-			<div class="row">
-				<?php
-				foreach ($org_logos as $logos) {
-					if ($logos[0] != "") { ?>
-						<div class="logo col-lg-4 col-md-4 col-4 d-flex align-items-center justify-content-center">
-							<a href="<?php echo $logos[2]; ?>" target="_blank">
-								<img src="<?php echo $logos[0]; ?>" class="img-fluid" title="<?php echo $logos[1]; ?>">
-							</a>
-						</div>
-				<?php }
-				} ?>
-			</div>
-		</div>
-		<br><br>
-	</section><!-- End Clients Section -->
 
 </main><!-- End #main -->
 <?php get_footer(); ?>

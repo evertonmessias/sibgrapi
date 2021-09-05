@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_header_portal(); ?>
 <main id="main" class="page" data-aos="fade-up">
    <!-- ======= Breadcrumbs ======= -->
    <section class="breadcrumbs">

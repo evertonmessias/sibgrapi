@@ -33,7 +33,7 @@
     margin-top: 3em;
 }
 .logo span{
-    color: #000 !important;
+    color: #999;
     font-weight: 900;
 }
 .featured-services .icon-box{
@@ -146,7 +146,7 @@ vertical-align:top;
 }
 
 .contact{
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .clients{
