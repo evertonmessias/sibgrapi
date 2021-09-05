@@ -87,11 +87,9 @@ function register_my_menu()
 add_action('init', 'register_my_menu');
 
 //************* Change Menu li id
-function my_li_id_handler($id, $item, $args)
+function my_li_id_handler($item)
 {
-  if ($item->post_name == "portifolio") $id = "portfolio"; //uma correção
-  else $id = $item->post_name;
-  return $id;
+  return $item->post_name;
 }
 add_filter('nav_menu_item_id', 'my_li_id_handler', 10, 3);
 
