@@ -4,7 +4,7 @@
 
 function field_box_event_year()
 {
-    add_meta_box('event_year_id', 'year', 'field_event_year', 'event');
+    add_meta_box('event_year_id', 'Year', 'field_event_year', 'event');
 }
 add_action('add_meta_boxes', 'field_box_event_year');
 
@@ -12,7 +12,7 @@ function field_event_year($post)
 {
     $value = get_post_meta($post->ID, 'event_year', true);
 ?>
-    <input type="number" name="event_year" value="<?php echo $value; ?>">
+    <input type="number" min="2000" max="2100" step="1" name="event_year" value="<?php echo $value; ?>">
 <?php
 }
 

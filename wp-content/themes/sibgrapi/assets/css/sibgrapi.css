@@ -145,6 +145,15 @@ vertical-align:top;
     margin-bottom: 50px;
 }
 
+ul.registration{    
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    list-style: square;
+}
+
 .php-email-form{
     margin-top: -40px !important;
 }
@@ -193,6 +202,9 @@ vertical-align:top;
         margin-bottom: 50px;
     }
     .page.schedule .portfolio-description{
+        width: 100%;
+    }
+    ul.registration{
         width: 100%;
     }
     .footer-top .footer-contact,.footer-top .footer-links{

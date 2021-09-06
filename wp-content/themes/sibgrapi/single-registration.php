@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$year = explode("-", get_post_meta(get_the_ID(), 'schedule_date', true))[0];
+$year = get_post_meta(get_the_ID(), 'registration_year', true);
 $loop = new WP_Query(array('post_type' => 'event'));
 while ($loop->have_posts()) {
    $loop->the_post();
@@ -10,7 +10,7 @@ while ($loop->have_posts()) {
 }
 wp_reset_postdata();
 ?>
-<main id="main" class="page schedule" data-aos="fade-up">
+<main id="main" class="page registration" data-aos="fade-up">
    <!-- ======= Breadcrumbs ======= -->
    <section class="breadcrumbs">
       <div class="container">
@@ -29,22 +29,8 @@ wp_reset_postdata();
    </section><!-- Breadcrumbs Section -->
    <!-- ======= Portfolio Details Section ======= -->
    <section class="portfolio-details">
-      <div class="container">
-
-         <div class="portfolio-details-container">
-            <div class="portfolio-info">
-               <h3><?php the_title() ?></h3>
-               <ul>
-                  <li><strong>Date</strong>:
-                     <?php echo get_post_meta($post->ID, 'schedule_date', true); ?>
-                  </li>
-               </ul>
-            </div>
-         </div>
-
-         <div class="portfolio-description">
-            <?php echo get_post_meta($post->ID, 'schedule_content', true); ?>
-         </div>
+      <div class="container">         
+         <?php echo get_post_meta($post->ID, 'registration_content', true); ?>        
       </div>
    </section><!-- End Portfolio Details Section -->
 

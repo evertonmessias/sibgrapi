@@ -1,4 +1,29 @@
-<?php $cor = "#f00"; ?>
+<?php
+$post_color = "#f00"; // colocar a cor no get_post_meta event
+// Colocar tb o logo do event, tirar do logo do settings (portal)
+
+if (url_active()[1] == "schedule" || url_active()[1] == "registration") {
+  if (url_active()[1] == "schedule") {
+    $year = explode("-", get_post_meta(get_the_ID(), 'schedule_date', true))[0];
+  }
+  if (url_active()[1] == "registration") {
+    $year = get_post_meta(get_the_ID(), 'registration_year', true);
+  }
+  $loop = new WP_Query(array('post_type' => 'event'));
+  while ($loop->have_posts()) {
+    $loop->the_post();
+    if (get_post_meta(get_the_ID(), 'event_year', true) == $year) {
+      $url_menu = "/".explode("/", get_the_permalink())[3]."/".explode("/", get_the_permalink())[4];
+      $title = get_the_title();
+    }
+  }
+  wp_reset_postdata();
+} else {
+  $url_menu = "/".url_active()[1]."/".url_active()[2];
+  $title = get_the_title();
+}
+?>
+
 <style>
   .back-to-top i:hover,
   #topbar,
@@ -11,11 +36,11 @@
   #footer .footer-newsletter form input[type="submit"],
   #footer .footer-top .social-links a,
   .php-email-form .button-send {
-    background-color: <?php echo $cor; ?>;
+    background-color: <?php echo $post_color; ?>;
   }
 
   .contact .php-email-form button[type="submit"] {
-    background-color: <?php echo $cor; ?> !important;
+    background-color: <?php echo $post_color; ?> !important;
   }
 
   .contact .php-email-form button[type="submit"]:hover {
@@ -25,17 +50,17 @@
   .team .member,
   .services .icon-box:hover,
   .portfolio .portfolio-item:hover {
-    box-shadow: 0px 0 5px 0 <?php echo $cor; ?>;
+    box-shadow: 0px 0 5px 0 <?php echo $post_color; ?>;
   }
 
   #preloader:before {
-    border-color: 6px solid <?php echo $cor; ?>;
+    border-color: 6px solid <?php echo $post_color; ?>;
   }
 
   .contact .php-email-form input:focus,
   .contact .php-email-form textarea:focus,
   .services .icon-box:hover .icon {
-    border-color: <?php echo $cor; ?>;
+    border-color: <?php echo $post_color; ?>;
   }
 
   a,
@@ -64,7 +89,7 @@
   #footer .footer-top .footer-links ul i,
   #footer .footer-top .footer-links ul a:hover,
   #topbar .search form input[type=submit] {
-    color: <?php echo $cor; ?>;
+    color: <?php echo $post_color; ?>;
   }
 </style>
 
@@ -116,44 +141,25 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto">
-        <a href="<?php the_permalink() ?>">
+        <a href="<?php echo $url_menu; ?>">
           <img src="<?php echo get_option('portal_input_2'); ?>" title="SIBGRAPI">
-          <span><?php the_title() ?></span>
+          <span><?php echo $title; ?></span>
         </a>
       </h1>
+
       <!-- Nav-Menu -->
-      <?php if (url_active()[1] == "schedule") { 
-        $year = explode("-",get_post_meta($post->ID, 'schedule_date', true))[0];
-        $link1 = url_menu($year)[3];
-        $link2 = url_menu($year)[4];
-        wp_reset_postdata();        
-      ?>
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li id="home"><a href="/<?php echo $link1 . "/" . $link2 ?>">Home</a></li>
-            <li id="schedule"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Schedule">Schedule</a></li>
-            <li id="program"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Program">Program</a></li>
-            <li id="committee"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Committee">Committee</a></li>
-            <li id="registration"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Registration">Registration</a></li>
-            <li id="sponsor"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Sponsor">Sponsor</a></li>
-            <li id="local"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Local">Local</a></li>
-            <li><a href="/">Portal</a></li>
-          </ul>
-        </nav>
-      <?php } else { ?>
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li id="home"><a href="<?php the_permalink() ?>">Home</a></li>
-            <li id="schedule"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Schedule">Schedule</a></li>
-            <li id="program"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Program">Program</a></li>
-            <li id="committee"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Committee">Committee</a></li>
-            <li id="registration"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Registration">Registration</a></li>
-            <li id="sponsor"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Sponsor">Sponsor</a></li>
-            <li id="local"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Local">Local</a></li>
-            <li><a href="/">Portal</a></li>
-          </ul>
-        </nav>
-      <?php } ?>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li id="home"><a href="<?php echo $url_menu; ?>">Home</a></li>
+          <li id="schedule"><a href="<?php echo $url_menu; ?>/#Schedule">Schedule</a></li>
+          <li id="program"><a href="<?php echo $url_menu; ?>/#Program">Program</a></li>
+          <li id="committee"><a href="<?php echo $url_menu; ?>/#Committee">Committee</a></li>
+          <li id="registration"><a href="<?php echo $url_menu; ?>/#Registration">Registration</a></li>
+          <li id="sponsor"><a href="<?php echo $url_menu; ?>/#Sponsor">Sponsor</a></li>
+          <li id="local"><a href="<?php echo $url_menu; ?>/#Local">Local</a></li>
+          <li><a href="/">Portal</a></li>
+        </ul>
+      </nav>
       <!-- .nav-menu -->
     </div>
   </header><!-- End Header -->

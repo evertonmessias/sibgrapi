@@ -151,8 +151,23 @@
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
 				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
 					<div class="member">
-						<?php echo get_post_meta($pid, 'event_content', true); ?>
-						<br>
+						<ul class="registration">
+							<?php
+							$args = array(
+								'post_type' => 'registration',
+								'orderby' => 'title',
+								'order'   => 'ASC',
+								'posts_per_page' => 100
+							);
+							$loop = new WP_Query($args);
+							while ($loop->have_posts()) {
+								$loop->the_post();
+							?>
+								<li>
+									<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+								</li>
+							<?php } ?>
+						</ul>
 					</div>
 				</div>
 			</div>

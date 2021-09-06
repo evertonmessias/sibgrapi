@@ -64,22 +64,6 @@ function url_active()
 add_action('url_active', 'url_active');
 
 
-//************* URL from breadcrumbs
-function url_menu($year)
-{
-  $loop = new WP_Query(array('post_type' => 'event'));
-  while ($loop->have_posts()) {
-    $loop->the_post();
-    if (get_post_meta(get_the_ID() , 'event_year', true) == $year) {
-      $urll = get_the_permalink();
-      return explode("/", $urll);
-    }
-  }
-  wp_reset_postdata();
-}
-add_action('url_menu', 'url_menu');
-
-
 //************* Remove tags support from posts
 function myprefix_unregister_tags()
 {
