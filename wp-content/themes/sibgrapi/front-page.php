@@ -144,7 +144,8 @@
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
-				<h2>Statistics</h2>				
+				<h2>Statistics</h2>
+				<h3><span>Our</span> statistics</h3>
 			</div>
 
 			<div class="row">
@@ -176,7 +177,8 @@
 	<section id="Events" class="services section-bg">
 		<div class="container" data-aos="fade-up">
 			<div class="section-title">
-				<h2>Events</h2>				
+				<h2>Events</h2>
+				<h3>All <span>Events</span></h3>
 			</div>
 			<div class="row">
 				<?php
@@ -204,7 +206,8 @@
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
-				<h2>Portfolio</h2>				
+				<h2>Portfolio</h2>
+				<h3>Check out our <span>Portfolio</span></h3>
 			</div>
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
 				<div class="col-lg-12 d-flex justify-content-center">
@@ -290,7 +293,8 @@
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
-				<h2>Contact</h2>				
+				<h2>Contact</h2>
+				<h3>Contact <span>Us</span></h3>
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">		
