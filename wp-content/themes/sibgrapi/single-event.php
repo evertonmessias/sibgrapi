@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php $pid = $post->ID; ?>
+<?php $pid = get_the_ID(); ?>
 <!-- ======= Hero Section ======= -->
 <section id="hero">
 	<div class="hero-container">
@@ -84,17 +84,18 @@
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if (strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
+					if (strtotime(get_post_meta(get_the_ID(), 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
 				?>
 						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 							<div class="icon-box">
 								<div class="icon"><i class="bx bx-timer"></i></div>
 								<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-								<p>Date: <?php echo get_post_meta($post->ID, 'schedule_date', true); ?></p>
+								<p>Date: <?php echo get_post_meta(get_the_ID(), 'schedule_date', true); ?></p>
 							</div>
 						</div>
 				<?php }
-				} ?>
+				}
+				wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</section><!-- End Schedule Section -->
