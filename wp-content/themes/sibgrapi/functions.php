@@ -64,6 +64,22 @@ function url_active()
 add_action('url_active', 'url_active');
 
 
+//************* URL from breadcrumbs
+function url_menu($year)
+{
+  $loop = new WP_Query(array('post_type' => 'event'));
+  while ($loop->have_posts()) {
+    $loop->the_post();
+    if (get_post_meta(get_the_ID() , 'event_year', true) == $year) {
+      $urll = get_the_permalink();
+      return explode("/", $urll);
+    }
+  }
+  wp_reset_postdata();
+}
+add_action('url_menu', 'url_menu');
+
+
 //************* Remove tags support from posts
 function myprefix_unregister_tags()
 {
@@ -74,26 +90,3 @@ add_action('init', 'myprefix_unregister_tags');
 
 //************* Add thumbnails
 add_theme_support('post-thumbnails', array('post'));
-
-
-//************* Add Menu
-function register_my_menu()
-{
-  register_nav_menu('sibgrapi-nav', __('SIBGRAPI NAV'));
-  register_nav_menu('sibgrapi-nav2', __('SIBGRAPI NAV2'));
-  register_nav_menu('sibgrapi-footer1', __('SIBGRAPI FOOTER1'));
-  register_nav_menu('sibgrapi-footer2', __('SIBGRAPI FOOTER2'));
-}
-add_action('init', 'register_my_menu');
-
-//************* Change Menu li id
-function my_li_id_handler($item)
-{
-  return $item->post_name;
-}
-add_filter('nav_menu_item_id', 'my_li_id_handler', 10, 3);
-
-//************* Removes rich text editor
-//add_filter( 'user_can_richedit' , '__return_false');
-
-

@@ -260,7 +260,7 @@
 		<div class="container" data-aos="fade-up">
 			<?php
 			$args = array(
-				'post_type' => 'management',
+				'category_name' => 'management',
 				'posts_per_page' => 1,
 				'order' => 'DESC'
 			);

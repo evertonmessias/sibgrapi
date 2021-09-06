@@ -69,7 +69,7 @@
 
 <main id="main">
 	<!-- ======= Schedule Section ======= -->
-	<section id="Schedule" class="services section-bg">
+	<section id="Schedule" class="services">
 		<div class="container" data-aos="fade-up">
 			<div class="section-title">
 				<h2>Schedule</h2>
@@ -84,78 +84,43 @@
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if(strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))){
+					if (strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
 				?>
-					<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
-						<div class="icon-box">
-							<div class="icon"><i class="bx bx-timer"></i></div>
-							<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-							<p>Date: <?php echo get_post_meta($post->ID, 'schedule_date', true); ?></p>
+						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
+							<div class="icon-box">
+								<div class="icon"><i class="bx bx-timer"></i></div>
+								<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+								<p>Date: <?php echo get_post_meta($post->ID, 'schedule_date', true); ?></p>
+							</div>
 						</div>
-					</div>
-				<?php }} ?>
+				<?php }
+				} ?>
 			</div>
-			<br><br>
-			<h4 class="plus"><a title="Schedule Completa" href="/schedule"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
 	</section><!-- End Schedule Section -->
 
-	<!-- ======= Portfolio Section ======= -->
-	<section id="Portfolio" class="portfolio">
+	<!-- ======= Program Section ======= -->
+	<section id="Program" class="team section-bg">
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
-				<h2>Portfolio</h2>
-				<h3>Check out our <span>Portfolio</span></h3>
+				<h2>Program</h2>
+				<h3>Program <span><?php echo get_option('portal_input_1'); ?></span></h3>
 			</div>
-			<div class="row" data-aos="fade-up" data-aos-delay="100">
-				<div class="col-lg-12 d-flex justify-content-center">
 
-					<ul id="portfolio-flters">
-						<?php $categories = get_categories(array('order' => 'DESC'));
-						foreach ($categories as $category) {
-							if (strstr($category->slug, "20")) { ?>
-								<li data-filter=".filter-<?php echo $category->slug; ?>" <?php if (get_option('portal_input_1') == $category->slug) echo "class='filter-active'";
-																							else echo "onclick='mostrar(" . $category->slug . ")'"; ?>><?php echo $category->slug; ?></li>
-						<?php }
-						} ?>
-					</ul>
+			<div class="row" data-aos="fade-up" data-aos-delay="100">
+				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+					<div class="member">
+						<?php echo get_post_meta($pid, 'event_content', true); ?>
+						<br>
+					</div>
 				</div>
 			</div>
-
-			<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-				<?php foreach ($categories as $category) {
-					if (strstr($category->slug, "20")) {
-						$args = array(
-							'category_name' => $category->slug,
-							'posts_per_page' => 6
-						);
-						$loop = new WP_Query($args);
-						while ($loop->have_posts()) {
-							$loop->the_post();
-				?>
-							<div <?php if (get_option('portal_input_1') != $category->slug) echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->slug; ?>">
-								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
-											else echo SITEPATH . "assets/img/semimagem.png"; ?>" class="img-fluid" title="<?php the_title() ?>">
-								<div class="portfolio-info">
-									<h4><?php the_title() ?></h4>
-									<a href="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
-												else echo SITEPATH . "assets/img/semimagem.png"; ?>" data-gall="portfolioGallery" class="venobox preview-link" title="<?php the_title() ?>"><i class="bx bx-plus"></i></a>
-									<a href="<?php the_permalink() ?>" class="details-link" title="Link"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
-				<?php }
-					}
-				} ?>
-			</div>
-			<br><br>
-			<h4 class="plus"><a title="Portfolio Completo" href="/portfolio"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
-	</section><!-- End Portfolio Section -->
+	</section>
 
-	<!-- ======= Team Section ======= -->
-	<section id="Committee" class="team committee section-bg">
+	<!-- ======= Committee Section ======= -->
+	<section id="Committee" class="team">
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
@@ -172,30 +137,30 @@
 				</div>
 			</div>
 		</div>
-	</section><!-- End Team Section -->
+	</section>
 
-	<!-- ======= Contact Section ======= -->
-	<section id="Contact" class="contact">
+	<!-- ======= Registration Section ======= -->
+	<section id="Registration" class="team section-bg">
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
-				<h2>Contact</h2>
-				<h3>Contact <span>Us</span></h3>
+				<h2>Registration</h2>
+				<h3>Registration <span><?php echo get_option('portal_input_1'); ?></span></h3>
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
-
-				<div class="col-lg-12">
-					<iframe class="mb-4 mb-lg-0" src="<?php echo get_option('portal_input_6'); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+					<div class="member">
+						<?php echo get_post_meta($pid, 'event_content', true); ?>
+						<br>
+					</div>
 				</div>
-
 			</div>
-
 		</div>
-	</section><!-- End Contact Section -->
+	</section>
 
-	<!-- ======= Clients Section ======= -->
-	<section id="clients" class="clients">
+	<!-- ======= Sponsor Section ======= -->
+	<section id="Sponsor" class="clients">
 
 		<div class="section-title">
 			<h2>Organized by</h2>
@@ -225,7 +190,27 @@
 			</div>
 		</div>
 		<br><br>
-	</section><!-- End Clients Section -->
+	</section>
+
+	<!-- ======= Local Section ======= -->
+	<section id="Local" class="local section-bg">
+		<div class="container" data-aos="fade-up">
+
+			<div class="section-title">
+				<h2>Local</h2>
+				<h3>Event's <span>Place</span></h3>
+			</div>
+
+			<div class="row" data-aos="fade-up" data-aos-delay="100">
+
+				<div class="col-lg-12">
+					<iframe class="mb-4 mb-lg-0" src="<?php echo get_option('portal_input_6'); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
 
 </main><!-- End #main -->
 <?php get_footer(); ?>

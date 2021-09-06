@@ -35,7 +35,7 @@
          <ul>
             <?php
             $args = array(
-               'post_type' => 'management',
+               'category_name' => 'management',
                'posts_per_page' => 100
             );
             $loop = new WP_Query($args);

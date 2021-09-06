@@ -120,6 +120,16 @@
         </a>
       </h1>
       <!-- Nav-Menu -->
-      <?php wp_nav_menu(array('theme_location' => 'sibgrapi-nav', 'container_class' => 'nav-menu d-none d-lg-block')); ?>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li id="home"><a href="/">Home</a></li>
+          <li id="sibgrapi"><a href="/#Sibgrapi">Sibgrapi</a></li>
+          <li id="cegrapi"><a href="/#Cegrapi">Cegrapi</a></li>
+          <li id="events"><a href="/#Events">Events</a></li>
+          <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
+          <li id="management"><a href="/#Management">Management</a></li>          
+          <li id="contact"><a href="/#Contact">Contact</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->

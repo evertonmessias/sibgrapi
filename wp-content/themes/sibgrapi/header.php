@@ -29,6 +29,9 @@
   <?php wp_head(); ?>
 </head>
 <?php
-if (url_active()[1] == "event") include ABSPATH . '/wp-content/themes/sibgrapi/layout/header-sibgrapi.php';
-else include ABSPATH . '/wp-content/themes/sibgrapi/layout/header-portal.php';
+if (url_active()[1] == "event" || (url_active()[1] == "schedule" && url_active()[2] != "")){
+  include ABSPATH . '/wp-content/themes/sibgrapi/layout/header-sibgrapi.php';
+}else {
+  include ABSPATH . '/wp-content/themes/sibgrapi/layout/header-portal.php';
+}
 ?>

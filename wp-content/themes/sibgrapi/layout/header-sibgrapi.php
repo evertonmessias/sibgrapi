@@ -116,12 +116,44 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto">
-        <a href="/">
+        <a href="<?php the_permalink() ?>">
           <img src="<?php echo get_option('portal_input_2'); ?>" title="SIBGRAPI">
           <span><?php the_title() ?></span>
         </a>
       </h1>
       <!-- Nav-Menu -->
-      <?php wp_nav_menu(array('theme_location' => 'sibgrapi-nav2', 'container_class' => 'nav-menu d-none d-lg-block')); ?>
+      <?php if (url_active()[1] == "schedule") { 
+        $year = explode("-",get_post_meta($post->ID, 'schedule_date', true))[0];
+        $link1 = url_menu($year)[3];
+        $link2 = url_menu($year)[4];
+        wp_reset_postdata();        
+      ?>
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li id="home"><a href="/<?php echo $link1 . "/" . $link2 ?>">Home</a></li>
+            <li id="schedule"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Schedule">Schedule</a></li>
+            <li id="program"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Program">Program</a></li>
+            <li id="committee"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Committee">Committee</a></li>
+            <li id="registration"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Registration">Registration</a></li>
+            <li id="sponsor"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Sponsor">Sponsor</a></li>
+            <li id="local"><a href="/<?php echo $link1 . "/" . $link2 ?>/#Local">Local</a></li>
+            <li><a href="/">Portal</a></li>
+          </ul>
+        </nav>
+      <?php } else { ?>
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li id="home"><a href="<?php the_permalink() ?>">Home</a></li>
+            <li id="schedule"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Schedule">Schedule</a></li>
+            <li id="program"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Program">Program</a></li>
+            <li id="committee"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Committee">Committee</a></li>
+            <li id="registration"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Registration">Registration</a></li>
+            <li id="sponsor"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Sponsor">Sponsor</a></li>
+            <li id="local"><a href="/<?php echo url_active()[1] . "/" . url_active()[2] ?>/#Local">Local</a></li>
+            <li><a href="/">Portal</a></li>
+          </ul>
+        </nav>
+      <?php } ?>
+      <!-- .nav-menu -->
     </div>
   </header><!-- End Header -->

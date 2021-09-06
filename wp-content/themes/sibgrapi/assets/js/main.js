@@ -63,8 +63,8 @@
   var nav_sections = $('section');
   var main_nav = $('.nav-menu, .mobile-nav');
   var pag = window.location.href.split('/');
-  if (pag[3].includes("#") || pag[3] == "") {
-    $('#inicio').addClass('active');
+  if (pag[3].includes("#") || pag[3] == "" || pag[3] == "event") {
+    $('#home').addClass('active');
     $(window).on('scroll', function () {
       var cur_pos = $(this).scrollTop() + 200;
 
@@ -76,18 +76,20 @@
           if (cur_pos <= bottom) {
             main_nav.find('li').removeClass('active');
           }
-          main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+          if(pag[3] == "event"){
+            main_nav.find('a[href="/'+pag[3]+'/'+pag[4]+'/#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+          }else{
+            main_nav.find('a[href="/#' + $(this).attr('id') + '"]').parent('li').addClass('active');          
+          }
         }
         if (cur_pos < 300) {
           $(".nav-menu ul:first li:first, .mobile-menu ul:first li:first").addClass('active');
         }
       });
     });
-
   } else if(document.getElementById(pag[3]) == null) {    
     main_nav.find('li').removeClass('active');
-  } else{
-    if(pag[3] == "about-cegrapi" || pag[3] == "about-sibgrapi")pag[3] = "about";    
+  } else{       
     $('#'+pag[3]).addClass('active');
   }
 

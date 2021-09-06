@@ -24,8 +24,8 @@
             </p>
           </div>
 
-          <?php wp_nav_menu(array('theme_location' => 'sibgrapi-footer1', 'container_class' => 'col-lg-3 col-md-6 footer-links menu1')); ?>
-          <?php wp_nav_menu(array('theme_location' => 'sibgrapi-footer2', 'container_class' => 'col-lg-3 col-md-6 footer-links menu2')); ?>
+          <?php //wp_nav_menu(array('theme_location' => 'sibgrapi-footer1', 'container_class' => 'col-lg-3 col-md-6 footer-links menu1')); ?>
+          <?php //wp_nav_menu(array('theme_location' => 'sibgrapi-footer2', 'container_class' => 'col-lg-3 col-md-6 footer-links menu2')); ?>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <div class="social-links mt-3">

@@ -2,17 +2,17 @@
 
 // Data **********************************
 
-function field_box_event_date()
+function field_box_event_year()
 {
-    add_meta_box('event_date_id', 'Date', 'field_event_date', 'event');
+    add_meta_box('event_year_id', 'year', 'field_event_year', 'event');
 }
-add_action('add_meta_boxes', 'field_box_event_date');
+add_action('add_meta_boxes', 'field_box_event_year');
 
-function field_event_date($post)
+function field_event_year($post)
 {
-    $value = get_post_meta($post->ID, 'event_date', true);
+    $value = get_post_meta($post->ID, 'event_year', true);
 ?>
-    <input type="date" name="event_date" value="<?php echo $value; ?>">
+    <input type="number" name="event_year" value="<?php echo $value; ?>">
 <?php
 }
 
@@ -35,9 +35,9 @@ function field_event_content($post)
 
 function save_postmeta_event($post_id)
 {
-    if (isset($_POST['event_date'])) {
-        $event_date = sanitize_text_field($_POST['event_date']);
-        update_post_meta($post_id, 'event_date', $event_date);
+    if (isset($_POST['event_year'])) {
+        $event_year = $_POST['event_year'];
+        update_post_meta($post_id, 'event_year', $event_year);
     }
 
     if (isset($_POST['event_content'])) {
