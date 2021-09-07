@@ -64,6 +64,29 @@
     padding: 20px 10px;
 }
 
+.event .icon-box{
+    padding: 0px 0px;
+}
+
+.event img{
+    width: 60%;    
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4em;
+    bottom: 0;
+    margin: auto;
+}
+
+.event h4{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 30px;
+    text-align: center;
+}
+
 .portfolio .portfolio-item{
     padding: 20px;
 }
@@ -214,4 +237,10 @@ ul.registration{
         float: right;
         width: 45%;        
     }    
+}
+.error{
+    display: block;
+    width: 100%;
+    height: 500px;
+    padding-top: 200px;
 }

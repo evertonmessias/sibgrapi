@@ -103,7 +103,7 @@
 				<h3>SIBGRAPI</h3>
 			</div>
 			<div id="Sibgrapi" class="row">
-				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">					
+				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
 					<?php
 					$loop = new WP_Query(array('pagename' => 'About SIBGRAPI'));
 					while ($loop->have_posts()) {
@@ -125,7 +125,7 @@
 				<h3>CEGRAPI</h3>
 			</div>
 			<div class="row">
-				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">					
+				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
 					<?php
 					$loop = new WP_Query(array('pagename' => 'About CEGRAPI'));
 					while ($loop->have_posts()) {
@@ -174,7 +174,7 @@
 	</section><!-- End Counts Section -->
 
 	<!-- ======= Events Section ======= -->
-	<section id="Events" class="services section-bg">
+	<section id="Events" class="services event section-bg">
 		<div class="container" data-aos="fade-up">
 			<div class="section-title">
 				<h2>Events</h2>
@@ -189,13 +189,22 @@
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
+					if(get_post_meta($post->ID, 'website', true) == "Internal"){
+						$urllink = get_the_permalink();
+						$target = "";}
+					else {
+						$urllink = get_post_meta($post->ID, 'event_url', true);
+						$target = "target='_blank'";
+					}
 				?>
-						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
-							<div class="icon-box">
-								<div class="icon">fazer imagem aqui</div>
-								<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-							</div>
+					<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
+						<div class="icon-box">
+							<a href="<?php echo $urllink; ?>" <?php echo $target; ?>>
+								<img src="<?php echo get_post_meta($post->ID, 'event_logo_1', true); ?>" title="<?php the_title() ?>">
+								<h4><?php the_title() ?></h4>
+							</a>
 						</div>
+					</div>
 				<?php }	 ?>
 			</div>
 		</div>
@@ -297,7 +306,7 @@
 				<h3>Contact <span>Us</span></h3>
 			</div>
 
-			<div class="row" data-aos="fade-up" data-aos-delay="100">		
+			<div class="row" data-aos="fade-up" data-aos-delay="100">
 
 				<div class="col-lg-12">
 					<?php echo do_shortcode('[wpforms id="176"]'); ?>

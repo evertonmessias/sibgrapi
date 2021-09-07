@@ -1,5 +1,8 @@
 <?php get_header(); ?>
-<?php $pid = get_the_ID(); ?>
+<?php 
+$pid = get_the_ID();
+$eyear = get_post_meta(get_the_ID(), 'event_year', true);
+?>
 <!-- ======= Hero Section ======= -->
 <section id="hero">
 	<div class="hero-container">
@@ -14,39 +17,39 @@
 			<div class="carousel-inner" role="listbox">
 
 				<!-- Slide 1 -->
-				<?php if (get_option('portal_input_111') != "") { ?>
-					<div class="carousel-item active" style="background-image: url('<?php echo get_option('portal_input_111'); ?>');">
+				<?php if (get_post_meta($post->ID, 'event_logo_2', true) != "") { ?>
+					<div class="carousel-item active" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_logo_2', true); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_112') ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_113'); ?></p>
-								<a href="<?php echo explode(",", get_option('portal_input_114'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_114'))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_logo_2_1', true) ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_logo_2_2', true); ?></p>
+								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_logo_2_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_logo_2_3', true))[0]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 
 				<!-- Slide 2 -->
-				<?php if (get_option('portal_input_115') != "") { ?>
-					<div class="carousel-item" style="background-image: url('<?php echo get_option('portal_input_115'); ?>');">
+				<?php if (get_post_meta($post->ID, 'event_logo_3', true) != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_logo_3', true); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_116') ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_117'); ?></p>
-								<a href="<?php echo explode(",", get_option('portal_input_118'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_118'))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_logo_3_1', true) ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_logo_3_2', true); ?></p>
+								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_logo_3_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_logo_3_3', true))[0]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 
 				<!-- Slide 3 -->
-				<?php if (get_option('portal_input_119') != "") { ?>
-					<div class="carousel-item" style="background-image: url('<?php echo get_option('portal_input_119'); ?>');">
+				<?php if (get_post_meta($post->ID, 'event_logo_4', true) != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_logo_4', true); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_120') ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_121'); ?></p>
-								<a href="<?php echo explode(",", get_option('portal_input_122'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_122'))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_logo_4_1', true) ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_logo_4_2', true); ?></p>
+								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_logo_4_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_logo_4_3', true))[0]; ?></a>
 							</div>
 						</div>
 					</div>
@@ -84,7 +87,8 @@
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if (strtotime(get_post_meta(get_the_ID(), 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
+					$syear = get_post_meta(get_the_ID(), 'schedule_date', true);
+					if (strtotime($syear) >= strtotime(date('Y-m-d')) && explode("-",$syear)[0] == $eyear) {
 				?>
 						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 							<div class="icon-box">

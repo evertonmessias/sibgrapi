@@ -16,11 +16,11 @@
     background-color: #bbb !important;
     border: 1px solid #bbb !important;
 }
-.settings-sibgrapi table{
+.settings-sibgrapi table, .tevent{
     width: 65em;
 }
 
-.settings-sibgrapi table img{
+.settings-sibgrapi table img, .tevent img{
     height: 100%;   
 }
 
@@ -28,26 +28,33 @@
     width: 7em;
     font-weight: 400;
 }
-.settings-sibgrapi input[type=email],.settings-sibgrapi input[type=text]{
+.settings-sibgrapi input[type=email],.settings-sibgrapi input[type=text],.ievent{
     width: 40em;
     font-weight: 400;
 }
-.settings-sibgrapi textarea{
+.settings-sibgrapi textarea, .tevent textarea{
     width: 100%;
     font-weight: 400;
     margin-bottom: -3px;
 }
 
-.settings-sibgrapi table td:nth-child(1),.settings-sibgrapi table td:nth-child(3){
+.settings-sibgrapi table td:nth-child(1),.settings-sibgrapi table td:nth-child(3),
+.tevent td:nth-child(1),.tevent td:nth-child(3){
     width: 9em;
 }
-.settings-sibgrapi table td:nth-child(1) div{
+.settings-sibgrapi table td:nth-child(1) div,
+.tevent td:nth-child(1) div{
     text-align: center !important;
     font-weight: 600;
 }
-.settings-sibgrapi table td:nth-child(2){
+.settings-sibgrapi table td:nth-child(2),
+.tevent td:nth-child(2){
     width: 40em;   
 }
-.settings-sibgrapi table td:nth-child(2) input{
+.settings-sibgrapi table td:nth-child(2) input,
+.tevent td:nth-child(2) input{
     width: 100%;
+}
+#heateor_sss_meta{
+    display: none;
 }

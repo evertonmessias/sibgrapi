@@ -26,6 +26,22 @@ function portal_page_html()
 				<h3 class="title">Theme Color: </h3><input type="color" id="portal_input_3" name="portal_input_3" value="<?php echo get_option('portal_input_3'); ?>" />
 			</label>
 
+			<br><br><!-- Logo *************************************** -->
+			<hr>
+
+			<?php
+			$image2 = get_option('portal_input_2'); ?>
+			<h3 class="title">Logo:</h3>
+			<table>
+				<tr>
+					<td><a href="#" onclick="upload_image(1,2);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_2" id="portal_input_2" value="<?php echo $image2; ?>" /></td>
+					<td>&emsp;<a href="<?php echo $image2; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_2" alt="preview" title="preview" src="<?php echo $image2; ?>" /></a></td>
+				</tr>
+			</table>
+			<span>(Ideal size: 100x100 px)</span>
+			
+
 			<br><br><!-- Slides *************************************** -->
 			<hr>
 
@@ -36,7 +52,7 @@ function portal_page_html()
 			<h3>Slide 1:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(111);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,111);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_111" id="portal_input_111" value="<?php echo $image111; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image111; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_111" alt="preview" title="preview" src="<?php echo $image111; ?>" /></a></td>
 				</tr>
@@ -65,7 +81,7 @@ function portal_page_html()
 			<h3>Slide 2:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(115);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,115);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_115" id="portal_input_115" value="<?php echo $image115; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image115; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_115" alt="preview" title="preview" src="<?php echo $image115; ?>" /></a></td>
 				</tr>
@@ -94,7 +110,7 @@ function portal_page_html()
 			<h3>Slide 3:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(119);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,119);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_119" id="portal_input_119" value="<?php echo $image119; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image119; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_119" alt="preview" title="preview" src="<?php echo $image119; ?>" /></a></td>
 				</tr>
@@ -120,23 +136,9 @@ function portal_page_html()
 
 			<br><span>(<b>Slide</b>; Ideal size: 1700x500 px)</span>
 			<br><span>(<b>Button</b>; Use <b>Name,URL</b> separated by commas and no spaces.)</span>
+			
 
-			<br><br><!-- *************************************** -->
-			<hr>
-
-			<?php
-			$image2 = get_option('portal_input_2'); ?>
-			<h3 class="title">Logo:</h3>
-			<table>
-				<tr>
-					<td><a href="#" onclick="upload_image(2);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_2" id="portal_input_2" value="<?php echo $image2; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image2; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_2" alt="preview" title="preview" src="<?php echo $image2; ?>" /></a></td>
-				</tr>
-			</table>
-			<span>(Ideal size: 100x100 px)</span>
-
-			<br><br><!-- *************************************** -->
+			<br><br><!-- Fone *************************************** -->
 			<hr>
 
 			<label>
@@ -144,7 +146,7 @@ function portal_page_html()
 			</label>
 			<br><span>(+00 00 00000-0000)</span>
 
-			<br><br><!-- *************************************** -->
+			<br><br><!-- E-Mail *************************************** -->
 			<hr>
 
 			<label>
@@ -223,7 +225,7 @@ function portal_page_html()
 			<h3>Logo 1:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(11);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,11);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_11" id="portal_input_11" value="<?php echo $image11; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image11; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_11" alt="preview" title="preview" src="<?php echo $image11; ?>" /></a></td>
 				</tr>
@@ -240,7 +242,7 @@ function portal_page_html()
 			<h3>Logo 2:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(13);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,13);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_13" id="portal_input_13" value="<?php echo $image13; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image13; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_13" alt="preview" title="preview" src="<?php echo $image13; ?>" /></a></td>
 				</tr>
@@ -257,7 +259,7 @@ function portal_page_html()
 			<h3>Logo 3:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(15);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,15);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_15" id="portal_input_15" value="<?php echo $image15; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image15; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_15" alt="preview" title="preview" src="<?php echo $image15; ?>" /></a></td>
 				</tr>
@@ -274,7 +276,7 @@ function portal_page_html()
 			<h3>Logo 4:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(17);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,17);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_17" id="portal_input_17" value="<?php echo $image17; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image17; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_17" alt="preview" title="preview" src="<?php echo $image17; ?>" /></a></td>
 				</tr>
@@ -291,7 +293,7 @@ function portal_page_html()
 			<h3>Logo 5:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(19);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,19);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_19" id="portal_input_19" value="<?php echo $image19; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image19; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_19" alt="preview" title="preview" src="<?php echo $image19; ?>" /></a></td>
 				</tr>
@@ -308,7 +310,7 @@ function portal_page_html()
 			<h3>Logo 6:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(21);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+					<td><a href="#" onclick="upload_image(1,21);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
 					<td><input type="text" name="portal_input_21" id="portal_input_21" value="<?php echo $image21; ?>" /></td>
 					<td>&emsp;<a href="<?php echo $image21; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_21" alt="preview" title="preview" src="<?php echo $image21; ?>" /></a></td>
 				</tr>
