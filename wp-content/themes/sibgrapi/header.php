@@ -13,6 +13,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
   if (url_active()[1] == "registration") {
     $year = get_post_meta(get_the_ID(), 'registration_year', true);
   }
+  $ok = false;
   $loop = new WP_Query(array('post_type' => 'event'));
   while ($loop->have_posts()) {
     $loop->the_post();
@@ -21,12 +22,14 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
       $url_menu = "/" . explode("/", get_the_permalink())[3] . "/" . explode("/", get_the_permalink())[4];
       $title = get_the_title();
       $post_color = get_post_meta(get_the_ID(), 'event_color', true);
-      $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);         
-    }else{
-      $title = "Calendar without event !";$post_color = "#f00";$logo = SITEPATH."assets/img/semimagem.png";
-    }
-  }
+      $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);  
+      $ok = true;       
+    }    
+  }  
   wp_reset_postdata();
+  if(!$ok){
+    $title = "Calendar without event !";$post_color = "#f00";$logo = SITEPATH."assets/img/semimagem.png";
+  }
 } else if (url_active()[1] == "event" && url_active()[2] != "") {
   // ********************** Montar header para o event
   if(get_the_title() == ""){echo "<script>window.location.href = '/';</script>";}
