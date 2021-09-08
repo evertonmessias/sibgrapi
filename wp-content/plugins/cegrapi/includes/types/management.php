@@ -63,14 +63,13 @@ class management
 		);
 	
 		$args = array(
-			'hierarchical'      => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
 			'labels'            => $labels,
+			'hierarchical'      => false,			
 			'show_ui'           => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'categories' ),
+			'query_var'         => true
 		);	
-		register_taxonomy( 'management_categories', array( 'management' ), $args );
+		register_taxonomy( 'management_categories','management', $args );
 	}	
 
 	public function activate()

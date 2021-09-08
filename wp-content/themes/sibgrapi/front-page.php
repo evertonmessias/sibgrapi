@@ -279,10 +279,14 @@
 			</div>
 			<div class="row">
 				<?php
-				$loop = new WP_Query(array('post_type' => 'management'));
+				$args = array(
+					'post_type' => 'management',					
+					'management_categories' => $cat_management[0],
+					'order' => 'DESC'
+				 );
+				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if (get_the_terms(get_the_ID(), 'management_categories')[0]->name == $cat_management[0]) {
 				?>
 						<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
 							<div class="member">
@@ -308,7 +312,7 @@
 								</div>
 							</div>
 						</div>
-					<?php } ?>
+				
 				<?php wp_reset_postdata();
 				} ?>
 			</div>
