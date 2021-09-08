@@ -114,8 +114,25 @@
 
 .team .member{
     width: 100%;
-    min-height: 300px;
-    padding: 30px;
+    height: 330px;
+    padding: 20px;
+}
+
+.team .member .member-img img{
+    display: block;
+    position: relative;    
+    margin: 0 auto;
+    height: 200px;   
+}
+
+.team .member .member-info{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 235px;
+    text-align: center;
+    padding: 0px 20px 0px 20px;
 }
 
 .team .member .bloco1,.team .member .bloco2 {
@@ -201,6 +218,10 @@ ul.registration{
     text-align: center;
 }
 
+#footer .footer-top .footer-contact h3, #footer .footer-top .footer-contact p{
+    text-align: center;
+}
+
 @media(max-width:900px){
     .featured-services .icon-box{
         width: 100%;
@@ -229,6 +250,9 @@ ul.registration{
     }
     ul.registration{
         width: 100%;
+    }
+    .event img{
+        width: 40%;
     }
     .footer-top .footer-contact,.footer-top .footer-links{
         text-align: center;

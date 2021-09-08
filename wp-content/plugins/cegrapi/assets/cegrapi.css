@@ -58,3 +58,7 @@
 #heateor_sss_meta{
     display: none;
 }
+.management input[type=text]{
+    width: 100%;
+    font-weight: 400;
+}

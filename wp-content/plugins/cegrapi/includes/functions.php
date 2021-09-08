@@ -70,3 +70,6 @@ function function_about()
 	include ABSPATH . '/wp-content/plugins/cegrapi/includes/about.php';
 }
 add_action('function_about','function_about');
+
+//************* Add thumbnails
+add_theme_support('post-thumbnails', array('management'));

@@ -189,10 +189,10 @@
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					if(get_post_meta($post->ID, 'website', true) == "Internal"){
+					if (get_post_meta($post->ID, 'website', true) == "Internal") {
 						$urllink = get_the_permalink();
-						$target = "";}
-					else {
+						$target = "";
+					} else {
 						$urllink = get_post_meta($post->ID, 'event_url', true);
 						$target = "target='_blank'";
 					}
@@ -260,7 +260,7 @@
 				} ?>
 			</div>
 			<br><br>
-			<h4 class="plus"><a title="Portfolio Completo" href="/portfolio"><i class="bx bxs-folder-plus"></i></a></h4>
+			<h4 class="plus"><a title="All Portfolio" href="/portfolio"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
 	</section><!-- End Portfolio Section -->
 
@@ -268,32 +268,52 @@
 	<section id="Management" class="team section-bg">
 		<div class="container" data-aos="fade-up">
 			<?php
-			$args = array(
-				'post_type' => 'management',
-				'posts_per_page' => 1,
-				'order' => 'DESC'
-			);
-			$loop = new WP_Query($args);
-			while ($loop->have_posts()) {
-				$loop->the_post();
-				$titulo_management_atual = get_the_title();
-				$conteudo_management_atual = get_the_content();
+			$terms = get_terms('management_categories', array('order' => 'DESC'));
+			foreach ($terms as $term) {
+				$cat_management[] = $term->name;
 			}
 			?>
 			<div class="section-title">
 				<h2>Management</h2>
-				<h3><?php echo $titulo_management_atual; ?></h3>
+				<h3><?php echo $cat_management[0]; ?></h3>
 			</div>
-
 			<div class="row">
-				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="member">
-						<?php echo $conteudo_management_atual; ?>
-						<h1>&ensp;</h1>
-						<h4 class="plus"><a title="Gestões Anteriores" href="/management"><i class="bx bxs-folder-plus"></i></a></h4>
-					</div>
-				</div>
+				<?php
+				$loop = new WP_Query(array('post_type' => 'management'));
+				while ($loop->have_posts()) {
+					$loop->the_post();
+					if (get_the_terms(get_the_ID(), 'management_categories')[0]->name == $cat_management[0]) {
+				?>
+						<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+							<div class="member">
+								<div class="member-img">
+									<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+												else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
+								</div>
+								<div class="member-info">
+									<?php if (get_post_meta($post->ID, 'management_caption_url', true) != "") { ?>
+										<h4>
+											<a href="<?php echo get_post_meta($post->ID, 'management_caption_url', true); ?>" target="_blank">
+												<?php echo get_the_title(); ?>
+											</a>
+										</h4>
+									<?php } else { ?>
+										<h4>
+											<?php echo get_the_title() ?>
+										</h4>
+									<?php } ?>
+
+									<span><?php echo get_post_meta($post->ID, 'management_caption_role', true); ?></span>
+									<span><?php echo get_post_meta($post->ID, 'management_caption_local', true); ?></span>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				<?php wp_reset_postdata();
+				} ?>
 			</div>
+			<br><br>
+			<h4 class="plus"><a title="All Management" href="/management"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
 	</section><!-- End Team Section -->
 

@@ -32,6 +32,7 @@
    </section><!-- End Breadcrumbs -->
    <section class="inner-page">
       <div class="container">
+         <h1>REFAZER COM classificação em TERMS</h1>
          <ul>
             <?php
             $args = array(

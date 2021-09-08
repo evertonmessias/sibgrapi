@@ -170,15 +170,8 @@ function portal_page_html()
 				<h3>Social 3: </h3>
 				<input type="text" id="portal_input_29" name="portal_input_29" value="<?php echo get_option('portal_input_29'); ?>" />
 			</label><br>
-			<br><span>(Use <b>Icon,URL,Title</b> separated by commas and no spaces. Choose Icon <a href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/icons-boxicons.html" target="_blank">Here</a>)</span>
+			<br><span>(Use <b>Icon,URL,Title</b> separated by commas and no spaces. Choose Icon <a href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/icons-boxicons.html" target="_blank">Here</a>)</span>			
 
-			<br><br><!-- *************************************** -->
-			<hr>
-
-			<label>
-				<h3 class="title">Google Maps: </h3><input type="text" id="portal_input_6" name="portal_input_6" value="<?php echo get_option('portal_input_6'); ?>" />
-			</label>
-			<br><span>(Only the url in HTTPS)</span>
 
 			<br><br><!-- *************************************** -->
 			<hr>
@@ -219,120 +212,115 @@ function portal_page_html()
 			<br><br><!-- *************************************** -->
 			<hr>
 
+			
+			<!-- ****************** COLOCAR MAPS NO EVENT********************* 
+			<label>
+				<h3 class="title">Google Maps: </h3><input type="text" id="portal_input_6" name="portal_input_6" value="<?php //echo get_option('portal_input_6'); ?>" />
+			</label>
+			<br><span>(Only the url in HTTPS)</span>-->
+
+
+			<!-- ****************** COLOCAR SPONSOR NO EVENT  ***************************
+
 			<h3 class="title">Sponsor:</h3>
-			<?php
-			$image11 = get_option('portal_input_11'); ?>
+			<?php //			$image11 = get_option('portal_input_11'); ?>
 			<h3>Logo 1:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(1,11);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_11" id="portal_input_11" value="<?php echo $image11; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image11; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_11" alt="preview" title="preview" src="<?php echo $image11; ?>" /></a></td>
+					<td><a href="#" onclick="upload_image(1,11);" class="button button-secondary"><?php // _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_11" id="portal_input_11" value="<?php // echo $image11; ?>" /></td>
+					<td>&emsp;<a href="<?php // echo $image11; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_11" alt="preview" title="preview" src="<?php // echo $image11; ?>" /></a></td>
 				</tr>
 				<tr>
 					<td>
 						<div>Name , URL:</div>
 					</td>
-					<td><input type="text" id="portal_input_12" name="portal_input_12" value="<?php echo get_option('portal_input_12'); ?>" /></td>
+					<td><input type="text" id="portal_input_12" name="portal_input_12" value="<?php // echo get_option('portal_input_12'); ?>" /></td>
 				</tr>
 			</table><br>
 
-			<?php
-			$image13 = get_option('portal_input_13'); ?>
+			<?php //			$image13 = get_option('portal_input_13'); ?>
 			<h3>Logo 2:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(1,13);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_13" id="portal_input_13" value="<?php echo $image13; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image13; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_13" alt="preview" title="preview" src="<?php echo $image13; ?>" /></a></td>
+					<td><a href="#" onclick="upload_image(1,13);" class="button button-secondary"><?php // _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_13" id="portal_input_13" value="<?php // echo $image13; ?>" /></td>
+					<td>&emsp;<a href="<?php // echo $image13; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_13" alt="preview" title="preview" src="<?php // echo $image13; ?>" /></a></td>
 				</tr>
 				<tr>
 					<td>
 						<div>Name , URL:</div>
 					</td>
-					<td><input type="text" id="portal_input_14" name="portal_input_14" value="<?php echo get_option('portal_input_14'); ?>" /></td>
+					<td><input type="text" id="portal_input_14" name="portal_input_14" value="<?php // echo get_option('portal_input_14'); ?>" /></td>
 				</tr>
 			</table><br>
 
-			<?php
-			$image15 = get_option('portal_input_15'); ?>
+			<?php //			$image15 = get_option('portal_input_15'); ?>
 			<h3>Logo 3:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(1,15);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_15" id="portal_input_15" value="<?php echo $image15; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image15; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_15" alt="preview" title="preview" src="<?php echo $image15; ?>" /></a></td>
+					<td><a href="#" onclick="upload_image(1,15);" class="button button-secondary"><?php // _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_15" id="portal_input_15" value="<?php // echo $image15; ?>" /></td>
+					<td>&emsp;<a href="<?php // echo $image15; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_15" alt="preview" title="preview" src="<?php // echo $image15; ?>" /></a></td>
 				</tr>
 				<tr>
 					<td>
 						<div>Name , URL:</div>
 					</td>
-					<td><input type="text" id="portal_input_16" name="portal_input_16" value="<?php echo get_option('portal_input_16'); ?>" /></td>
+					<td><input type="text" id="portal_input_16" name="portal_input_16" value="<?php // echo get_option('portal_input_16'); ?>" /></td>
 				</tr>
 			</table><br>
 
-			<?php
-			$image17 = get_option('portal_input_17'); ?>
+			<?php //			$image17 = get_option('portal_input_17'); ?>
 			<h3>Logo 4:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(1,17);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_17" id="portal_input_17" value="<?php echo $image17; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image17; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_17" alt="preview" title="preview" src="<?php echo $image17; ?>" /></a></td>
+					<td><a href="#" onclick="upload_image(1,17);" class="button button-secondary"><?php // _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_17" id="portal_input_17" value="<?php // echo $image17; ?>" /></td>
+					<td>&emsp;<a href="<?php // echo $image17; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_17" alt="preview" title="preview" src="<?php // echo $image17; ?>" /></a></td>
 				</tr>
 				<tr>
 					<td>
 						<div>Name , URL:</div>
 					</td>
-					<td><input type="text" id="portal_input_18" name="portal_input_18" value="<?php echo get_option('portal_input_18'); ?>" /></td>
+					<td><input type="text" id="portal_input_18" name="portal_input_18" value="<?php // echo get_option('portal_input_18'); ?>" /></td>
 				</tr>
 			</table><br>
 
-			<?php
-			$image19 = get_option('portal_input_19'); ?>
+			<?php //			$image19 = get_option('portal_input_19'); ?>
 			<h3>Logo 5:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(1,19);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_19" id="portal_input_19" value="<?php echo $image19; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image19; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_19" alt="preview" title="preview" src="<?php echo $image19; ?>" /></a></td>
+					<td><a href="#" onclick="upload_image(1,19);" class="button button-secondary"><?php // _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_19" id="portal_input_19" value="<?php // echo $image19; ?>" /></td>
+					<td>&emsp;<a href="<?php // echo $image19; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_19" alt="preview" title="preview" src="<?php // echo $image19; ?>" /></a></td>
 				</tr>
 				<tr>
 					<td>
 						<div>Name , URL:</div>
 					</td>
-					<td><input type="text" id="portal_input_20" name="portal_input_20" value="<?php echo get_option('portal_input_20'); ?>" /></td>
+					<td><input type="text" id="portal_input_20" name="portal_input_20" value="<?php // echo get_option('portal_input_20'); ?>" /></td>
 				</tr>
 			</table><br>
 
-			<?php
-			$image21 = get_option('portal_input_21'); ?>
+			<?php //			$image21 = get_option('portal_input_21'); ?>
 			<h3>Logo 6:</h3>
 			<table>
 				<tr>
-					<td><a href="#" onclick="upload_image(1,21);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-					<td><input type="text" name="portal_input_21" id="portal_input_21" value="<?php echo $image21; ?>" /></td>
-					<td>&emsp;<a href="<?php echo $image21; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_21" alt="preview" title="preview" src="<?php echo $image21; ?>" /></a></td>
+					<td><a href="#" onclick="upload_image(1,21);" class="button button-secondary"><?php // _e('Upload Image'); ?></a></td>
+					<td><input type="text" name="portal_input_21" id="portal_input_21" value="<?php // echo $image21; ?>" /></td>
+					<td>&emsp;<a href="<?php // echo $image21; ?>" target="_blank"><img style="height:30px" id="preview_portal_input_21" alt="preview" title="preview" src="<?php // echo $image21; ?>" /></a></td>
 				</tr>
 				<tr>
 					<td>
 						<div>Name , URL:</div>
 					</td>
-					<td><input type="text" id="portal_input_22" name="portal_input_22" value="<?php echo get_option('portal_input_22'); ?>" /></td>
+					<td><input type="text" id="portal_input_22" name="portal_input_22" value="<?php // echo get_option('portal_input_22'); ?>" /></td>
 				</tr>
 			</table><br>
 			<br><span>(Use <b>Name,URL</b> separated by commas and no spaces.)</span>
-
-			<br><br><!-- *************************************** -->
-			<hr>
-
-			<h2 class="title">Committee</h2>
-			<?php
-			$value_editor = get_option('portal_input_30');
-			wp_editor($value_editor, 'post_meta_box', array('textarea_name' => 'portal_input_30'));
-			?>
-
-			<br><br><!-- *************************************** -->
+			
+			<br><br> *************************************** -->
 
 			<?php submit_button(); ?>
 		</form>
@@ -476,12 +464,6 @@ function portal_settings5()
 }
 add_action('admin_init', 'portal_settings5');
 
-function portal_settings6()
-{
-	add_option('portal_input_6');
-	register_setting('portal_option_grupo', 'portal_input_6');
-}
-add_action('admin_init', 'portal_settings6');
 
 function portal_settings7()
 {
@@ -510,90 +492,6 @@ function portal_settings10()
 	register_setting('portal_option_grupo', 'portal_input_10');
 }
 add_action('admin_init', 'portal_settings10');
-
-function portal_settings11()
-{
-	add_option('portal_input_11');
-	register_setting('portal_option_grupo', 'portal_input_11');
-}
-add_action('admin_init', 'portal_settings11');
-
-function portal_settings12()
-{
-	add_option('portal_input_12');
-	register_setting('portal_option_grupo', 'portal_input_12');
-}
-add_action('admin_init', 'portal_settings12');
-
-function portal_settings13()
-{
-	add_option('portal_input_13');
-	register_setting('portal_option_grupo', 'portal_input_13');
-}
-add_action('admin_init', 'portal_settings13');
-
-function portal_settings14()
-{
-	add_option('portal_input_14');
-	register_setting('portal_option_grupo', 'portal_input_14');
-}
-add_action('admin_init', 'portal_settings14');
-
-function portal_settings15()
-{
-	add_option('portal_input_15');
-	register_setting('portal_option_grupo', 'portal_input_15');
-}
-add_action('admin_init', 'portal_settings15');
-
-function portal_settings16()
-{
-	add_option('portal_input_16');
-	register_setting('portal_option_grupo', 'portal_input_16');
-}
-add_action('admin_init', 'portal_settings16');
-
-function portal_settings17()
-{
-	add_option('portal_input_17');
-	register_setting('portal_option_grupo', 'portal_input_17');
-}
-add_action('admin_init', 'portal_settings17');
-
-function portal_settings18()
-{
-	add_option('portal_input_18');
-	register_setting('portal_option_grupo', 'portal_input_18');
-}
-add_action('admin_init', 'portal_settings18');
-
-function portal_settings19()
-{
-	add_option('portal_input_19');
-	register_setting('portal_option_grupo', 'portal_input_19');
-}
-add_action('admin_init', 'portal_settings19');
-
-function portal_settings20()
-{
-	add_option('portal_input_20');
-	register_setting('portal_option_grupo', 'portal_input_20');
-}
-add_action('admin_init', 'portal_settings20');
-
-function portal_settings21()
-{
-	add_option('portal_input_21');
-	register_setting('portal_option_grupo', 'portal_input_21');
-}
-add_action('admin_init', 'portal_settings21');
-
-function portal_settings22()
-{
-	add_option('portal_input_22');
-	register_setting('portal_option_grupo', 'portal_input_22');
-}
-add_action('admin_init', 'portal_settings22');
 
 function portal_settings23()
 {

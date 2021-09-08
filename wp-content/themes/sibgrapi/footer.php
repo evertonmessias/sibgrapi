@@ -24,8 +24,24 @@
             </p>
           </div>
 
-          <?php //wp_nav_menu(array('theme_location' => 'sibgrapi-footer1', 'container_class' => 'col-lg-3 col-md-6 footer-links menu1')); ?>
-          <?php //wp_nav_menu(array('theme_location' => 'sibgrapi-footer2', 'container_class' => 'col-lg-3 col-md-6 footer-links menu2')); ?>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li id="home"><i class="bx bx-chevron-right"></i><a href="/">Home</a></li>
+              <li id="sibgrapi"><i class="bx bx-chevron-right"></i><a href="/#Sibgrapi">Sibgrapi</a></li>
+              <li id="cegrapi"><i class="bx bx-chevron-right"></i><a href="/#Cegrapi">Cegrapi</a></li>
+              <li id="events"><i class="bx bx-chevron-right"></i><a href="/#Events">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Other links</h4>
+            <ul>
+              <li id="portfolio"><i class="bx bx-chevron-right"></i><a href="/#Portfolio">Portfolio</a></li>
+              <li id="management"><i class="bx bx-chevron-right"></i><a href="/#Management">Management</a></li>
+              <li id="contact"><i class="bx bx-chevron-right"></i><a href="/#Contact">Contact</a></li>
+            </ul>
+          </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <div class="social-links mt-3">
