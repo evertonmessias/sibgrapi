@@ -171,7 +171,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 								<li>
 									<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 								</li>
-							<?php } ?>
+							<?php }wp_reset_postdata() ?>
 						</ul>
 					</div>
 				</div>

@@ -103,7 +103,7 @@
     border: 2px solid #e2eefd;
 }
 
-.page.page-portfolio .section-title h2{
+.page.page-portfolio .section-title h2, .page.management .section-title h2 {
     position: relative;
     top: -32px;
 }

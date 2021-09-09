@@ -1,12 +1,4 @@
 <?php get_header(); ?>
-<style>
-      .management .contentmanagement{
-         display: none;
-      }
-      .management ul{
-         list-style: none;                  
-      }      
-   </style>
 <main id="main" class="page management" data-aos="fade-up">
    <!-- ======= Breadcrumbs ======= -->
    <section class="breadcrumbs">
@@ -30,26 +22,68 @@
          </div>
       </div>
    </section><!-- End Breadcrumbs -->
-   <section class="inner-page">
-      <div class="container">
-         <h1>REFAZER COM classificação em TERMS</h1>
-         <ul>
-            <?php
-            $args = array(
-               'post_type' => 'management',
-               'posts_per_page' => 100
-            );
-            $loop = new WP_Query($args);
-            $x = 1;
-            while ($loop->have_posts()) {
-               $loop->the_post(); ?>
-                  <li>
-                  <a href="#!" title="Click" onclick="$('#p<?php echo $x; ?>').slideToggle(500)"><h5><?php echo get_the_title(); ?></h5></a>
-                  <div class="contentmanagement" id="p<?php echo $x; ?>"><br><?php echo get_the_content(); ?><br><br></div>
-                  </li><br>
-            <?php $x++; } ?>
-         </ul>
-      </div>
-   </section>
+
+   	<!-- ======= Team Section ======= -->
+	<section id="Management" class="team">
+		<div class="container" data-aos="fade-up">
+			<?php
+			$terms = get_terms('management_categories', array('order' => 'DESC'));
+			foreach ($terms as $term) { ?>
+			<div class='section-title'>
+            <hr><h3><?php echo $term->name; ?></h3>
+         </div>
+			<div class="row">
+				<?php
+				$args = array(
+					'post_type' => 'management',					
+					'management_categories' => $term->name,
+					'order' => 'DESC'
+				 );
+				$loop = new WP_Query($args);
+				while ($loop->have_posts()) {
+					$loop->the_post();
+				?>
+						<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+							<div class="member">
+								<div class="member-img">
+									<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+												else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
+								</div>
+								<div class="member-info">
+									<?php if (get_post_meta($post->ID, 'management_caption_url', true) != "") { ?>
+										<h4>
+											<a href="<?php echo get_post_meta($post->ID, 'management_caption_url', true); ?>" target="_blank">
+												<?php echo get_the_title(); ?>
+											</a>
+										</h4>
+									<?php } else { ?>
+										<h4>
+											<?php echo get_the_title() ?>
+										</h4>
+									<?php } ?>
+
+									<span><?php echo get_post_meta($post->ID, 'management_caption_role', true); ?></span>
+									<span><?php echo get_post_meta($post->ID, 'management_caption_local', true); ?></span>
+								</div>
+							</div>
+						</div>
+				
+				<?php wp_reset_postdata();
+				} ?>
+			</div><h1>&nbsp;</h1>
+         <?php }	?>
+		</div>
+	</section><!-- End Team Section -->
+
+
+
+
+
+
+
+
+
+
+
 </main><!-- End #main -->
 <?php get_footer(); ?>

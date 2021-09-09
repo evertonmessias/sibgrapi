@@ -34,7 +34,7 @@
                   <a href="<?php the_permalink() ?>"><?php echo get_the_title(); ?></a>
                </li>
             </ul>
-         <?php } ?>
+         <?php }wp_reset_postdata() ?>
       </div>
    </section>
 </main><!-- End #main -->

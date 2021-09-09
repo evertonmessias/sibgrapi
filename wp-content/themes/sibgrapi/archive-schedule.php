@@ -26,50 +26,55 @@
    <section class="inner-page">
       <div class="container">
          <?php
-         // POSTS  
-         $x = 1;          
-         while (have_posts()){
+         // new  
+         $x = 1;
+         while (have_posts()) {
             the_post();
-            if(strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))){
-            ?>
-            <ul>
-               <li>
-                  <a href="<?php the_permalink() ?>">
-                  <?php
-                  if($x < 10)$n = "0".$x;
-                  else "".$n = $x;
-                  echo $n.". ";
-                  echo "<strong>".get_post_meta($post->ID, 'schedule_date', true)."</strong> - ";
-                  echo get_the_title();  
-                  ?>
-                  </a>
-               </li>
-            </ul>
-         <?php $x++; }}
+            if (strtotime(get_post_meta($post->ID, 'schedule_date', true)) >= strtotime(date('Y-m-d'))) {
+         ?>
+               <ul>
+                  <li>
+                     <a href="<?php the_permalink() ?>">
+                        <?php
+                        if ($x < 10) $n = "0" . $x;
+                        else "" . $n = $x;
+                        echo $n . ". ";
+                        echo "<strong>" . get_post_meta($post->ID, 'schedule_date', true) . "</strong> - ";
+                        echo get_the_title();
+                        ?>
+                     </a>
+                  </li>
+               </ul>
+         <?php $x++;
+            }
+         }wp_reset_postdata()
          ?>
          <?php
-         // POSTS 
-         $x = 1;           
-         while (have_posts()){
+         // old 
+         $x = 1;
+         while (have_posts()) {
             the_post();
-            if(strtotime(get_post_meta($post->ID, 'schedule_date', true)) < strtotime(date('Y-m-d'))){
-            ?>
-            <br><hr><br>
-            <h5>History</h5><br>            
-            <ul>
-               <li>
-                  <a href="<?php the_permalink() ?>">
-                  <?php
-                  if($x < 10)$n = "0".$x;
-                  else "".$n = $x;
-                  echo $n.". ";
-                  echo "<strong>".get_post_meta($post->ID, 'schedule_date', true)."</strong> - ";
-                  echo get_the_title();  
-                  ?>
-                  </a>
-               </li>
-            </ul>
-         <?php $x++; }}
+            if (strtotime(get_post_meta($post->ID, 'schedule_date', true)) < strtotime(date('Y-m-d'))) {
+         ?>
+               <br>
+               <hr><br>
+               <h5>History</h5><br>
+               <ul>
+                  <li>
+                     <a href="<?php the_permalink() ?>">
+                        <?php
+                        if ($x < 10) $n = "0" . $x;
+                        else "" . $n = $x;
+                        echo $n . ". ";
+                        echo "<strong>" . get_post_meta($post->ID, 'schedule_date', true) . "</strong> - ";
+                        echo get_the_title();
+                        ?>
+                     </a>
+                  </li>
+               </ul>
+         <?php $x++;
+            }
+         }wp_reset_postdata()
          ?>
       </div>
    </section>

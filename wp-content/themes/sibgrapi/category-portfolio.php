@@ -52,7 +52,7 @@
                                     else echo SITEPATH . "assets/img/semimagem.png"; ?>" data-gall="portfolioGallery" class="venobox preview-link" title="<?php the_title() ?> (<?php echo $category->slug; ?>)"><i class="bx bx-plus"></i></a>
                            <a href="<?php the_permalink() ?>" class="details-link" title="Link"><i class="bx bx-link"></i></a>
                         </div>
-                     </div><?php } ?>
+                     </div><?php }wp_reset_postdata() ?>
                </div><?php }} ?>
       </div>
    </section>

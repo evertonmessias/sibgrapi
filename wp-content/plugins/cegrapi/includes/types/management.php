@@ -64,7 +64,7 @@ class management
 	
 		$args = array(
 			'labels'            => $labels,
-			'hierarchical'      => false,			
+			'hierarchical'      => true,			
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'query_var'         => true
