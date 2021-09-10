@@ -38,7 +38,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
   }  
   wp_reset_postdata();
   if(!$ok){
-    $title = "Calendar without event !";$post_color = "#f00";$logo = SITEPATH."assets/img/semimagem.png";
+    $title = "Post without event !";$post_color = "#aaa";$logo = SITEPATH."assets/img/semimagem.png";
   }
 } else if (url_active()[1] == "event" && url_active()[2] != "") {
   // ********************** Montar header para o event
