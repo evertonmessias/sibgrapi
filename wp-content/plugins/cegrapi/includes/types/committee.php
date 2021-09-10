@@ -1,24 +1,24 @@
 <?php
 
-class registration
+class committee
 {
 	public function __construct()
 	{
-		add_action('init', array($this,'create_custom_post_type_registration'));
-		add_action('init', array($this,'create_registration_taxonomies'));
+		add_action('init', array($this,'create_custom_post_type_committee'));
+		add_action('init', array($this,'create_committee_taxonomies'));
 	}
 
-	public function create_custom_post_type_registration()
+	public function create_custom_post_type_committee()
 	{
 		$labels = [
-			'name' => _x('Registration', 'post type general name'),
-			'singular_name' => _x('Registration', 'post type singular name'),
-			'add_new' => _x('Add New', 'Registration'),
-			'add_new_item' => __('Add New Registration'),
-			'edit_item' => __('Edit Registration'),
-			'new_item' => __('New Registration'),
-			'view_item' => __('View Registration'),
-			'search_items' => __('Search Registration'),
+			'name' => _x('Committee', 'post type general name'),
+			'singular_name' => _x('Committee', 'post type singular name'),
+			'add_new' => _x('Add New', 'Committee'),
+			'add_new_item' => __('Add New Committee'),
+			'edit_item' => __('Edit Committee'),
+			'new_item' => __('New Committee'),
+			'view_item' => __('View Committee'),
+			'search_items' => __('Search Committee'),
 			'not_found' =>  __('Nothing found'),
 			'not_found_in_trash' => __('Nothing found in Trash'),
 			'parent_item_colon' => ''
@@ -37,17 +37,17 @@ class registration
 			'rewrite' 				=> true,
 			'show_in_nav_menus'     => true,
 			'can_export'			=> true,
-			'menu_icon'             => 'dashicons-welcome-write-blog',
+			'menu_icon'             => 'dashicons-groups',
 			'has_archive'           => true,
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
-			'capability_type'     	=> array('post', 'registration'),
+			'capability_type'     	=> array('post', 'committee'),
 			'map_meta_cap'        => true,
 		];
-		register_post_type('registration', $args);
+		register_post_type('committee', $args);
 	}
 
-	function create_registration_taxonomies() {
+	function create_committee_taxonomies() {
 		$labels = array(
 			'name'              => _x( 'Categories', 'taxonomy general name' ),
 			'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
@@ -69,7 +69,7 @@ class registration
 			'show_admin_column' => true,
 			'query_var'         => true
 		);	
-		register_taxonomy( 'registration_categories','registration', $args );
+		register_taxonomy( 'committee_categories','committee', $args );
 	}	
 
 	public function activate()
@@ -77,8 +77,8 @@ class registration
 		remove_role('subscriber');
 		remove_role('contributor');
 		remove_role('author');
-		$this->create_custom_post_type_registration();
-		$this->create_registration_taxonomies();
+		$this->create_custom_post_type_committee();
+		$this->create_committee_taxonomies();
 		flush_rewrite_rules();
 	}
 
@@ -89,24 +89,24 @@ class registration
 }
 
 //Roles for Admin, Editor
-function role_caps_registration()
+function role_caps_committee()
 {
 	$roles = array('editor', 'administrator');
 	foreach ($roles as $the_role) {
 		$role = get_role($the_role);
 		$role->add_cap('read');
-		$role->add_cap('read_registration');
-		$role->add_cap('read_private_registration');
-		$role->add_cap('edit_registration');
-		$role->add_cap('edit_others_registration');
-		$role->add_cap('edit_published_registration');
-		$role->add_cap('publish_registration');
-		$role->add_cap('delete_others_registration');
-		$role->add_cap('delete_private_registration');
-		$role->add_cap('delete_published_registration');
+		$role->add_cap('read_committee');
+		$role->add_cap('read_private_committee');
+		$role->add_cap('edit_committee');
+		$role->add_cap('edit_others_committee');
+		$role->add_cap('edit_published_committee');
+		$role->add_cap('publish_committee');
+		$role->add_cap('delete_others_committee');
+		$role->add_cap('delete_private_committee');
+		$role->add_cap('delete_published_committee');
 	}
 }
-add_action('admin_init', 'role_caps_registration', 999);
+add_action('admin_init', 'role_caps_committee', 999);
 
 // POSTMETA ************************************************
-include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/postmeta/postmeta-registration.php';
+include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/postmeta/postmeta-committee.php';

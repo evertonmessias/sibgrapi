@@ -3,7 +3,7 @@
 // ***************** Add in Menu
 function menu_cegrapi()
 {
-	add_menu_page('SIBGRAPI Portal', 'SIBGRAPI Portal', 'edit_posts', 'cegrapi', 'function_about', 'dashicons-screenoptions', 1);
+	add_menu_page('Portal', 'Portal', 'edit_posts', 'cegrapi', 'function_about', 'dashicons-screenoptions', 1);
 }
 add_action('admin_menu', 'menu_cegrapi');
 

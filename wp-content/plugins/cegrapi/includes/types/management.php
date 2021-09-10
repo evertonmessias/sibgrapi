@@ -109,4 +109,4 @@ function role_caps_management()
 add_action('admin_init', 'role_caps_management', 999);
 
 // POSTMETA ************************************************
-include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/postmeta-management.php';
+include ABSPATH . '/wp-content/plugins/cegrapi/includes/types/postmeta/postmeta-management.php';

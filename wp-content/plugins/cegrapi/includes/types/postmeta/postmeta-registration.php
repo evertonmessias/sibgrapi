@@ -1,6 +1,6 @@
 <?php
 
-// Data **********************************
+/* Data **********************************
 
 function field_box_registration_year()
 {
@@ -14,7 +14,7 @@ function field_registration_year($post)
 ?>
     <input type="number" min="2000" max="2100" step="1" name="registration_year" value="<?php echo $value; ?>">
 <?php
-}
+}*/
 
 // Conteúdo ********************************
 
@@ -35,10 +35,10 @@ function field_registration_content($post)
 
 function save_postmeta_registration($post_id)
 {
-    if (isset($_POST['registration_year'])) {
+    /*if (isset($_POST['registration_year'])) {
         $registration_year = sanitize_text_field($_POST['registration_year']);
         update_post_meta($post_id, 'registration_year', $registration_year);
-    }
+    }*/
 
     if (isset($_POST['registration_content'])) {
         $registration_content = $_POST['registration_content'];

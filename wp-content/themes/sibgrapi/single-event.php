@@ -74,6 +74,12 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 	<!-- ======= Schedule Section ======= -->
 	<section id="Schedule" class="services">
 		<div class="container" data-aos="fade-up">
+			<?php
+			$terms = get_terms('schedule_categories', array('order' => 'DESC'));
+			foreach ($terms as $term) {
+				$cat_schedule[] = $term->name;
+			}			
+			?>
 			<div class="section-title">
 				<h2>Schedule</h2>
 				<h3>Check out our <span>Schedule</span></h3>
@@ -81,14 +87,15 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'schedule',
-					'posts_per_page' => 12
+					'post_type' => 'schedule',					
+					'schedule_categories' => $cat_schedule[0],
+					'order' => 'DESC'
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
 					$syear = get_post_meta(get_the_ID(), 'schedule_date', true);
-					if (strtotime($syear) >= strtotime(date('Y-m-d')) && explode("-", $syear)[0] == $eyear) {
+					if (strtotime($syear) >= strtotime(date('Y-m-d'))) {
 				?>
 						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 							<div class="icon-box">
@@ -147,7 +154,12 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 	<!-- ======= Registration Section ======= -->
 	<section id="Registration" class="counts section-bg">
 		<div class="container" data-aos="fade-up">
-
+			<?php
+			$terms = get_terms('registration_categories', array('order' => 'DESC'));
+			foreach ($terms as $term) {
+				$cat_registration[] = $term->name;
+			}			
+			?>
 			<div class="section-title">
 				<h2>Registration</h2>
 				<h3>Registration <span><?php echo $eyear; ?></span></h3>
@@ -156,10 +168,9 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'registration',
-					'orderby' => 'title',
-					'order'   => 'ASC',
-					'posts_per_page' => 100
+					'post_type' => 'registration',					
+					'registration_categories' => $cat_registration[0],
+					'order' => 'ASC'
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
