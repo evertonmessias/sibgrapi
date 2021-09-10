@@ -99,9 +99,9 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
     background-color: #ccc !important;
   }
 
-  .team .member,
   .services .icon-box:hover,
-  .portfolio .portfolio-item:hover {
+  .portfolio .portfolio-item:hover,
+  .counts .box-registration:hover {
     box-shadow: 0px 0 5px 0 <?php echo $post_color; ?>;
   }
 

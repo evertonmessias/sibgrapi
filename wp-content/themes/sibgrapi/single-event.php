@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php 
+<?php
 $pid = get_the_ID();
 $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 ?>
@@ -17,39 +17,39 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<div class="carousel-inner" role="listbox">
 
 				<!-- Slide 1 -->
-				<?php if (get_post_meta($post->ID, 'event_logo_2', true) != "") { ?>
-					<div class="carousel-item active" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_logo_2', true); ?>');">
+				<?php if (get_post_meta($post->ID, 'event_slide_1', true) != "") { ?>
+					<div class="carousel-item active" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_slide_1', true); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_logo_2_1', true) ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_logo_2_2', true); ?></p>
-								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_logo_2_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_logo_2_3', true))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_slide_1_1', true) ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_slide_1_2', true); ?></p>
+								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_slide_1_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_slide_1_3', true))[0]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 
 				<!-- Slide 2 -->
-				<?php if (get_post_meta($post->ID, 'event_logo_3', true) != "") { ?>
-					<div class="carousel-item" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_logo_3', true); ?>');">
+				<?php if (get_post_meta($post->ID, 'event_slide_2', true) != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_slide_2', true); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_logo_3_1', true) ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_logo_3_2', true); ?></p>
-								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_logo_3_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_logo_3_3', true))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_slide_2_1', true) ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_slide_2_2', true); ?></p>
+								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_slide_2_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_slide_2_3', true))[0]; ?></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 
 				<!-- Slide 3 -->
-				<?php if (get_post_meta($post->ID, 'event_logo_4', true) != "") { ?>
-					<div class="carousel-item" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_logo_4', true); ?>');">
+				<?php if (get_post_meta($post->ID, 'event_slide_3', true) != "") { ?>
+					<div class="carousel-item" style="background-image: url('<?php echo get_post_meta($post->ID, 'event_slide_3', true); ?>');">
 						<div class="carousel-container">
 							<div class="carousel-content container">
-								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_logo_4_1', true) ?></h2>
-								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_logo_4_2', true); ?></p>
-								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_logo_4_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_logo_4_3', true))[0]; ?></a>
+								<h2 class="animate__animated animate__fadeInDown"><?php echo get_post_meta($post->ID, 'event_slide_3_1', true) ?></h2>
+								<p class="animate__animated animate__fadeInUp"><?php echo get_post_meta($post->ID, 'event_slide_3_2', true); ?></p>
+								<a href="<?php echo explode(",", get_post_meta($post->ID, 'event_slide_3_3', true))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_post_meta($post->ID, 'event_slide_3_3', true))[0]; ?></a>
 							</div>
 						</div>
 					</div>
@@ -88,7 +88,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 				while ($loop->have_posts()) {
 					$loop->the_post();
 					$syear = get_post_meta(get_the_ID(), 'schedule_date', true);
-					if (strtotime($syear) >= strtotime(date('Y-m-d')) && explode("-",$syear)[0] == $eyear) {
+					if (strtotime($syear) >= strtotime(date('Y-m-d')) && explode("-", $syear)[0] == $eyear) {
 				?>
 						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 							<div class="icon-box">
@@ -110,13 +110,13 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 
 			<div class="section-title">
 				<h2>Program</h2>
-				<h3>Program <span><?php echo get_option('portal_input_1'); ?></span></h3>
+				<h3>Program <span><?php echo $eyear; ?></span></h3>
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
 				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="member">
-						<?php echo get_post_meta($pid, 'event_content', true); ?>
+					<div class="member program">
+						<?php echo get_post_meta($pid, 'event_program', true); ?>
 						<br>
 					</div>
 				</div>
@@ -130,7 +130,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 
 			<div class="section-title">
 				<h2>Committee</h2>
-				<h3>Committee <span><?php echo get_option('portal_input_1'); ?></span></h3>
+				<h3>Committee <span><?php echo $eyear; ?></span></h3>
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -145,36 +145,37 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 	</section>
 
 	<!-- ======= Registration Section ======= -->
-	<section id="Registration" class="team section-bg">
+	<section id="Registration" class="counts section-bg">
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
 				<h2>Registration</h2>
-				<h3>Registration <span><?php echo get_option('portal_input_1'); ?></span></h3>
+				<h3>Registration <span><?php echo $eyear; ?></span></h3>
 			</div>
-
-			<div class="row" data-aos="fade-up" data-aos-delay="100">
-				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="member">
-						<ul class="registration">
-							<?php
-							$args = array(
-								'post_type' => 'registration',
-								'orderby' => 'title',
-								'order'   => 'ASC',
-								'posts_per_page' => 100
-							);
-							$loop = new WP_Query($args);
-							while ($loop->have_posts()) {
-								$loop->the_post();
-							?>
-								<li>
-									<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-								</li>
-							<?php }wp_reset_postdata() ?>
-						</ul>
+			<h1>&nbsp;</h1>
+			<div class="row">
+				<?php
+				$args = array(
+					'post_type' => 'registration',
+					'orderby' => 'title',
+					'order'   => 'ASC',
+					'posts_per_page' => 100
+				);
+				$loop = new WP_Query($args);
+				while ($loop->have_posts()) {
+					$loop->the_post();
+				?>
+					<div class="col-lg-4 col-md-4">
+						<div class="count-box box-registration">
+							<a href="<?php the_permalink() ?>">
+								<i class="bx bx-highlight"></i>
+								<br>
+								<?php the_title(); ?>
+							</a>
+						</div>
 					</div>
-				</div>
+				<?php }
+				wp_reset_postdata() ?>
 			</div>
 		</div>
 	</section>
@@ -187,22 +188,22 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<h3>Sponsor</h3>
 		</div>
 		<?php
-		$org_logo_1 = array(get_option('portal_input_11'), explode(',', get_option('portal_input_12'))[0], explode(',', get_option('portal_input_12'))[1]);
-		$org_logo_2 = array(get_option('portal_input_13'), explode(',', get_option('portal_input_14'))[0], explode(',', get_option('portal_input_14'))[1]);
-		$org_logo_3 = array(get_option('portal_input_15'), explode(',', get_option('portal_input_16'))[0], explode(',', get_option('portal_input_16'))[1]);
-		$org_logo_4 = array(get_option('portal_input_17'), explode(',', get_option('portal_input_18'))[0], explode(',', get_option('portal_input_18'))[1]);
-		$org_logo_5 = array(get_option('portal_input_19'), explode(',', get_option('portal_input_20'))[0], explode(',', get_option('portal_input_20'))[1]);
-		$org_logo_6 = array(get_option('portal_input_21'), explode(',', get_option('portal_input_22'))[0], explode(',', get_option('portal_input_22'))[1]);
-		$org_logos = array($org_logo_1, $org_logo_2, $org_logo_3, $org_logo_4, $org_logo_5, $org_logo_6)
+		$sponsor_1 = array(get_post_meta($post->ID, 'event_sponsor_1', true), explode(',', get_post_meta($post->ID, 'event_sponsor_1_1', true))[0], explode(',', get_post_meta($post->ID, 'event_sponsor_1_1', true))[1]);
+		$sponsor_2 = array(get_post_meta($post->ID, 'event_sponsor_2', true), explode(',', get_post_meta($post->ID, 'event_sponsor_2_1', true))[0], explode(',', get_post_meta($post->ID, 'event_sponsor_2_1', true))[1]);
+		$sponsor_3 = array(get_post_meta($post->ID, 'event_sponsor_3', true), explode(',', get_post_meta($post->ID, 'event_sponsor_3_1', true))[0], explode(',', get_post_meta($post->ID, 'event_sponsor_3_1', true))[1]);
+		$sponsor_4 = array(get_post_meta($post->ID, 'event_sponsor_4', true), explode(',', get_post_meta($post->ID, 'event_sponsor_4_1', true))[0], explode(',', get_post_meta($post->ID, 'event_sponsor_4_1', true))[1]);
+		$sponsor_5 = array(get_post_meta($post->ID, 'event_sponsor_5', true), explode(',', get_post_meta($post->ID, 'event_sponsor_5_1', true))[0], explode(',', get_post_meta($post->ID, 'event_sponsor_5_1', true))[1]);
+		$sponsor_6 = array(get_post_meta($post->ID, 'event_sponsor_6', true), explode(',', get_post_meta($post->ID, 'event_sponsor_6_1', true))[0], explode(',', get_post_meta($post->ID, 'event_sponsor_6_1', true))[1]);
+		$sponsors = array($sponsor_1, $sponsor_2, $sponsor_3, $sponsor_4, $sponsor_5, $sponsor_6)
 		?>
 		<div class="container" data-aos="zoom-in">
 			<div class="row">
 				<?php
-				foreach ($org_logos as $logos) {
-					if ($logos[0] != "") { ?>
+				foreach ($sponsors as $spo) {
+					if ($spo[0] != "") { ?>
 						<div class="logo col-lg-4 col-md-4 col-4 d-flex align-items-center justify-content-center">
-							<a href="<?php echo $logos[2]; ?>" target="_blank">
-								<img src="<?php echo $logos[0]; ?>" class="img-fluid" title="<?php echo $logos[1]; ?>">
+							<a href="<?php echo $spo[2]; ?>" target="_blank">
+								<img src="<?php echo $spo[0]; ?>" class="img-fluid" title="<?php echo $spo[1]; ?>">
 							</a>
 						</div>
 				<?php }
@@ -224,7 +225,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<div class="row" data-aos="fade-up" data-aos-delay="100">
 
 				<div class="col-lg-12">
-					<iframe class="mb-4 mb-lg-0" src="<?php echo get_option('portal_input_6'); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+					<iframe class="mb-4 mb-lg-0" src="<?php echo get_post_meta($pid, 'event_maps', true); ?>" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
 				</div>
 
 			</div>

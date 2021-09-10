@@ -6,20 +6,34 @@ window.onload = function () {
         $("#event_year_id").show();
         $("#event_color_id").show();
         $("#event_logo_1_id").show();
-        $("#event_logo_2_id").show();
-        $("#event_logo_3_id").show();
-        $("#event_logo_4_id").show();
-        $("#event_content_id").show();
+        $("#event_slide_1_id").show();
+        $("#event_slide_2_id").show();
+        $("#event_slide_3_id").show();
+        $("#event_program_id").show();
+        $("#event_sponsor_1_id").show();
+        $("#event_sponsor_2_id").show();
+        $("#event_sponsor_3_id").show();
+        $("#event_sponsor_4_id").show();
+        $("#event_sponsor_5_id").show();
+        $("#event_sponsor_6_id").show();
+        $("#event_maps_id").show();
     }
     function external(){
         $("#event_url_id").show();
         $("#event_year_id").hide();
         $("#event_color_id").hide();
         $("#event_logo_1_id").show();
-        $("#event_logo_2_id").hide();
-        $("#event_logo_3_id").hide();
-        $("#event_logo_4_id").hide();
-        $("#event_content_id").hide();
+        $("#event_slide_1_id").hide();
+        $("#event_slide_2_id").hide();
+        $("#event_slide_3_id").hide();
+        $("#event_program_id").hide();
+        $("#event_sponsor_1_id").hide();
+        $("#event_sponsor_2_id").hide();
+        $("#event_sponsor_3_id").hide();
+        $("#event_sponsor_4_id").hide();
+        $("#event_sponsor_5_id").hide();
+        $("#event_sponsor_6_id").hide();
+        $("#event_maps_id").hide();
     }
 
     if($("#vwebsite").val() == "Internal"){
@@ -57,8 +71,12 @@ function upload_image(type, val) {
             $('#portal_input_' + val).val("/" + url);
             $('#preview_portal_input_' + val).attr('src', "/" + url);
         } else if (type == 2) {
-            $('#event_logo_' + val).val("/" + url);
-            $('#preview_event_logo_' + val).attr('src', "/" + url);
+            $('#event_slide_' + val).val("/" + url);
+            $('#preview_event_slide_' + val).attr('src', "/" + url);
+        }
+        else if (type == 3) {
+            $('#event_sponsor_' + val).val("/" + url);
+            $('#preview_event_sponsor_' + val).attr('src', "/" + url);
         }
     })
         .open();
