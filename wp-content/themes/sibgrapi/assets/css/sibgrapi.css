@@ -113,6 +113,10 @@
     top: -32px;
 }
 
+.page.management .img-management{
+    max-width: 150px;
+}
+
 .page.page-portfolio .portfolio-item.page-portfolio{
     float: left;
 }
