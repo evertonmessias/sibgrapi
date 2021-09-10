@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main id="main" class="page management" data-aos="fade-up">
+<main id="main" class="page committee" data-aos="fade-up">
   <!-- ======= Breadcrumbs ======= -->
   <section class="breadcrumbs">
     <div class="container">
@@ -32,16 +32,16 @@
         <?php if(has_post_thumbnail()){ ?>
         <div class="owl-carousel portfolio-details-carousel">
           <a href="<?php the_post_thumbnail_url('full'); ?>" target="_blank">
-            <img src="<?php the_post_thumbnail_url('full'); ?>" class="img-fluid img-management" title="<?php the_title() ?>">
+            <img src="<?php the_post_thumbnail_url('full'); ?>" class="img-fluid img-committee" title="<?php the_title() ?>">
           </a>
         </div>  
         <?php } ?>
       </div>
-
+      
       <div class="member-info">
-								<?php if (get_post_meta($post->ID, 'management_caption_url', true) != "") { ?>
+								<?php if (get_post_meta($post->ID, 'committee_caption_url', true) != "") { ?>
 									<h4>
-										<a href="<?php echo get_post_meta($post->ID, 'management_caption_url', true); ?>" target="_blank">
+										<a href="<?php echo get_post_meta($post->ID, 'committee_caption_url', true); ?>" target="_blank">
 											<?php echo get_the_title(); ?>
 										</a>
 									</h4>
@@ -51,11 +51,11 @@
 									</h4>
 								<?php } ?>
 
-								<span><?php echo get_post_meta($post->ID, 'management_caption_role', true); ?></span><br>
-								<span><?php echo get_post_meta($post->ID, 'management_caption_local', true); ?></span>
+								<span><?php echo get_post_meta($post->ID, 'committee_caption_role', true); ?></span><br>
+								<span><?php echo get_post_meta($post->ID, 'committee_caption_local', true); ?></span>
 							</div>
       </div>
-    </div>
+ 
   </section><!-- End Portfolio Details Section -->
 
 </main><!-- End #main -->

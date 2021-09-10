@@ -108,13 +108,20 @@
     border: 2px solid #e2eefd;
 }
 
-.page.page-portfolio .section-title h2, .page.management .section-title h2 {
+.page.page-portfolio .section-title h2, .page.management .section-title h2, .page.committee .section-title h2 {
     position: relative;
     top: -32px;
 }
 
-.page.management .img-management{
-    max-width: 150px;
+.page.management .member-info, .page.committee .member-info {
+    text-align: center;
+}
+
+.page.management .img-management, .page.committee .img-committee {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 250px;
 }
 
 .page.page-portfolio .portfolio-item.page-portfolio{

@@ -78,7 +78,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			$terms = get_terms('schedule_categories', array('order' => 'DESC'));
 			foreach ($terms as $term) {
 				$cat_schedule[] = $term->name;
-			}			
+			}
 			?>
 			<div class="section-title">
 				<h2>Schedule</h2>
@@ -87,7 +87,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'schedule',					
+					'post_type' => 'schedule',
 					'schedule_categories' => $cat_schedule[0],
 					'order' => 'DESC'
 				);
@@ -134,22 +134,57 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 	<!-- ======= Committee Section ======= -->
 	<section id="Committee" class="team">
 		<div class="container" data-aos="fade-up">
-
+			<?php
+			$terms = get_terms('committee_categories', array('order' => 'DESC'));
+			foreach ($terms as $term) {
+				$cat_committee[] = $term->name;
+			}
+			?>
 			<div class="section-title">
 				<h2>Committee</h2>
-				<h3>Committee <span><?php echo $eyear; ?></span></h3>
+				<h3><?php echo $cat_committee[0]; ?></h3>
 			</div>
+			<div class="row">
+				<?php
+				$args = array(
+					'post_type' => 'committee',
+					'committee_categories' => $cat_committee[0],
+					'order' => 'DESC'
+				);
+				$loop = new WP_Query($args);
+				while ($loop->have_posts()) {
+					$loop->the_post();
+				?>
+					<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+						<div class="member">
+							<div class="member-img">
+								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+											else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
+							</div>
+							<div class="member-info">
+								<?php if (get_post_meta($post->ID, 'committee_caption_url', true) != "") { ?>
+									<h4>
+										<a href="<?php echo get_post_meta($post->ID, 'committee_caption_url', true); ?>" target="_blank">
+											<?php echo get_the_title(); ?>
+										</a>
+									</h4>
+								<?php } else { ?>
+									<h4>
+										<?php echo get_the_title() ?>
+									</h4>
+								<?php } ?>
 
-			<div class="row" data-aos="fade-up" data-aos-delay="100">
-				<div class="col-lg-12 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="member">
-						<?php echo get_post_meta($pid, 'event_content', true); ?>
-						<br>
+								<span><?php echo get_post_meta($post->ID, 'committee_caption_role', true); ?></span>
+								<span><?php echo get_post_meta($post->ID, 'committee_caption_local', true); ?></span>
+							</div>
+						</div>
 					</div>
-				</div>
+
+				<?php wp_reset_postdata();
+				} ?>
 			</div>
 		</div>
-	</section>
+	</section><!-- End Team Section -->
 
 	<!-- ======= Registration Section ======= -->
 	<section id="Registration" class="counts section-bg">
@@ -158,7 +193,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			$terms = get_terms('registration_categories', array('order' => 'DESC'));
 			foreach ($terms as $term) {
 				$cat_registration[] = $term->name;
-			}			
+			}
 			?>
 			<div class="section-title">
 				<h2>Registration</h2>
@@ -168,7 +203,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'registration',					
+					'post_type' => 'registration',
 					'registration_categories' => $cat_registration[0],
 					'order' => 'ASC'
 				);

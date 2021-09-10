@@ -73,3 +73,4 @@ add_action('function_about','function_about');
 
 //************* Add thumbnails
 add_theme_support('post-thumbnails', array('management'));
+add_theme_support('post-thumbnails', array('committee'));
