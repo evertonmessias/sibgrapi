@@ -1,6 +1,10 @@
 <?php get_header(); ?>
 <?php
-$year = get_post_meta(get_the_ID(), 'registration_year', true);
+$terms = get_terms('registration_categories', array('order' => 'DESC'));
+foreach ($terms as $term) {
+   $cat_registration[] = $term->name;
+}
+$year = $cat_registration[0];
 $loop = new WP_Query(array('post_type' => 'event'));
 while ($loop->have_posts()) {
    $loop->the_post();

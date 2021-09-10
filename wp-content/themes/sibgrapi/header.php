@@ -3,15 +3,25 @@
 $nav_menu_portal = false;
 $nav_menu_sibgrapi = false;
 
+$terms = get_terms('registration_categories', array('order' => 'DESC'));
+foreach ($terms as $term) {
+   $cat_registration[] = $term->name;
+}
+
+$terms = get_terms('schedule_categories', array('order' => 'DESC'));
+foreach ($terms as $term) {
+   $cat_schedule[] = $term->name;
+}
+
   // ********************** Montar headers:
 
 if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active()[1] == "schedule" && url_active()[2] != "")) {
   // ********************** Montar header para types 
   if (url_active()[1] == "schedule") {
-    $year = explode("-", get_post_meta(get_the_ID(), 'schedule_date', true))[0];
+    $year = $cat_schedule[0];
   }
   if (url_active()[1] == "registration") {
-    $year = get_post_meta(get_the_ID(), 'registration_year', true);
+    $year = $cat_registration[0];
   }
   $ok = false;
   $loop = new WP_Query(array('post_type' => 'event'));

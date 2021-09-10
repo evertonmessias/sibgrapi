@@ -1,6 +1,10 @@
 <?php get_header(); ?>
 <?php
-$year = explode("-", get_post_meta(get_the_ID(), 'schedule_date', true))[0];
+$terms = get_terms('schedule_categories', array('order' => 'DESC'));
+foreach ($terms as $term) {
+   $cat_schedule[] = $term->name;
+}
+$year = $cat_schedule[0];
 $loop = new WP_Query(array('post_type' => 'event'));
 while ($loop->have_posts()) {
    $loop->the_post();
