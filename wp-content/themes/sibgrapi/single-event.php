@@ -95,7 +95,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 				while ($loop->have_posts()) {
 					$loop->the_post();
 					$syear = get_post_meta(get_the_ID(), 'schedule_date', true);
-					if (strtotime($syear) >= strtotime(date('Y-m-d'))) {
+					if (strtotime($syear) >= strtotime(date('Y-m-d')) && explode("-", $syear)[0] == $eyear) {
 				?>
 						<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 							<div class="icon-box">
@@ -142,7 +142,7 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 			?>
 			<div class="section-title">
 				<h2>Committee</h2>
-				<h3><?php echo $cat_committee[0]; ?></h3>
+				<h3><?php echo $eyear; ?></h3>
 			</div>
 			<div class="row">
 				<?php
@@ -154,34 +154,35 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
+					if ($cat_committee[0] == $eyear) {
 				?>
-					<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-						<div class="member">
-							<div class="member-img">
-								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
-											else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
-							</div>
-							<div class="member-info">
-								<?php if (get_post_meta($post->ID, 'committee_caption_url', true) != "") { ?>
-									<h4>
-										<a href="<?php echo get_post_meta($post->ID, 'committee_caption_url', true); ?>" target="_blank">
-											<?php echo get_the_title(); ?>
-										</a>
-									</h4>
-								<?php } else { ?>
-									<h4>
-										<?php echo get_the_title() ?>
-									</h4>
-								<?php } ?>
+						<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+							<div class="member">
+								<div class="member-img">
+									<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+												else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
+								</div>
+								<div class="member-info">
+									<?php if (get_post_meta($post->ID, 'committee_caption_url', true) != "") { ?>
+										<h4>
+											<a href="<?php echo get_post_meta($post->ID, 'committee_caption_url', true); ?>" target="_blank">
+												<?php echo get_the_title(); ?>
+											</a>
+										</h4>
+									<?php } else { ?>
+										<h4>
+											<?php echo get_the_title() ?>
+										</h4>
+									<?php } ?>
 
-								<span><?php echo get_post_meta($post->ID, 'committee_caption_role', true); ?></span>
-								<span><?php echo get_post_meta($post->ID, 'committee_caption_local', true); ?></span>
+									<span><?php echo get_post_meta($post->ID, 'committee_caption_role', true); ?></span>
+									<span><?php echo get_post_meta($post->ID, 'committee_caption_local', true); ?></span>
+								</div>
 							</div>
 						</div>
-					</div>
-
-				<?php wp_reset_postdata();
-				} ?>
+				<?php }
+				}
+				wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</section><!-- End Team Section -->
@@ -210,17 +211,19 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
+					if ($cat_registration[0] == $eyear) {
 				?>
-					<div class="col-lg-4 col-md-4">
-						<div class="count-box box-registration">
-							<a href="<?php the_permalink() ?>">
-								<i class="bx bx-highlight"></i>
-								<br>
-								<?php the_title(); ?>
-							</a>
+						<div class="col-lg-4 col-md-4">
+							<div class="count-box box-registration">
+								<a href="<?php the_permalink() ?>">
+									<i class="bx bx-highlight"></i>
+									<br>
+									<?php the_title(); ?>
+								</a>
+							</div>
 						</div>
-					</div>
 				<?php }
+				}
 				wp_reset_postdata() ?>
 			</div>
 		</div>

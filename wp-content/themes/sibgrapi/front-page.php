@@ -200,7 +200,9 @@
 					<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 						<div class="icon-box">
 							<a href="<?php echo $urllink; ?>" <?php echo $target; ?>>
-								<img src="<?php echo get_post_meta($post->ID, 'event_logo_1', true); ?>" title="<?php the_title() ?>">
+								<?php if (get_post_meta($post->ID, 'event_logo_1', true) != "") { ?>
+									<img src="<?php echo get_post_meta($post->ID, 'event_logo_1', true); ?>" title="<?php the_title() ?>">
+								<?php } ?>
 								<h4><?php the_title() ?></h4>
 							</a>
 						</div>
@@ -213,6 +215,14 @@
 	<!-- ======= Portfolio Section ======= -->
 	<section id="Portfolio" class="portfolio">
 		<div class="container" data-aos="fade-up">
+			<?php
+			$categories = get_terms('category', array('order' => 'DESC'));
+			foreach ($categories as $category) {
+				if ($category->name != "Portfolio") {
+				$cat_portfolio[] = $category->name;
+				}
+			}
+			?>
 
 			<div class="section-title">
 				<h2>Portfolio</h2>
@@ -222,11 +232,11 @@
 				<div class="col-lg-12 d-flex justify-content-center">
 
 					<ul id="portfolio-flters">
-						<?php $categories = get_categories(array('order' => 'DESC'));
+						<?php
 						foreach ($categories as $category) {
-							if (strstr($category->slug, "20")) { ?>
-								<li data-filter=".filter-<?php echo $category->slug; ?>" <?php if (get_option('portal_input_1') == $category->slug) echo "class='filter-active'";
-																							else echo "onclick='mostrar(" . $category->slug . ")'"; ?>><?php echo $category->slug; ?></li>
+							if ($category->name != "Portfolio") { ?>
+								<li data-filter=".filter-<?php echo $category->name; ?>" <?php if ($cat_portfolio[0] == $category->name) echo "class='filter-active'";
+																							else echo "onclick='mostrar(" . $category->name . ")'"; ?>><?php echo $category->name; ?></li>
 						<?php }
 						} ?>
 					</ul>
@@ -236,16 +246,16 @@
 			<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
 				<?php foreach ($categories as $category) {
-					if (strstr($category->slug, "20")) {
+					if ($category->name != "Portfolio") {
 						$args = array(
-							'category_name' => $category->slug,
+							'category_name' => $category->name,
 							'posts_per_page' => 6
 						);
 						$loop = new WP_Query($args);
 						while ($loop->have_posts()) {
 							$loop->the_post();
 				?>
-							<div <?php if (get_option('portal_input_1') != $category->slug) echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->slug; ?>">
+							<div <?php if ($cat_portfolio[0] != $category->name) echo "style='display: none;'"; ?> class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $category->name; ?>">
 								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
 											else echo SITEPATH . "assets/img/semimagem.png"; ?>" class="img-fluid" title="<?php the_title() ?>">
 								<div class="portfolio-info">
@@ -280,39 +290,39 @@
 			<div class="row">
 				<?php
 				$args = array(
-					'post_type' => 'management',					
+					'post_type' => 'management',
 					'management_categories' => $cat_management[0],
 					'order' => 'DESC'
-				 );
+				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
 					$loop->the_post();
 				?>
-						<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-							<div class="member">
-								<div class="member-img">
-									<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
-												else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
-								</div>
-								<div class="member-info">
-									<?php if (get_post_meta($post->ID, 'management_caption_url', true) != "") { ?>
-										<h4>
-											<a href="<?php echo get_post_meta($post->ID, 'management_caption_url', true); ?>" target="_blank">
-												<?php echo get_the_title(); ?>
-											</a>
-										</h4>
-									<?php } else { ?>
-										<h4>
-											<?php echo get_the_title() ?>
-										</h4>
-									<?php } ?>
+					<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+						<div class="member">
+							<div class="member-img">
+								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
+											else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
+							</div>
+							<div class="member-info">
+								<?php if (get_post_meta($post->ID, 'management_caption_url', true) != "") { ?>
+									<h4>
+										<a href="<?php echo get_post_meta($post->ID, 'management_caption_url', true); ?>" target="_blank">
+											<?php echo get_the_title(); ?>
+										</a>
+									</h4>
+								<?php } else { ?>
+									<h4>
+										<?php echo get_the_title() ?>
+									</h4>
+								<?php } ?>
 
-									<span><?php echo get_post_meta($post->ID, 'management_caption_role', true); ?></span>
-									<span><?php echo get_post_meta($post->ID, 'management_caption_local', true); ?></span>
-								</div>
+								<span><?php echo get_post_meta($post->ID, 'management_caption_role', true); ?></span>
+								<span><?php echo get_post_meta($post->ID, 'management_caption_local', true); ?></span>
 							</div>
 						</div>
-				
+					</div>
+
 				<?php wp_reset_postdata();
 				} ?>
 			</div>

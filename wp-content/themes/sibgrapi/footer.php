@@ -7,11 +7,11 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3 class="logo mr-auto">
               <a href="/">
-                <img src="<?php echo get_option('portal_input_2'); ?>" title="SIBGRAPI">
+                <img src="<?php echo get_option('portal_input_2'); ?>" title="SIBGRAPI"><br><br>
                 <span>SIBGRAPI</span>
               </a>
             </h3>
-            <h3><?php echo get_option('portal_input_1'); ?></h3>
+            <h3>Portal</h3>
             <p>
               <?php if (get_option('portal_input_5') != "") { ?>
                 <i class="icofont-envelope"></i>&ensp;<a href="mailto:<?php echo get_option('portal_input_5'); ?>"><?php echo get_option('portal_input_5'); ?></a>

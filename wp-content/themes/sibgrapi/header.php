@@ -5,15 +5,15 @@ $nav_menu_sibgrapi = false;
 
 $terms = get_terms('registration_categories', array('order' => 'DESC'));
 foreach ($terms as $term) {
-   $cat_registration[] = $term->name;
+  $cat_registration[] = $term->name;
 }
 
 $terms = get_terms('schedule_categories', array('order' => 'DESC'));
 foreach ($terms as $term) {
-   $cat_schedule[] = $term->name;
+  $cat_schedule[] = $term->name;
 }
 
-  // ********************** Montar headers:
+// ********************** Montar headers:
 
 if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active()[1] == "schedule" && url_active()[2] != "")) {
   // ********************** Montar header para types 
@@ -32,29 +32,35 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
       $url_menu = "/" . explode("/", get_the_permalink())[3] . "/" . explode("/", get_the_permalink())[4];
       $title = get_the_title();
       $post_color = get_post_meta(get_the_ID(), 'event_color', true);
-      $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);  
-      $ok = true;       
-    }    
-  }  
+      $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);
+      $ok = true;
+    }
+  }
   wp_reset_postdata();
-  if(!$ok){
-    $title = "Post without event !";$post_color = "#aaa";$logo = SITEPATH."assets/img/semimagem.png";
+  if (!$ok) {
+    $title = "Post without event !";
+    $post_color = "#aaa";
+    $logo = SITEPATH . "assets/img/semimagem.png";
   }
 } else if (url_active()[1] == "event" && url_active()[2] != "") {
-  // ********************** Montar header para o event
-  if(get_the_title() == ""){echo "<script>window.location.href = '/';</script>";}
-  $nav_menu_sibgrapi = true;
-  $url_menu = "/" . url_active()[1] . "/" . url_active()[2];
-  $title = get_the_title();  
-  $post_color = get_post_meta(get_the_ID(), 'event_color', true);
-  $logo = get_post_meta(get_the_ID(), 'event_logo_1', true); 
+  if (get_post_meta(get_the_ID(), 'event_url', true) != "") {
+    echo "<script>window.location.href='" . get_post_meta(get_the_ID(), 'event_url', true) . "'</script>";
+  } else {
+    // ********************** Montar header para o event
+    if (get_the_title() == "")echo "<script>window.location.href = '/';</script>";
+    $nav_menu_sibgrapi = true;
+    $url_menu = "/" . url_active()[1] . "/" . url_active()[2];
+    $title = get_the_title();
+    $post_color = get_post_meta(get_the_ID(), 'event_color', true);
+    $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);
+  }
 } else {
   // ********************** Montar header para o portal
   $nav_menu_portal = true;
   $url_menu = "/";
   $title = get_option('portal_input_0');
   $post_color = get_option('portal_input_3');
-  $logo = get_option('portal_input_2');  
+  $logo = get_option('portal_input_2');
 }
 ?>
 
@@ -87,73 +93,73 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
   <link href="<?php echo SITEPATH; ?>assets/css/style.css" rel="stylesheet">
   <link href="<?php echo SITEPATH; ?>assets/css/sibgrapi.css" rel="stylesheet">
   <style>
-  .back-to-top i:hover,
-  #topbar,
-  #hero .btn-get-started,
-  .featured-services .icon-box:hover::before,
-  .counts .count-box i,
-  .nav-menu>ul>li>a:before,
-  .skills .progress-bar,
-  .portfolio-details .portfolio-details-carousel .owl-dot.active,
-  #footer .footer-newsletter form input[type="submit"],
-  #footer .footer-top .social-links a,
-  .php-email-form .button-send {
-    background-color: <?php echo $post_color; ?>;
-  }
+    .back-to-top i:hover,
+    #topbar,
+    #hero .btn-get-started,
+    .featured-services .icon-box:hover::before,
+    .counts .count-box i,
+    .nav-menu>ul>li>a:before,
+    .skills .progress-bar,
+    .portfolio-details .portfolio-details-carousel .owl-dot.active,
+    #footer .footer-newsletter form input[type="submit"],
+    #footer .footer-top .social-links a,
+    .php-email-form .button-send {
+      background-color: <?php echo $post_color; ?>;
+    }
 
-  .contact .php-email-form button[type="submit"] {
-    background-color: <?php echo $post_color; ?> !important;
-  }
+    .contact .php-email-form button[type="submit"] {
+      background-color: <?php echo $post_color; ?> !important;
+    }
 
-  .contact .php-email-form button[type="submit"]:hover {
-    background-color: #ccc !important;
-  }
+    .contact .php-email-form button[type="submit"]:hover {
+      background-color: #ccc !important;
+    }
 
-  .services .icon-box:hover,
-  .portfolio .portfolio-item:hover,
-  .counts .box-registration:hover {
-    box-shadow: 0px 0 5px 0 <?php echo $post_color; ?>;
-  }
+    .services .icon-box:hover,
+    .portfolio .portfolio-item:hover,
+    .counts .box-registration:hover {
+      box-shadow: 0px 0 5px 0 <?php echo $post_color; ?>;
+    }
 
-  #preloader:before {
-    border-color: 6px solid <?php echo $post_color; ?>;
-  }
+    #preloader:before {
+      border-color: 6px solid <?php echo $post_color; ?>;
+    }
 
-  .contact .php-email-form input:focus,
-  .contact .php-email-form textarea:focus,
-  .services .icon-box:hover .icon {
-    border-color: <?php echo $post_color; ?>;
-  }
+    .contact .php-email-form input:focus,
+    .contact .php-email-form textarea:focus,
+    .services .icon-box:hover .icon {
+      border-color: <?php echo $post_color; ?>;
+    }
 
-  a,
-  #header .logo a span,
-  .nav-menu a:hover,
-  .nav-menu .active>a,
-  .nav-menu li:hover>a,
-  .nav-menu .drop-down ul a:hover,
-  .nav-menu .drop-down ul .active>a,
-  .nav-menu .drop-down ul li:hover>a,
-  .mobile-nav a:hover,
-  .mobile-nav .active>a,
-  .mobile-nav li:hover>a,
-  .section-title h2,
-  .section-title h3 span,
-  .featured-services .icon i,
-  .about .content ul i,
-  .services .icon-box:hover h4 a,
-  .services .icon-box:hover .icon i,
-  .portfolio #portfolio-flters li:hover,
-  .portfolio #portfolio-flters li.filter-active,
-  .portfolio .portfolio-item .portfolio-info .preview-link:hover,
-  .portfolio .portfolio-item .portfolio-info .details-link:hover,
-  .contact .info-box i,
-  #footer .footer-top .footer-contact h3 span,
-  #footer .footer-top .footer-links ul i,
-  #footer .footer-top .footer-links ul a:hover,
-  #topbar .search form input[type=submit] {
-    color: <?php echo $post_color; ?>;
-  }
-</style>
+    a,
+    #header .logo a span,
+    .nav-menu a:hover,
+    .nav-menu .active>a,
+    .nav-menu li:hover>a,
+    .nav-menu .drop-down ul a:hover,
+    .nav-menu .drop-down ul .active>a,
+    .nav-menu .drop-down ul li:hover>a,
+    .mobile-nav a:hover,
+    .mobile-nav .active>a,
+    .mobile-nav li:hover>a,
+    .section-title h2,
+    .section-title h3 span,
+    .featured-services .icon i,
+    .about .content ul i,
+    .services .icon-box:hover h4 a,
+    .services .icon-box:hover .icon i,
+    .portfolio #portfolio-flters li:hover,
+    .portfolio #portfolio-flters li.filter-active,
+    .portfolio .portfolio-item .portfolio-info .preview-link:hover,
+    .portfolio .portfolio-item .portfolio-info .details-link:hover,
+    .contact .info-box i,
+    #footer .footer-top .footer-contact h3 span,
+    #footer .footer-top .footer-links ul i,
+    #footer .footer-top .footer-links ul a:hover,
+    #topbar .search form input[type=submit] {
+      color: <?php echo $post_color; ?>;
+    }
+  </style>
   <?php wp_head(); ?>
 </head>
 
@@ -206,7 +212,9 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto">
         <a href="<?php echo $url_menu; ?>">
-          <img src="<?php echo $logo; ?>" title="<?php echo $title; ?>">
+          <?php if ($logo != "") { ?>
+            <img src="<?php echo $logo; ?>" title="<?php echo $title; ?>">
+          <?php } ?>
           <span><?php echo $title; ?></span>
         </a>
       </h1>
