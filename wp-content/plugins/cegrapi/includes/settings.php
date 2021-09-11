@@ -11,13 +11,7 @@ function portal_page_html()
 			<!-- Name ********************************** -->
 			<label>
 				<h3 class="title">Site Name: </h3><input type="text" id="portal_input_0" name="portal_input_0" value="<?php echo get_option('portal_input_0'); ?>" />
-			</label>
-
-			<br><br><!-- Year *************************************** -->
-			<hr>
-			<label>
-				<h3 class="title">Year: </h3><input type="number" min="2020" max="2050" step="1" id="portal_input_1" name="portal_input_1" value="<?php echo get_option('portal_input_1'); ?>" />
-			</label>
+			</label>		
 
 			<br><br><!-- Colors *************************************** -->
 			<hr>
@@ -235,12 +229,6 @@ function portal_settings0()
 }
 add_action('admin_init', 'portal_settings0');
 
-function portal_settings1()
-{
-	add_option('portal_input_1');
-	register_setting('portal_option_grupo', 'portal_input_1');
-}
-add_action('admin_init', 'portal_settings1');
 
 function portal_settings111()
 {
