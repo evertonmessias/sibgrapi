@@ -22,9 +22,11 @@
     background-color: #aaa;
     color: #fff;
 }
+
 #topbar .social-links i{
     transform: scale(1.2);
 }
+
 #hero h2, #hero p{
     color: #FFF;
     text-shadow: black 0.1em 0.1em 0.2em
@@ -246,7 +248,39 @@ ul.registration{
     text-align: center;
 }
 
+@media(min-width:900px){
+    #header .search{
+        display: none;
+    }
+}
+
 @media(max-width:900px){
+    .mobile-nav ul{
+        margin-top: 30px
+    }
+    .mobile-nav .search{
+        width: 17em; 
+        height: 30px;  
+        position: relative;   
+        margin: 0 auto; 
+        margin-top: 30px;      
+    }
+    .mobile-nav .search form label{
+        display: none;
+    }
+    .mobile-nav .search form input{
+        border-radius: 2px;
+    }
+    .mobile-nav .search form input[type=text]{
+        border: 1px solid #888;    
+    }
+    .mobile-nav .search form input[type=submit]{        
+        margin-left: -2px;
+        background-color: #888; 
+        color: #fff;
+        border: 1px solid #888;
+    }
+
     .featured-services .icon-box{
         width: 100%;
     }

@@ -221,9 +221,11 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
 
       <!-- Nav-Menu -->
       <nav class="nav-menu d-none d-lg-block">
+          <div class="search">
+            <?php echo get_search_form() ?>
+          </div>
         <ul>
           <?php if ($nav_menu_portal) { ?>
-
             <li id="home"><a href="/">Home</a></li>
             <li id="sibgrapi"><a href="/#Sibgrapi">Sibgrapi</a></li>
             <li id="cegrapi"><a href="/#Cegrapi">Cegrapi</a></li>
@@ -243,7 +245,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
             <li id="local"><a href="<?php echo $url_menu; ?>/#Local">Local</a></li>
             <li><a href="/">Portal</a></li>
 
-          <?php } ?>
+          <?php } ?>          
         </ul>
       </nav>
       <!-- .nav-menu -->
