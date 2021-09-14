@@ -200,8 +200,8 @@
 					<div class="col-lg-3 col-md-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
 						<div class="icon-box">
 							<a href="<?php echo $urllink; ?>" <?php echo $target; ?>>
-								<?php if (get_post_meta($post->ID, 'event_logo_1', true) != "") { ?>
-									<img src="<?php echo get_post_meta($post->ID, 'event_logo_1', true); ?>" title="<?php the_title() ?>">
+								<?php if (get_post_meta($post->ID, 'event_slide_0', true) != "") { ?>
+									<img src="<?php echo get_post_meta($post->ID, 'event_slide_0', true); ?>" title="<?php the_title() ?>">
 								<?php } ?>
 								<h4><?php the_title() ?></h4>
 							</a>

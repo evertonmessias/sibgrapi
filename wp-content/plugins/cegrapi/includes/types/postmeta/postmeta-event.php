@@ -73,21 +73,21 @@ function field_event_color($post)
 
 // Logo **********************************
 
-function field_box_event_logo_1()
+function field_box_event_slide_0()
 {
-    add_meta_box('event_logo_1_id', 'Logo', 'field_event_logo_1', 'event');
+    add_meta_box('event_slide_0_id', 'Logo', 'field_event_slide_0', 'event');
 }
-add_action('add_meta_boxes', 'field_box_event_logo_1');
+add_action('add_meta_boxes', 'field_box_event_slide_0');
 
-function field_event_logo_1($post)
+function field_event_slide_0($post)
 {
-    $value3 = get_post_meta($post->ID, 'event_logo_1', true);
+    $value3 = get_post_meta($post->ID, 'event_slide_0', true);
 ?>
     <table class="tevent">
         <tr>
-            <td><a href="#" onclick="upload_image(2,1);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
-            <td><input type="text" name="event_logo_1" id="event_logo_1" value="<?php echo $value3; ?>" /></td>
-            <td>&emsp;<a href="<?php echo $value3; ?>" target="_blank"><img style="height:30px" id="preview_event_logo_1" alt="preview" title="preview" src="<?php echo $value3; ?>" /></a></td>
+            <td><a href="#" onclick="upload_image(2,0);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+            <td><input type="text" name="event_slide_0" id="event_slide_0" value="<?php echo $value3; ?>" /></td>
+            <td>&emsp;<a href="<?php echo $value3; ?>" target="_blank"><img style="height:30px" id="preview_event_slide_0" alt="preview" title="preview" src="<?php echo $value3; ?>" /></a></td>
         </tr>
     </table>
     <span>(Ideal size: 100x100 px)</span>
@@ -339,7 +339,7 @@ function field_event_sponsor_4($post)
 {?>
     <table class="tevent">
         <tr>
-            <td><a href="#" onclick="upload_image(3,1);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+            <td><a href="#" onclick="upload_image(3,4);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
             <td><input type="text" name="event_sponsor_4" id="event_sponsor_4" value="<?php echo get_post_meta($post->ID, 'event_sponsor_4', true); ?>" /></td>
             <td>&emsp;<a href="<?php echo get_post_meta($post->ID, 'event_sponsor_4', true); ?>" target="_blank"><img style="height:30px" id="preview_event_sponsor_4" alt="preview" title="preview" src="<?php echo get_post_meta($post->ID, 'event_sponsor_4', true); ?>" /></a></td>
         </tr>        
@@ -369,7 +369,7 @@ function field_event_sponsor_5($post)
 ?>
     <table class="tevent">
         <tr>
-            <td><a href="#" onclick="upload_image(3,2);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+            <td><a href="#" onclick="upload_image(3,5);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
             <td><input type="text" name="event_sponsor_5" id="event_sponsor_5" value="<?php echo get_post_meta($post->ID, 'event_sponsor_5', true); ?>" /></td>
             <td>&emsp;<a href="<?php echo get_post_meta($post->ID, 'event_sponsor_5', true); ?>" target="_blank"><img style="height:30px" id="preview_event_sponsor_5" alt="preview" title="preview" src="<?php echo get_post_meta($post->ID, 'event_sponsor_5', true); ?>" /></a></td>
         </tr>        
@@ -399,7 +399,7 @@ function field_event_sponsor_6($post)
 ?>
     <table class="tevent">
         <tr>
-            <td><a href="#" onclick="upload_image(3,3);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
+            <td><a href="#" onclick="upload_image(3,6);" class="button button-secondary"><?php _e('Upload Image'); ?></a></td>
             <td><input type="text" name="event_sponsor_6" id="event_sponsor_6" value="<?php echo get_post_meta($post->ID, 'event_sponsor_6', true); ?>" /></td>
             <td>&emsp;<a href="<?php echo get_post_meta($post->ID, 'event_sponsor_6', true); ?>" target="_blank"><img style="height:30px" id="preview_event_sponsor_6" alt="preview" title="preview" src="<?php echo get_post_meta($post->ID, 'event_sponsor_6', true); ?>" /></a></td>
         </tr>        
@@ -457,9 +457,9 @@ function save_postmeta_event($post_id)
         update_post_meta($post_id, 'event_color', $event_color);
     }
 
-    if (isset($_POST['event_logo_1'])) {
-        $event_logo_1 = $_POST['event_logo_1'];
-        update_post_meta($post_id, 'event_logo_1', $event_logo_1);
+    if (isset($_POST['event_slide_0'])) {
+        $event_slide_0 = $_POST['event_slide_0'];
+        update_post_meta($post_id, 'event_slide_0', $event_slide_0);
     }
 
     if (isset($_POST['event_slide_1'])) {

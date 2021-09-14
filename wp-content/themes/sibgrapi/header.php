@@ -32,7 +32,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
       $url_menu = "/" . explode("/", get_the_permalink())[3] . "/" . explode("/", get_the_permalink())[4];
       $title = get_the_title();
       $post_color = get_post_meta(get_the_ID(), 'event_color', true);
-      $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);
+      $logo = get_post_meta(get_the_ID(), 'event_slide_0', true);
       $ok = true;
     }
   }
@@ -52,7 +52,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
     $url_menu = "/" . url_active()[1] . "/" . url_active()[2];
     $title = get_the_title();
     $post_color = get_post_meta(get_the_ID(), 'event_color', true);
-    $logo = get_post_meta(get_the_ID(), 'event_logo_1', true);
+    $logo = get_post_meta(get_the_ID(), 'event_slide_0', true);
   }
 } else {
   // ********************** Montar header para o portal
