@@ -76,13 +76,14 @@
 }
 
 .event img{
-    width: 60%;    
+    max-width: 60%; 
+    max-height: 180px;   
     position: absolute;
     left: 0;
     right: 0;
     top: -4em;
     bottom: 0;
-    margin: auto;
+    margin: auto;    
 }
 
 .event h4{
