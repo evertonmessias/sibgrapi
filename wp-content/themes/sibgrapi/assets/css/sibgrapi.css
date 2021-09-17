@@ -311,7 +311,8 @@ ul.registration{
         width: 100%;
     }
     .event img{
-        width: 40%;
+        max-width: 60%;
+        max-height: 180px;
     }
     .footer-top .footer-contact,.footer-top .footer-links{
         text-align: center;
