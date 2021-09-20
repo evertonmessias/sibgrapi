@@ -95,90 +95,11 @@
 		</div>
 	</section><!-- End Featured Services Section -->
 
-	<!-- ======= About Sibgrapi ======= -->
-	<section id="Sibgrapi" class="about section-bg">
+		<!-- ======= Events Section ======= -->
+		<section id="Events" class="services event section-bg">
 		<div class="container" data-aos="fade-up">
 			<div class="section-title">
-				<h2>About</h2>
-				<h3>SIBGRAPI</h3>
-			</div>
-			<div id="Sibgrapi" class="row">
-				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
-					<?php
-					$loop = new WP_Query(array('pagename' => 'About SIBGRAPI'));
-					while ($loop->have_posts()) {
-						$loop->the_post();
-						echo "<p>" . the_content() . "</p>";
-					}
-					?>
-				</div>
-			</div>
-		</div>
-		</div>
-	</section><!-- End About Section -->
-
-	<!-- ======= About Section ======= -->
-	<section id="Cegrapi" class="about section-bg">
-		<div class="container" data-aos="fade-up">
-			<div class="section-title">
-				<h2>About</h2>
-				<h3>CEGRAPI</h3>
-			</div>
-			<div class="row">
-				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
-					<?php
-					$loop = new WP_Query(array('pagename' => 'About CEGRAPI'));
-					while ($loop->have_posts()) {
-						$loop->the_post();
-						echo "<p>" . the_content() . "</p>";
-					}
-					?>
-				</div>
-			</div>
-		</div>
-		</div>
-	</section><!-- End About Section -->
-
-	<!-- ======= Counts Section ======= -->
-	<section id="counts" class="counts">
-		<div class="container" data-aos="fade-up">
-
-			<div class="section-title">
-				<h2>Statistics</h2>
-				<h3><span>Our</span> statistics</h3>
-			</div>
-
-			<div class="row">
-				<?php
-				$bloco_count1 = explode(',', get_option('portal_input_23'));
-				$bloco_count2 = explode(',', get_option('portal_input_24'));
-				$bloco_count3 = explode(',', get_option('portal_input_25'));
-				$bloco_count4 = explode(',', get_option('portal_input_26'));
-				$bloco_counts = array($bloco_count1, $bloco_count2, $bloco_count3, $bloco_count4);
-				foreach ($bloco_counts as $bloco) {
-					if ($bloco[0] != "" && $bloco[1] != "" && $bloco[2] != "") {
-				?>
-						<div class="col-lg-3 col-md-6">
-							<div class="count-box">
-								<i class="bx <?php echo $bloco[0]; ?>"></i>
-								<span data-toggle="counter-up"><?php echo $bloco[1]; ?></span>
-								<p><?php echo $bloco[2]; ?></p>
-							</div>
-						</div>
-				<?php }
-				} ?>
-
-			</div>
-
-		</div>
-	</section><!-- End Counts Section -->
-
-	<!-- ======= Events Section ======= -->
-	<section id="Events" class="services event section-bg">
-		<div class="container" data-aos="fade-up">
-			<div class="section-title">
-				<h2>Events</h2>
-				<h3>All <span>Events</span></h3>
+				<h2>Events</h2>				
 			</div>
 			<div class="row">
 				<?php
@@ -212,8 +133,63 @@
 		</div>
 	</section><!-- End Schedule Section -->
 
+	<!-- ======= About Sibgrapi ======= -->
+	<section id="Sibgrapi" class="about">
+		<div class="container" data-aos="fade-up">
+			<div class="section-title">
+				<h2>About</h2>
+				<h3>SIBGRAPI</h3>
+			</div>
+			<div id="Sibgrapi" class="row">
+				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
+					<?php
+					$loop = new WP_Query(array('pagename' => 'sibgrapi'));
+					while ($loop->have_posts()) {
+						$loop->the_post();
+						echo "<p>" . the_content() . "</p>";
+					}
+					?>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section><!-- End About Section -->
+
+	<!-- ======= Counts Section ======= -->
+	<section id="counts" class="counts">
+		<div class="container" data-aos="fade-up">
+
+			<div class="section-title">
+				<h2>Statistics</h2>				
+			</div>
+
+			<div class="row">
+				<?php
+				$bloco_count1 = explode(',', get_option('portal_input_23'));
+				$bloco_count2 = explode(',', get_option('portal_input_24'));
+				$bloco_count3 = explode(',', get_option('portal_input_25'));
+				$bloco_count4 = explode(',', get_option('portal_input_26'));
+				$bloco_counts = array($bloco_count1, $bloco_count2, $bloco_count3, $bloco_count4);
+				foreach ($bloco_counts as $bloco) {
+					if ($bloco[0] != "" && $bloco[1] != "" && $bloco[2] != "") {
+				?>
+						<div class="col-lg-3 col-md-6">
+							<div class="count-box">
+								<i class="bx <?php echo $bloco[0]; ?>"></i>
+								<span data-toggle="counter-up"><?php echo $bloco[1]; ?></span>
+								<p><?php echo $bloco[2]; ?></p>
+							</div>
+						</div>
+				<?php }
+				} ?>
+
+			</div>
+
+		</div>
+	</section><!-- End Counts Section -->
+
 	<!-- ======= Portfolio Section ======= -->
-	<section id="Portfolio" class="portfolio">
+	<section id="Portfolio" class="portfolio section-bg">
 		<div class="container" data-aos="fade-up">
 			<?php
 			$categories = get_terms('category', array('order' => 'DESC'));
@@ -273,63 +249,6 @@
 			<h4 class="plus"><a title="All Portfolio" href="/portfolio"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
 	</section><!-- End Portfolio Section -->
-
-	<!-- ======= Team Section ======= -->
-	<section id="Management" class="team section-bg">
-		<div class="container" data-aos="fade-up">
-			<?php
-			$terms = get_terms('management_categories', array('order' => 'DESC'));
-			foreach ($terms as $term) {
-				$cat_management[] = $term->name;
-			}
-			?>
-			<div class="section-title">
-				<h2>Management</h2>
-				<h3><?php echo $cat_management[0]; ?></h3>
-			</div>
-			<div class="row">
-				<?php
-				$args = array(
-					'post_type' => 'management',
-					'management_categories' => $cat_management[0],
-					'order' => 'DESC'
-				);
-				$loop = new WP_Query($args);
-				while ($loop->have_posts()) {
-					$loop->the_post();
-				?>
-					<div class="col-lg-3 col-md-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-						<div class="member">
-							<div class="member-img">
-								<img src="<?php if (has_post_thumbnail()) the_post_thumbnail_url('full');
-											else echo SITEPATH . 'assets/img/semimagem.png'; ?>" class="img-fluid" title="<?php echo get_the_title(); ?>">
-							</div>
-							<div class="member-info">
-								<?php if (get_post_meta($post->ID, 'management_caption_url', true) != "") { ?>
-									<h4>
-										<a href="<?php echo get_post_meta($post->ID, 'management_caption_url', true); ?>" target="_blank">
-											<?php echo get_the_title(); ?>
-										</a>
-									</h4>
-								<?php } else { ?>
-									<h4>
-										<?php echo get_the_title() ?>
-									</h4>
-								<?php } ?>
-
-								<span><?php echo get_post_meta($post->ID, 'management_caption_role', true); ?></span>
-								<span><?php echo get_post_meta($post->ID, 'management_caption_local', true); ?></span>
-							</div>
-						</div>
-					</div>
-
-				<?php wp_reset_postdata();
-				} ?>
-			</div>
-			<br><br>
-			<h4 class="plus"><a title="All Management" href="/management"><i class="bx bxs-folder-plus"></i></a></h4>
-		</div>
-	</section><!-- End Team Section -->
 
 	<!-- ======= Contact Section ======= -->
 	<section id="Contact" class="contact">

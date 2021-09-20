@@ -26,19 +26,18 @@
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
-            <ul>
-              <li id="home"><i class="bx bx-chevron-right"></i><a href="/">Home</a></li>
-              <li id="sibgrapi"><i class="bx bx-chevron-right"></i><a href="/#Sibgrapi">Sibgrapi</a></li>
-              <li id="cegrapi"><i class="bx bx-chevron-right"></i><a href="/#Cegrapi">Cegrapi</a></li>
-              <li id="events"><i class="bx bx-chevron-right"></i><a href="/#Events">Events</a></li>
+            <ul>              
+              <li id="events"><i class="bx bx-chevron-right"></i><a href="/event">Events</a></li>
+              <li id="sibgrapi"><i class="bx bx-chevron-right"></i><a href="/sibgrapi">About SIBGRAPI</a></li>
+              <li id="cegrapi"><i class="bx bx-chevron-right"></i><a href="/cegrapi">About CEGRAPI</a></li>              
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Other links</h4>
             <ul>
-              <li id="portfolio"><i class="bx bx-chevron-right"></i><a href="/#Portfolio">Portfolio</a></li>
-              <li id="management"><i class="bx bx-chevron-right"></i><a href="/#Management">Management</a></li>
+              <li id="portfolio"><i class="bx bx-chevron-right"></i><a href="/portfolio">Portfolio</a></li>
+              <li id="management"><i class="bx bx-chevron-right"></i><a href="/management">Management</a></li>
               <li id="contact"><i class="bx bx-chevron-right"></i><a href="/#Contact">Contact</a></li>
             </ul>
           </div>

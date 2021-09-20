@@ -227,12 +227,12 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
         <ul>
           <?php if ($nav_menu_portal) { ?>
             <li id="home"><a href="/">Home</a></li>
-            <li id="sibgrapi"><a href="/#Sibgrapi">Sibgrapi</a></li>
-            <li id="cegrapi"><a href="/#Cegrapi">Cegrapi</a></li>
             <li id="events"><a href="/#Events">Events</a></li>
+            <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li> 
             <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
-            <li id="management"><a href="/#Management">Management</a></li>
             <li id="contact"><a href="/#Contact">Contact</a></li>
+            <li id="cegrapi"><a href="/cegrapi">CEGRAPI</a></li>
+            <li id="cegrapi"><a href="/publications">Publications</a></li>
 
           <?php } else if ($nav_menu_sibgrapi) { ?>
 
