@@ -33,6 +33,7 @@ function heateorSssExportConfig(){
         dataType: 'json',
         url: heateorSssSharingAjaxUrl,
         data: {
+            nonce: heateor_sss_admin_options_script_object.nonce,
             action: 'heateor_sss_export_config'
         },
         success: function(data, textStatus, XMLHttpRequest){
@@ -52,17 +53,16 @@ function heateorSssImportConfig(){
         url: heateorSssSharingAjaxUrl,
         data: {
             config: jQuery('#heateor_sss_import_config_txt').val().trim(),
+            nonce: heateor_sss_admin_options_script_object.nonce,
             action: 'heateor_sss_import_config'
         },
         success: function(data, textStatus, XMLHttpRequest){
             jQuery('#import_config_loading').css('display', 'none');
             if(data != null && typeof data.success != 'undefined' && data.success == 1){
-                location.href = heateorSssPluginPageUrl + "&settings-updated=true";
+                location.href = heateor_sss_admin_options_script_object.plugin_page_url + "&settings-updated=true";
             }else{
                 alert("Something went wrong");
             }
-        },
-        error: function(data, textStatus, XMLHttpRequest){
         }
     });
 }
@@ -82,6 +82,7 @@ function heateorSssClearShorturlCache(){
         type: 'GET',
         url: heateorSssSharingAjaxUrl,
         data: {
+            nonce: heateor_sss_admin_options_script_object.nonce,
             action: 'heateor_sss_clear_shorturl_cache'
         },
         success: function(data, textStatus, XMLHttpRequest){
@@ -97,6 +98,7 @@ function heateorSssClearShareCountCache(){
         type: 'GET',
         url: heateorSssSharingAjaxUrl,
         data: {
+            nonce: heateor_sss_admin_options_script_object.nonce,
             action: 'heateor_sss_clear_share_count_cache'
         },
         success: function(data, textStatus, XMLHttpRequest){

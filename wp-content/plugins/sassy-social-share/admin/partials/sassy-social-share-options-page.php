@@ -358,7 +358,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 								<tr>
 									<td colspan="2">
 									<div>
-									<a href="https://www.heateor.com/comparison-between-sassy-social-share-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/responsive-icons.png', __FILE__ ) ?>" /></a>
+									<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/responsive-icons.png', __FILE__ ) ?>" /></a>
 									</div>
 									</td>
 								</tr>

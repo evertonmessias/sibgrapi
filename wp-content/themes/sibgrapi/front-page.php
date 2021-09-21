@@ -105,7 +105,9 @@
 				<?php
 				$args = array(
 					'post_type' => 'event',
-					'posts_per_page' => 12
+					'posts_per_page' => '-1',
+					'order' => 'DESC',
+    				'orderby' => 'title'
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
@@ -130,6 +132,8 @@
 					</div>
 				<?php }	 ?>
 			</div>
+			<br><br>
+			<h4 class="plus"><a title="All Events" href="/event"><i class="bx bxs-folder-plus"></i></a></h4>
 		</div>
 	</section><!-- End Schedule Section -->
 

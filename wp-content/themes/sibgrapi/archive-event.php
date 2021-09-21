@@ -26,12 +26,19 @@
    <section class="inner-page">
       <div class="container">
          <?php
-         while (have_posts()) {
-            the_post();
+         $args = array(
+            'post_type' => 'event',
+            'posts_per_page' => '-1',
+            'order' => 'DESC',
+             'orderby' => 'title'
+         );
+         $loop = new WP_Query($args);
+         while ($loop->have_posts()) {
+            $loop->the_post();
          ?>
             <ul>
                <li>
-                  <a href="<?php the_permalink() ?>"><?php echo get_the_title(); ?></a>
+                  <a target="_blank" href="<?php the_permalink() ?>"><?php echo get_the_title(); ?></a>
                </li>
             </ul>
          <?php }wp_reset_postdata() ?>

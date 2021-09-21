@@ -317,7 +317,12 @@ class Sassy_Social_Share_Admin {
 	public function admin_options_scripts() {
 
 		wp_enqueue_script( 'heateor_sss_admin_options_script', plugins_url( 'js/sassy-social-share-options.js', __FILE__ ), array( 'jquery', 'jquery-ui-sortable' ), $this->version );
-		wp_add_inline_script( 'heateor_sss_admin_options_script', 'var heateorSssPluginPageUrl = "' . admin_url() . 'admin.php?page=heateor-sss-options";var heateorSssAjaxLoader = "' . plugins_url( '../images/ajax_loader.gif', __FILE__ ) . '"', $position = 'before' );
+		wp_localize_script( 'heateor_sss_admin_options_script', 'heateor_sss_admin_options_script_object',
+	        array( 
+	            'plugin_page_url' => admin_url() . 'admin.php?page=heateor-sss-options',
+	            'nonce' => wp_create_nonce( 'heateor_sss_admin_options_script' ),
+	        )
+	    );
 	
 	}
 
@@ -420,13 +425,17 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function export_config() {
 		
-		$config = get_option( 'heateor_sss' );
-		header( 'Content-Type: application/json' );
-		die( json_encode(
-			array(
-				'config' => base64_encode( maybe_serialize( $config ) )
-			)
-		) );
+		if ( current_user_can( 'manage_options' ) ) {
+			if ( check_ajax_referer( 'heateor_sss_admin_options_script', 'nonce' ) === false ) {
+				die;
+			}
+			$config = get_option( 'heateor_sss' );
+			die( json_encode(
+				array(
+					'config' => json_encode( $config )
+				)
+			) );
+		}
 	
 	}
 
@@ -437,19 +446,23 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function import_config() {
 		
-		if ( isset( $_POST['config'] ) && strlen( trim( $_POST['config'] ) ) > 0 ) {
-			$config = maybe_unserialize( base64_decode( trim( $_POST['config'] ) ) );
-			if ( is_array( $config ) && count( $config ) > 0 ) {
-				update_option( 'heateor_sss', $config );
-				header( 'Content-Type: application/json' );
-				die( json_encode(
-					array(
-						'success' => 1
-					)
-				) );
+		if ( current_user_can( 'manage_options' ) ) {
+		    if ( check_ajax_referer( 'heateor_sss_admin_options_script', 'nonce' ) === false ) {
+				die;
 			}
+			if ( isset( $_POST['config'] ) && strlen( trim( $_POST['config'] ) ) > 0 ) {
+				$config = json_decode( stripslashes( trim( $_POST['config'] ) ), true );
+				if ( is_array( $config ) && count( $config ) > 0 ) {
+					update_option( 'heateor_sss', $config );
+					die( json_encode(
+						array(
+							'success' => 1
+						)
+					) );
+				}
+			}
+			die;
 		}
-		die;
 	
 	}
 
@@ -512,8 +525,13 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function clear_shorturl_cache() {
 		
-		global $wpdb;
-		$wpdb->query( "DELETE FROM $wpdb->postmeta WHERE meta_key = '_heateor_sss_bitly_url'" );
+		if ( current_user_can( 'manage_options' ) ) {
+		    if ( check_ajax_referer( 'heateor_sss_admin_options_script', 'nonce' ) === false ) {
+				die;
+			}
+			global $wpdb;
+			$wpdb->query( "DELETE FROM $wpdb->postmeta WHERE meta_key = '_heateor_sss_bitly_url'" );
+		}
 		die;
 	
 	}
@@ -525,8 +543,13 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function clear_share_count_cache() {
 		
-		global $wpdb;
-		$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_heateor_sss_share_count_%'" );
+		if ( current_user_can( 'manage_options' ) ) {
+		    if ( check_ajax_referer( 'heateor_sss_admin_options_script', 'nonce' ) === false ) {
+				die;
+			}
+			global $wpdb;
+			$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_heateor_sss_share_count_%'" );
+		}
 		die;
 	
 	}
@@ -538,7 +561,12 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function twitter_share_notification_read() {
 
-		update_option( 'heateor_sss_twitter_share_notification_read', '1' );
+		if ( current_user_can( 'manage_options' ) ) {
+			if ( check_ajax_referer( 'heateor_sss_admin_ajax_nonce', 'nonce' ) === false ) {
+				die;
+			}
+			update_option( 'heateor_sss_twitter_share_notification_read', '1' );
+		}
 		die;
 	
 	}
@@ -550,7 +578,12 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function twitcount_notification_read() {
 
-		update_option( 'heateor_sss_twitcount_notification_read', '1' );
+		if ( current_user_can( 'manage_options' ) ) {
+			if ( check_ajax_referer( 'heateor_sss_admin_ajax_nonce', 'nonce' ) === false ) {
+				die;
+			}
+			update_option( 'heateor_sss_twitcount_notification_read', '1' );
+		}
 		die;
 	
 	}
@@ -562,7 +595,12 @@ class Sassy_Social_Share_Admin {
 	 */
 	public function gdpr_notification_read() {
 
-		update_option( 'heateor_sss_gdpr_notification_read', '1' );
+		if ( current_user_can( 'manage_options' ) ) {
+			if ( check_ajax_referer( 'heateor_sss_admin_ajax_nonce', 'nonce' ) === false ) {
+				die;
+			}
+			update_option( 'heateor_sss_gdpr_notification_read', '1' );
+		}
 		die;
 	
 	}
@@ -604,6 +642,7 @@ class Sassy_Social_Share_Admin {
 							type: 'GET',
 							url: '<?php echo get_admin_url() ?>admin-ajax.php',
 							data: {
+								nonce: '<?php echo wp_create_nonce( 'heateor_sss_admin_ajax_nonce' ) ?>',
 								action: 'heateor_sss_gdpr_notification_read'
 							},
 							success: function(data, textStatus, XMLHttpRequest){
@@ -630,6 +669,7 @@ class Sassy_Social_Share_Admin {
 								type: 'GET',
 								url: '<?php echo get_admin_url() ?>admin-ajax.php',
 								data: {
+									nonce: '<?php echo wp_create_nonce( 'heateor_sss_admin_ajax_nonce' ) ?>',
 									action: 'heateor_sss_twitter_share_notification_read'
 								},
 								success: function(data, textStatus, XMLHttpRequest){
@@ -653,6 +693,7 @@ class Sassy_Social_Share_Admin {
 								type: 'GET',
 								url: '<?php echo get_admin_url() ?>admin-ajax.php',
 								data: {
+									nonce: '<?php echo wp_create_nonce( 'heateor_sss_admin_ajax_nonce' ) ?>',
 									action: 'heateor_sss_twitcount_notification_read'
 								},
 								success: function(data, textStatus, XMLHttpRequest){
