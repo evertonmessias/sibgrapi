@@ -47,7 +47,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
     echo "<script>window.location.href='" . get_post_meta(get_the_ID(), 'event_url', true) . "'</script>";
   } else {
     // ********************** Montar header para o event
-    if (get_the_title() == "")echo "<script>window.location.href = '/';</script>";
+    if (get_the_title() == "") echo "<script>window.location.href = '/';</script>";
     $nav_menu_sibgrapi = true;
     $url_menu = "/" . url_active()[1] . "/" . url_active()[2];
     $title = get_the_title();
@@ -221,17 +221,21 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
 
       <!-- Nav-Menu -->
       <nav class="nav-menu d-none d-lg-block">
-          <div class="search">
-            <?php echo get_search_form() ?>
-          </div>
+        <div class="search">
+          <?php echo get_search_form() ?>
+        </div>
         <ul>
           <?php if ($nav_menu_portal) { ?>
             <li id="home"><a href="/">Home</a></li>
             <li id="events"><a href="/#Events">Events</a></li>
-            <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li> 
+            <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li>
             <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
             <li id="contact"><a href="/#Contact">Contact</a></li>
-            <li id="cegrapi"><a href="/cegrapi">CEGRAPI</a></li>
+            <li id="cegrapi" class="drop-down"><a href="/cegrapi">CEGRAPI</a>
+              <ul>
+                <li><a href="/management">Management</a></li>
+              </ul>
+            </li>
             <li id="cegrapi"><a href="/publications">Publications</a></li>
 
           <?php } else if ($nav_menu_sibgrapi) { ?>
@@ -245,7 +249,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
             <li id="local"><a href="<?php echo $url_menu; ?>/#Local">Local</a></li>
             <li><a href="/">Portal</a></li>
 
-          <?php } ?>          
+          <?php } ?>
         </ul>
       </nav>
       <!-- .nav-menu -->

@@ -46,7 +46,8 @@
 				$args = array(
 					'post_type' => 'management',
 					'management_categories' => $cat_management[0],
-					'order' => 'DESC'
+					'order' => 'ASC',
+    				'orderby' => 'title'
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
