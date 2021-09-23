@@ -19,7 +19,7 @@
 							<div class="carousel-content container">
 								<h2 class="animate__animated animate__fadeInDown"><?php echo get_option('portal_input_112') ?></h2>
 								<p class="animate__animated animate__fadeInUp"><?php echo get_option('portal_input_113'); ?></p>
-								<a href="<?php echo explode(",", get_option('portal_input_114'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_114'))[0]; ?></a>
+								<a target="_blank" href="<?php echo explode(",", get_option('portal_input_114'))[1]; ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo explode(",", get_option('portal_input_114'))[0]; ?></a>
 							</div>
 						</div>
 					</div>
@@ -67,33 +67,6 @@
 </section><!-- End Hero -->
 
 <main id="main">
-	<!-- ======= Featured Services Section ======= -->
-	<section id="featured-services" class="featured-services">
-		<div class="container" data-aos="fade-up">
-			<div class="row">
-				<?php
-				$bloco_link1 = explode(',', get_option('portal_input_7'));
-				$bloco_link2 = explode(',', get_option('portal_input_8'));
-				$bloco_link3 = explode(',', get_option('portal_input_9'));
-				$bloco_link4 = explode(',', get_option('portal_input_10'));
-				$bloco_links = array($bloco_link1, $bloco_link2, $bloco_link3, $bloco_link4);
-				foreach ($bloco_links as $bloco) {
-					if ($bloco[0] != "" && $bloco[1] != "" && $bloco[2] != "") {
-				?>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-							<div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-								<div class="icon"><i class="bx <?php echo $bloco[0]; ?>"></i></div>
-								<h4 class="title"><a href="<?php echo $bloco[1]; ?>"><?php echo $bloco[2]; ?></a></h4>
-								<p class="description">&emsp;</p>
-							</div>
-						</div>
-				<?php }
-				} ?>
-
-			</div>
-
-		</div>
-	</section><!-- End Featured Services Section -->
 
 		<!-- ======= Events Section ======= -->
 		<section id="Events" class="services event section-bg">
@@ -259,8 +232,7 @@
 		<div class="container" data-aos="fade-up">
 
 			<div class="section-title">
-				<h2>Contact</h2>
-				<h3>Contact <span>Us</span></h3>
+				<h2>Contact</h2>				
 			</div>
 
 			<div class="row" data-aos="fade-up" data-aos-delay="100">

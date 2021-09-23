@@ -166,25 +166,7 @@ function portal_page_html()
 			</label><br>
 			<br><span>(Use <b>Icon,URL,Title</b> separated by commas and no spaces. Choose Icon <a href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/icons-boxicons.html" target="_blank">Here</a>)</span>			
 
-
-			<br><br><!-- *************************************** -->
-			<hr>
-
-			<h3 class="title">Block Menu:</h3>
-			<label>
-				<h3>Block 1: </h3><input type="text" id="portal_input_7" name="portal_input_7" value="<?php echo get_option('portal_input_7'); ?>" />
-			</label><br>
-			<label>
-				<h3>Block 2: </h3><input type="text" id="portal_input_8" name="portal_input_8" value="<?php echo get_option('portal_input_8'); ?>" />
-			</label><br>
-			<label>
-				<h3>Block 3: </h3><input type="text" id="portal_input_9" name="portal_input_9" value="<?php echo get_option('portal_input_9'); ?>" />
-			</label><br>
-			<label>
-				<h3>Block 4: </h3><input type="text" id="portal_input_10" name="portal_input_10" value="<?php echo get_option('portal_input_10'); ?>" />
-			</label><br>
-			<br><span>(Use <b>Icon,URL,Title</b> separated by commas and no spaces. Choose Icon <a href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/icons-boxicons.html" target="_blank">Here</a>)</span>
-
+			
 			<br><br><!-- *************************************** -->
 			<hr>
 

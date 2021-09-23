@@ -149,7 +149,8 @@ $eyear = get_post_meta(get_the_ID(), 'event_year', true);
 				$args = array(
 					'post_type' => 'committee',
 					'committee_categories' => $cat_committee[0],
-					'order' => 'DESC'
+					'order' => 'ASC',
+    				'orderby' => 'title'
 				);
 				$loop = new WP_Query($args);
 				while ($loop->have_posts()) {
