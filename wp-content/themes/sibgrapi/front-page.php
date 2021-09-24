@@ -78,7 +78,7 @@
 				<?php
 				$args = array(
 					'post_type' => 'event',
-					'posts_per_page' => '-1',
+					'posts_per_page' => 24,
 					'order' => 'DESC',
     				'orderby' => 'title'
 				);

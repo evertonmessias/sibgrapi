@@ -34,6 +34,15 @@
 #hero .carousel-control-prev-icon, #hero .carousel-control-next-icon{
     margin-top: 3em;
 }
+
+.logosbc{
+    margin-left: 5px;
+}
+
+.logosbc img:hover{
+    transform: scale(1.1);
+}
+
 .logo span{
     color: #999;
     font-weight: 900;

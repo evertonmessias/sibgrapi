@@ -79,7 +79,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
   <link href="<?php echo $logo; ?>" rel="icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="<?php echo SITEPATH; ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -211,14 +211,16 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto">
+        <a class="logosbc" href="https://www.sbc.org.br/" target="_blank">
+          <img src="<?php echo SITEPATH; ?>assets/img/sbc.png" title="SBC">
+        </a> 
         <a href="<?php echo $url_menu; ?>">
           <?php if ($logo != "") { ?>
             <img src="<?php echo $logo; ?>" title="<?php echo $title; ?>">
           <?php } ?>
           <span><?php echo $title; ?></span>
-        </a>
+        </a> 
       </h1>
-
       <!-- Nav-Menu -->
       <nav class="nav-menu d-none d-lg-block">
         <div class="search">
@@ -234,9 +236,10 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
             <li id="cegrapi" class="drop-down"><a href="/cegrapi">CEGRAPI</a>
               <ul>
                 <li><a href="/management">Management</a></li>
+                <li><a href="/publications">Publications</a></li>
+                <li><a href="/iapr">IAPR</a></li>
               </ul>
-            </li>
-            <li id="cegrapi"><a href="/publications">Publications</a></li>
+            </li>            
 
           <?php } else if ($nav_menu_sibgrapi) { ?>
 

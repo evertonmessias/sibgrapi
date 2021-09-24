@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Arial";
   color: #444444;
 }
 
@@ -224,9 +224,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #222222;
   transition: 0.3s;
   font-size: 15px;
-  font-weight: 600;
-  padding: 0 3px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  padding: 0 3px;  
 }
 
 .nav-menu > ul > li > a:before {
