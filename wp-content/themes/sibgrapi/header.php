@@ -228,18 +228,18 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
         </div>
         <ul>
           <?php if ($nav_menu_portal) { ?>
-            <li id="home"><a href="/">Home</a></li>
+            <!--<li id="home"><a href="/">Home</a></li>-->
             <li id="events"><a href="/#Events">Events</a></li>
             <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li>
             <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
             <li id="contact"><a href="/#Contact">Contact</a></li>
             <li id="cegrapi" class="drop-down"><a href="/cegrapi">CEGRAPI</a>
               <ul>
-                <li><a href="/management">Management</a></li>
-                <li><a href="/publications">Publications</a></li>
-                <li><a href="/iapr">IAPR</a></li>
+                <li><a href="/management">Management</a></li>                
               </ul>
-            </li>            
+            </li>
+            <li id="publications"><a href="/publications">Publications</a></li>
+            <li id="iapr"><a href="/iapr">IAPR</a></li>            
 
           <?php } else if ($nav_menu_sibgrapi) { ?>
 

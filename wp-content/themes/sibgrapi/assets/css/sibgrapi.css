@@ -35,11 +35,15 @@
     margin-top: 3em;
 }
 
-.logosbc{
-    margin-left: 5px;
+#header .logo .logosbc {
+    margin-right: 5px;
 }
 
-.logosbc img:hover{
+#header .logo .logosbc img {
+    max-height: 45px;
+}
+
+#header .logo .logosbc img:hover {
     transform: scale(1.1);
 }
 
