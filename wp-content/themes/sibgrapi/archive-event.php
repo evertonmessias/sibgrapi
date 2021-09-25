@@ -25,23 +25,31 @@
 
    <section class="inner-page">
       <div class="container">
-         <?php
-         $args = array(
-            'post_type' => 'event',
-            'posts_per_page' => '-1',
-            'order' => 'DESC',
-             'orderby' => 'title'
-         );
-         $loop = new WP_Query($args);
-         while ($loop->have_posts()) {
-            $loop->the_post();
-         ?>
-            <ul>
+         <ul>
+            <?php
+            $args = array(
+               'post_type' => 'event',
+               'posts_per_page' => '-1',
+               'order' => 'DESC',
+               'orderby' => 'title'
+            );
+            $loop = new WP_Query($args);
+            while ($loop->have_posts()) {
+               $loop->the_post();
+               if(get_post_meta($post->ID, 'event_url', true) == ""){
+                  $event_url = "#";
+                  $event_target = "";
+               }else{
+                  $event_url = get_permalink();
+                  $event_target = "_blank";
+               }
+            ?>
                <li>
-                  <a target="_blank" href="<?php the_permalink() ?>"><?php echo get_the_title(); ?></a>
+                  <a target="<?php echo $event_target; ?>" href="<?php echo $event_url; ?>"><?php echo get_the_title(); ?></a>
                </li>
-            </ul>
-         <?php }wp_reset_postdata() ?>
+            <?php }
+            wp_reset_postdata() ?>
+         </ul>
       </div>
    </section>
 </main><!-- End #main -->
