@@ -233,11 +233,7 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
             <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li>
             <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
             <li id="contact"><a href="/#Contact">Contact</a></li>
-            <li id="cegrapi" class="drop-down"><a href="/cegrapi">CEGRAPI</a>
-              <ul>
-                <li><a href="/management">Management</a></li>                
-              </ul>
-            </li>
+            <li id="cegrapi"><a href="/cegrapi">CEGRAPI</a></li>
             <li id="publications"><a href="/publications">Publications</a></li>
             <li id="iapr"><a href="/iapr">IAPR</a></li>            
 
