@@ -120,7 +120,7 @@
 			<div id="Sibgrapi" class="row">
 				<div class="col-lg-12 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="100">
 					<?php
-					$loop = new WP_Query(array('pagename' => 'sibgrapi'));
+					$loop = new WP_Query(array('pagename' => 'about-sibgrapi'));
 					while ($loop->have_posts()) {
 						$loop->the_post();
 						echo "<p>" . the_content() . "</p>";
