@@ -4,7 +4,7 @@ Donate link: https://www.heateor.com/donate/?action=Sassy+Social+Share
 Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, parler share
 Requires at least: 2.5.0
 Tested up to: 5.8.1
-Stable tag: 3.3.24
+Stable tag: 3.3.25
 License: GPLv2 or later
 
 Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinterest, Whatsapp, Parler, Gab and over 100 more.
@@ -13,7 +13,7 @@ Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinte
 
 Sassy Social Share enables your website users to share the content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Parler, Gab and over 100 more social sharing and bookmarking services.
 
-This is the Simplest and Smoothest Social Sharing plugin with optimized and great looking vector icons.
+This is the simplest and the fastest Social Sharing plugin with optimized and great looking vector icons.
 
 **Note:** Plugin will not work on local server. You should have an online website for the plugin to function properly.
 
@@ -123,6 +123,9 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 4. **Universal Sharing Popup**: Universal Sharing popup having all the supported sharing and bookmarking services
 
 == Changelog ==
+= 3.3.25 [16 October 2021] =
+* [Improvement] Fixed broken links at the plugin configuration page
+
 = 3.3.24 [17 September 2021] =
 * [Important] Fixed PHP Object Injection vulnerability
 * [Improvement] Admin UI improvement
@@ -1026,3 +1029,6 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 = 3.3.24 [17 September 2021] =
 * [Important] Fixed PHP Object Injection vulnerability
 * [Improvement] Admin UI improvement
+
+= 3.3.25 [16 October 2021] =
+* [Improvement] Fixed broken links at the plugin configuration page
