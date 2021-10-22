@@ -232,14 +232,21 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
             <li id="events"><a href="/#Events">Events</a></li>
             <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li>
             <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
-            <li id="contact"><a href="/#Contact">Contact</a></li>
+            <li id="contact" class="drop-down"><a href="/#Contact">Contact</a>
+              <ul>
+                <li><a href="https://grupos.ufrgs.br/mailman/listinfo/sbc-graf" target="_blank">Discussion List</a></li>
+              </ul>
+            </li>
             <li id="cegrapi" class="drop-down"><a href="/about-cegrapi">CEGRAPI</a>
               <ul>
                 <li><a href="/meeting-minutes">Meeting minutes</a></li>
-                <li><a href="#">Drop Down 2</a></li>
               </ul>
             </li>
-            <li id="publications"><a href="/publications">Publications</a></li>
+            <li id="publications" class="drop-down"><a href="/publications">Publications</a>
+              <ul>
+                <li><a href="/research-groups">Research Groups</a></li>
+              </ul>
+            </li>
             <li id="iapr"><a href="/iapr">IAPR</a></li>
 
 
