@@ -213,13 +213,13 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
       <h1 class="logo mr-auto">
         <a class="logosbc" href="https://www.sbc.org.br/" target="_blank">
           <img src="<?php echo SITEPATH; ?>assets/img/sbc.png" title="SBC">
-        </a> 
+        </a>
         <a href="<?php echo $url_menu; ?>">
           <?php if ($logo != "") { ?>
             <img src="<?php echo $logo; ?>" title="<?php echo $title; ?>">
           <?php } ?>
           <span><?php echo $title; ?></span>
-        </a> 
+        </a>
       </h1>
       <!-- Nav-Menu -->
       <nav class="nav-menu d-none d-lg-block">
@@ -233,9 +233,15 @@ if ((url_active()[1] == "registration" && url_active()[2] != "") || (url_active(
             <li id="sibgrapi"><a href="/#Sibgrapi">About</a></li>
             <li id="portfolio"><a href="/#Portfolio">Portfolio</a></li>
             <li id="contact"><a href="/#Contact">Contact</a></li>
-            <li id="cegrapi"><a href="/about-cegrapi">CEGRAPI</a></li>
+            <li id="cegrapi" class="drop-down"><a href="/about-cegrapi">CEGRAPI</a>
+              <ul>
+                <li><a href="/meeting-minutes">Meeting minutes</a></li>
+                <li><a href="#">Drop Down 2</a></li>
+              </ul>
+            </li>
             <li id="publications"><a href="/publications">Publications</a></li>
-            <li id="iapr"><a href="/iapr">IAPR</a></li>            
+            <li id="iapr"><a href="/iapr">IAPR</a></li>
+
 
           <?php } else if ($nav_menu_sibgrapi) { ?>
 
